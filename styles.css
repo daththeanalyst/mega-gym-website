@@ -3180,8 +3180,27 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     .page-hero-sub { margin: 0 auto; }
     .breadcrumb { justify-content: center; }
     .section-cta { text-align: center; }
-    .hero-content { text-align: center; }
+    .hero-content { text-align: center; padding: 32px 24px 36px; }
     .hero-badge { margin-left: auto; margin-right: auto; }
+
+    /* Missing grid breakpoints */
+    .programs-grid { grid-template-columns: 1fr; }
+    .intro-highlights { grid-template-columns: 1fr; }
+    .trust-signals { grid-template-columns: 1fr; gap: 16px; }
+    .equipment-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .pt-features-grid { grid-template-columns: 1fr; }
+    .pt-results-grid { grid-template-columns: 1fr; }
+
+    /* Touch targets */
+    .btn, .btn-yellow, .btn-dark, .btn-outline, .btn-dark-outline { min-height: 48px; padding: 14px 28px; }
+    .lang-toggle { min-height: 40px; display: flex; align-items: center; }
+    .nav-toggle { width: 44px; height: 44px; }
+
+    /* Cookie banner mobile */
+    .cookie-banner { flex-direction: column; gap: 12px; padding: 16px 20px; }
+    .cookie-banner p { font-size: .82rem; }
 }
 
 @media (max-width: 480px) {
@@ -3189,6 +3208,10 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     .about-metrics { flex-direction: column; gap: 20px; }
     .contact-quick .contact-form-wrap { padding: 24px 16px; }
     .page-hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .hero-content { padding: 24px 16px 28px; }
+    .accessories-grid { grid-template-columns: 1fr; }
+    .about-image img { height: 240px; }
+    .transform-image-placeholder { height: 150px; }
 }
 
 
