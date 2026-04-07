@@ -4075,8 +4075,10 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     box-shadow: 0 6px 28px rgba(37, 211, 102, .55);
 }
 @media (max-width: 480px) {
-    .whatsapp-float { bottom: 88px; right: 20px; width: 52px; height: 52px; }
-    .back-to-top { bottom: 24px; right: 20px; width: 44px; height: 44px; }
+    .whatsapp-float { bottom: 80px; right: 20px; width: 52px; height: 52px; }
+    .back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+    .chatbot-bubble { bottom: 144px; right: 20px; }
+    .chatbot-btn { width: 48px; height: 48px; }
 }
 
 
@@ -4234,7 +4236,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
    =================================================================== */
 .chatbot-bubble {
     position: fixed;
-    bottom: 160px;
+    bottom: 168px;
     right: 32px;
     z-index: 999;
     cursor: pointer;
@@ -4336,7 +4338,5 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     border-radius: var(--radius-pill);
 }
 @media (max-width: 480px) {
-    .chatbot-bubble { bottom: 148px; right: 20px; }
-    .chatbot-btn { width: 48px; height: 48px; }
     .chatbot-popup { width: 260px; right: -8px; }
 }
