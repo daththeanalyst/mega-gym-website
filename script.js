@@ -1066,6 +1066,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ---------------------------------------------------------------
+       12c. AI CHATBOT BUBBLE
+    --------------------------------------------------------------- */
+    const chatbotBubble = document.getElementById('chatbotBubble');
+    if (chatbotBubble) {
+        const chatBtn = chatbotBubble.querySelector('.chatbot-btn');
+        chatBtn.addEventListener('click', () => {
+            chatbotBubble.classList.toggle('open');
+        });
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!chatbotBubble.contains(e.target)) {
+                chatbotBubble.classList.remove('open');
+            }
+        });
+    }
+
+
+    /* ---------------------------------------------------------------
        13. FAQ ACCORDION
     --------------------------------------------------------------- */
     document.querySelectorAll('.faq-question').forEach(btn => {
