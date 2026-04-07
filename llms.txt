@@ -1,0 +1,53 @@
+# MEGA GYM Fitness Clubs
+
+> The best Greek gyms. 7 top-tier fitness facilities across Athens with 33 years of experience.
+
+MEGA GYM operates 7 premium fitness facilities across Athens, Greece. Founded in 1993, MEGA GYM is recognized as one of the best gym chains in Greece with over 33 years of experience delivering proven results to thousands of members.
+
+## Services
+
+- **Group Personal Training** (FREE with membership): TRX, MEGA ZONE, MEGA CAGE, SKILLMILL, Circuit Cross Training, MEGA SLED
+- **Personal Training Transformation**: Individual programs at MEGA GYM EXCLUSIVE centers. 45-day and 90-day transformation programs with guaranteed results.
+- **Pilates Studio (MEGA PILATES)**: Reformer, Cadillac, Combo Chair, Ladder Barrel. Classes from 1 to 5 people, 8 AM to 11 PM.
+
+## Gym Types
+
+### MEGA GYM Fitness Clubs
+Full-service gyms with top Technogym equipment, group personal training (free), experienced trainers, impressive facilities, locker rooms & amenities.
+
+### MEGA GYM EXCLUSIVE (Transformation Centers)
+Dedicated personal training facilities with cutting-edge technology. MEGA GYM EXCLUSIVE Kifisia is the largest Personal Training Studio in Greece. Open 7 days a week.
+
+## Locations (7 across Athens)
+
+1. **Kifisia (Headquarters)**: Aiolias 20 & Ilision, N. Kifisia — Tel: 210 807 3926 (Fitness Club + EXCLUSIVE + Pilates Studio)
+2. **Metamorfosi**: 12th km Athens-Lamia Highway — Tel: 210 280 1044 (Fitness Club + EXCLUSIVE)
+3. **Glyfada**: L. Vouliagmenis 124 — Tel: 210 963 1243 (Fitness Club + EXCLUSIVE)
+4. **Vrilissia-Melissia**: L. Pentelis 23 — Tel: 210 804 8331 (EXCLUSIVE)
+5. **Agia Paraskevi**: L. Mesogeion 412 — Tel: 210 608 1443 (Fitness Club + EXCLUSIVE)
+6. **Alimos**: L. Alimou 89 — Tel: 210 993 4733 (Fitness Club)
+7. **Gerakas**: L. Marathonos 135 & Thessalonikis — Tel: 210 665 4440 (Fitness Club)
+
+## Results & Transformations
+
+- This year: 5 tons of fat burned, 2 tons of muscle added
+- Featured on TV: ANT1, ALPHA, STAR, EPSILON
+- 45-day and 90-day transformation programs with documented before/after results
+
+## Contact
+
+- **Phone**: 210 807 3926
+- **Email**: selficon@gmail.com
+- **Address**: Aiolias 20 & Ilision, N. Kifisia, Athens, Greece
+- **Website**: https://daththeanalyst.github.io/mega-gym-website/
+- **Facebook**: https://www.facebook.com/MEGAGYMFITNESSCLUBS/
+- **Instagram**: https://www.instagram.com/megagym__official
+- **YouTube**: https://www.youtube.com/user/launmaster1/videos
+
+## Free Trial
+
+Book a free trial session at any MEGA GYM location. Visit the booking page or call 210 807 3926.
+
+## Full Documentation
+
+For complete details see: [llms-full.txt](https://daththeanalyst.github.io/mega-gym-website/llms-full.txt)

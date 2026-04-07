@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="assets/MegaGymPhotos/mega-gym-logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - MEGA GYM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 24px;
+        }
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 20vw, 12rem);
+            font-weight: 700;
+            color: var(--yellow);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .error-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-bottom: 16px;
+        }
+        .error-desc {
+            color: var(--gray-400);
+            max-width: 480px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <section class="error-page">
+        <div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-desc">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-yellow">Home</a>
+                <a href="dokimastiki.html" class="btn btn-outline">Free Trial</a>
+                <a href="epikoinonia.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

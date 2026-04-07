@@ -2,12 +2,26 @@
 <html lang="el">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="assets/MegaGymPhotos/mega-gym-logo.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEGA GYM | Επικοινωνία - Contact</title>
     <meta name="description" content="Επικοινωνήστε μαζί μας. MEGA GYM Fitness Clubs - 7 τοποθεσίες στην Αθήνα. Τηλέφωνο, email, φόρμα επικοινωνίας.">
+    <link rel="canonical" href="https://daththeanalyst.github.io/mega-gym-website/epikoinonia.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MEGA GYM Fitness Clubs">
+    <meta property="og:title" content="MEGA GYM | Επικοινωνία - Contact">
+    <meta property="og:description" content="Επικοινωνήστε μαζί μας. MEGA GYM Fitness Clubs - 7 τοποθεσίες στην Αθήνα. Τηλέφωνο, email, φόρμα επικοινωνίας.">
+    <meta property="og:url" content="https://daththeanalyst.github.io/mega-gym-website/epikoinonia.html">
+    <meta property="og:image" content="https://daththeanalyst.github.io/mega-gym-website/assets/MegaGymPhotos/mega-gym-logo.jpg">
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MEGA GYM | Επικοινωνία - Contact">
+    <meta name="twitter:description" content="Επικοινωνήστε μαζί μας. MEGA GYM Fitness Clubs - 7 τοποθεσίες στην Αθήνα. Τηλέφωνο, email, φόρμα επικοινωνίας.">
+    <meta name="twitter:image" content="https://daththeanalyst.github.io/mega-gym-website/assets/MegaGymPhotos/mega-gym-logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,10 +33,16 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" data-i18n="nav-home">Αρχική</a></li>
                 <li><a href="gymnastiria.html" data-i18n="nav-gyms">Γυμναστήρια</a></li>
-                <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
-                <li><a href="personal-training.html" data-i18n="nav-pt">Personal Training</a></li>
-                <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle" data-i18n="nav-services">Υπηρεσίες <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
+                        <li><a href="personal-training.html" data-i18n="nav-pt">Personal Training</a></li>
+                        <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                    </ul>
+                </li>
                 <li><a href="dokimastiki.html" data-i18n="nav-trial">Δοκιμαστική</a></li>
+                <li><a href="epikoinonia.html" data-i18n="nav-contact">Επικοινωνία</a></li>
             </ul>
             <div class="nav-right">
                 <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN | <span class="lang-active">GR</span></button>
@@ -39,12 +59,12 @@
     <section class="page-hero">
         <div class="page-hero-content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="index.html" data-i18n="nav-home">Αρχική</a>
-                <span class="breadcrumb-sep">&rsaquo;</span>
-                <span data-i18n="contact-page-title">Επικοινωνία</span>
+                <a href="index.html" data-i18n="gym-page-bc-home">Αρχική</a>
+                <span class="breadcrumb-sep">/</span>
+                <span data-i18n="epi-bc">Επικοινωνία</span>
             </nav>
-            <h1 class="page-hero-title" data-i18n="contact-hero-title">ΕΠΙΚΟΙΝΩΝΙΑ</h1>
-            <p class="page-hero-subtitle" data-i18n="contact-hero-subtitle">Είμαστε εδώ για σένα.</p>
+            <h1 class="page-hero-title" data-i18n="epi-page-title">ΕΠΙΚΟΙΝΩΝΙΑ</h1>
+            <p class="page-hero-subtitle" data-i18n="epi-page-sub">Είμαστε εδώ για σένα.</p>
         </div>
     </section>
 
@@ -58,9 +78,9 @@
 
                 <!-- Left: Contact Info -->
                 <div class="contact-info">
-                    <span class="tag" data-i18n="contact-tag">Επικοινωνία</span>
-                    <h2 class="section-title" data-i18n="contact-info-title">Επικοινώνησε Μαζί Μας</h2>
-                    <p class="text-gray" data-i18n="contact-info-desc">Είμαστε πάντα εδώ για σένα. Επικοινώνησε μαζί μας με όποιον τρόπο σε βολεύει.</p>
+                    <span class="tag" data-i18n="epi-contact-tag">Επικοινωνία</span>
+                    <h2 class="section-title" data-i18n="epi-contact-title">Επικοινώνησε Μαζί Μας</h2>
+                    <p class="text-gray" data-i18n="epi-contact-desc">Είμαστε πάντα εδώ για σένα. Επικοινώνησε μαζί μας με όποιον τρόπο σε βολεύει.</p>
 
                     <div class="contact-items">
                         <div class="contact-row">
@@ -94,17 +114,21 @@
                 <div class="contact-form-wrap">
                     <form class="contact-form" id="contactForm">
                         <div class="form-row">
-                            <input type="text" name="name" placeholder="Ονοματεπώνυμο" data-i18n-placeholder="form-name" required>
+                            <label for="contactName" data-i18n="epi-form-name">Ονοματεπώνυμο</label>
+                            <input type="text" id="contactName" name="name" placeholder="Ονοματεπώνυμο" data-i18n-placeholder="epi-form-name" required>
                         </div>
                         <div class="form-row">
-                            <input type="email" name="email" placeholder="Email" required>
+                            <label for="contactEmail" data-i18n="epi-form-email">Email</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="Email" data-i18n-placeholder="epi-form-email" required>
                         </div>
                         <div class="form-row">
-                            <input type="tel" name="phone" placeholder="Τηλέφωνο" data-i18n-placeholder="form-phone">
+                            <label for="contactPhone" data-i18n="epi-form-phone">Τηλέφωνο</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="Τηλέφωνο" data-i18n-placeholder="epi-form-phone">
                         </div>
                         <div class="form-row">
-                            <select name="location" data-i18n-placeholder="form-location">
-                                <option value="" disabled selected data-i18n="form-location">Επιλέξτε Τοποθεσία</option>
+                            <label for="contactLocation" data-i18n="epi-form-location">Τοποθεσία</label>
+                            <select id="contactLocation" name="location" data-i18n-placeholder="epi-form-location">
+                                <option value="" disabled selected data-i18n="epi-form-location">Επιλέξτε Τοποθεσία</option>
                                 <option value="kifisia">Κηφισιά</option>
                                 <option value="metamorfosi">Μεταμόρφωση</option>
                                 <option value="glyfada">Γλυφάδα</option>
@@ -115,9 +139,10 @@
                             </select>
                         </div>
                         <div class="form-row">
-                            <textarea name="message" rows="4" placeholder="Μήνυμα" data-i18n-placeholder="form-message"></textarea>
+                            <label for="contactMessage" data-i18n="epi-form-message">Μήνυμα</label>
+                            <textarea id="contactMessage" name="message" rows="4" placeholder="Μήνυμα" data-i18n-placeholder="epi-form-message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full" data-i18n="form-submit">Αποστολή Μηνύματος</button>
+                        <button type="submit" class="btn btn-primary btn-full" data-i18n="epi-form-submit">Αποστολή Μηνύματος</button>
                     </form>
                 </div>
 
@@ -132,15 +157,15 @@
     <section class="section section-gray">
         <div class="container">
             <div class="section-header center">
-                <span class="tag" data-i18n="loc-tag">7 Τοποθεσίες</span>
-                <h2 class="section-title" data-i18n="loc-title">Βρες το MEGA GYM Σου</h2>
+                <span class="tag" data-i18n="epi-dir-tag">7 Τοποθεσίες</span>
+                <h2 class="section-title" data-i18n="epi-dir-title">Βρες το MEGA GYM Σου</h2>
             </div>
 
             <div class="directory-grid">
 
                 <!-- Kifisia -->
                 <div class="directory-card directory-card-featured">
-                    <div class="directory-card-badge" data-i18n="loc-flagship">Κεντρικό</div>
+                    <div class="directory-card-badge" data-i18n="epi-dir-hq">Κεντρικό</div>
                     <h3>MEGA GYM Κηφισιά</h3>
                     <div class="directory-info">
                         <div class="directory-row">
@@ -249,15 +274,50 @@
     </section>
 
 
+    <!-- ALL LOCATIONS MAP -->
+    <section class="map-section">
+        <div id="megaMap" style="width:100%; height:500px;"></div>
+    </section>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var map = L.map('megaMap', { scrollWheelZoom: false }).setView([37.98, 23.82], 11);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap &copy; CARTO',
+            maxZoom: 19
+        }).addTo(map);
+
+        var pinSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="40" viewBox="0 0 28 40"><path d="M14 0C6.27 0 0 6.27 0 14c0 10.5 14 26 14 26s14-15.5 14-26C28 6.27 21.73 0 14 0z" fill="#F5C518"/><circle cx="14" cy="13" r="6" fill="#0a0a0a"/><text x="14" y="16" text-anchor="middle" fill="#F5C518" font-size="8" font-weight="700" font-family="sans-serif">M</text></svg>';
+        var icon = L.divIcon({ html: pinSvg, className: '', iconSize: [28, 40], iconAnchor: [14, 40], popupAnchor: [0, -36] });
+
+        var gyms = [
+            { lat: 38.0786, lng: 23.8108, name: 'MEGA GYM Κηφισιά', addr: 'Αιολίας 20 & Ιλισίων', tel: '210 807 3926', tags: 'Fitness Club · EXCLUSIVE · Pilates', hq: true },
+            { lat: 38.0590, lng: 23.7540, name: 'MEGA GYM Μεταμόρφωση', addr: '12ο χλμ Εθνικής Οδού', tel: '210 280 1044', tags: 'Fitness Club · EXCLUSIVE' },
+            { lat: 37.8645, lng: 23.7540, name: 'MEGA GYM Γλυφάδα', addr: 'Λ. Βουλιαγμένης 124', tel: '210 963 1243', tags: 'Fitness Club · EXCLUSIVE' },
+            { lat: 38.0340, lng: 23.8380, name: 'MEGA GYM Βριλήσσια-Μελίσσια', addr: 'Λ. Πεντέλης 23', tel: '210 804 8331', tags: 'EXCLUSIVE' },
+            { lat: 38.0135, lng: 23.8221, name: 'MEGA GYM Αγία Παρασκευή', addr: 'Λ. Μεσογείων 412', tel: '210 608 1443', tags: 'Fitness Club · EXCLUSIVE' },
+            { lat: 37.9130, lng: 23.7150, name: 'MEGA GYM Άλιμος', addr: 'Λ. Αλίμου 89', tel: '210 993 4733', tags: 'Fitness Club' },
+            { lat: 37.9900, lng: 23.8650, name: 'MEGA GYM Γέρακας', addr: 'Λ. Μαραθώνος 135', tel: '210 665 4440', tags: 'Fitness Club' }
+        ];
+
+        gyms.forEach(function(g) {
+            var hqBadge = g.hq ? '<span style="background:#F5C518;color:#0a0a0a;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px;">HQ</span>' : '';
+            L.marker([g.lat, g.lng], { icon: icon }).addTo(map)
+                .bindPopup('<div style="font-family:Inter,sans-serif;min-width:180px;"><strong style="font-size:14px;">' + g.name + '</strong>' + hqBadge + '<br><span style="color:#666;font-size:12px;">' + g.addr + '</span><br><a href="tel:+30' + g.tel.replace(/ /g,'') + '" style="color:#F5C518;font-weight:600;font-size:13px;">' + g.tel + '</a><br><span style="font-size:11px;color:#888;">' + g.tags + '</span></div>');
+        });
+    });
+    </script>
+
     <!-- ============================================================
          SECTION 4: CAREER
     ============================================================= -->
     <section class="section section-white career-section">
         <div class="container">
             <div class="section-header center">
-                <span class="tag" data-i18n="career-tag">Καριέρα</span>
-                <h2 class="section-title" data-i18n="career-title">ΚΑΡΙΕΡΑ - Θέσεις Εργασίας</h2>
-                <p class="section-desc" data-i18n="career-desc">Ψάχνουμε πάντα ταλαντούχους ανθρώπους να ενταχθούν στην ομάδα MEGA GYM. Αν είσαι γυμναστής, personal trainer ή θέλεις να εργαστείς στον χώρο του fitness, στείλε μας το βιογραφικό σου.</p>
+                <span class="tag" data-i18n="epi-career-tag">Καριέρα</span>
+                <h2 class="section-title" data-i18n="epi-career-title">ΚΑΡΙΕΡΑ - Θέσεις Εργασίας</h2>
+                <p class="section-desc" data-i18n="epi-career-desc">Ψάχνουμε πάντα ταλαντούχους ανθρώπους να ενταχθούν στην ομάδα MEGA GYM. Αν είσαι γυμναστής, personal trainer ή θέλεις να εργαστείς στον χώρο του fitness, στείλε μας το βιογραφικό σου.</p>
             </div>
             <div class="career-cta">
                 <div class="contact-row" style="justify-content: center;">
@@ -275,10 +335,10 @@
     <section class="section section-yellow">
         <div class="container" style="text-align: center;">
             <div class="trial-content">
-                <h2 data-i18n="contact-cta-title">ΓΙΝΕ ΜΕΛΟΣ ΣΗΜΕΡΑ</h2>
-                <p data-i18n="contact-cta-desc">Κάνε το πρώτο βήμα για μια καλύτερη ζωή. Κλείσε τη δοκιμαστική σου προπόνηση σήμερα!</p>
+                <h2 data-i18n="epi-cta-title">ΓΙΝΕ ΜΕΛΟΣ ΣΗΜΕΡΑ</h2>
+                <p data-i18n="epi-cta-desc">Κάνε το πρώτο βήμα για μια καλύτερη ζωή. Κλείσε τη δοκιμαστική σου προπόνηση σήμερα!</p>
                 <div class="trial-actions">
-                    <a href="dokimastiki.html" class="btn btn-dark" data-i18n="contact-cta-btn">Κλείσε Ραντεβού</a>
+                    <a href="dokimastiki.html" class="btn btn-dark" data-i18n="epi-cta-book">Κλείσε Ραντεβού</a>
                 </div>
             </div>
         </div>
@@ -303,6 +363,7 @@
                         <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
                         <li><a href="personal-training.html" data-i18n="nav-pt">Personal Training</a></li>
                         <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                        <li><a href="epikoinonia.html" data-i18n="nav-contact">Επικοινωνία</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -339,6 +400,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/302108073926" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Cookie consent -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας σας. Συνεχίζοντας, αποδέχεστε τη χρήση τους.</p>
+        <button class="cookie-banner-btn" id="cookieAccept">Αποδοχή</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
