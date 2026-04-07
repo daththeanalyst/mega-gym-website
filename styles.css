@@ -4236,7 +4236,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     position: fixed;
     bottom: 160px;
     right: 32px;
-    z-index: 898;
+    z-index: 999;
     cursor: pointer;
 }
 .chatbot-btn {
