@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA GYM - Τα Καλύτερα Ελληνικά Γυμναστήρια</title>
+    <meta name="description" content="MEGA GYM Fitness Clubs - 7 κορυφαίες εγκαταστάσεις γυμναστικής στην Αθήνα. 33 χρόνια εμπειρίας.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="nav-home">Αρχική</a></li>
+                <li><a href="gymnastiria.html" data-i18n="nav-gyms">Γυμναστήρια</a></li>
+                <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
+                <li><a href="personal-training.html" data-i18n="nav-pt">Personal Training</a></li>
+                <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                <li><a href="dokimastiki.html" data-i18n="nav-trial">Δοκιμαστική</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN | <span class="lang-active">GR</span></button>
+                <a href="dokimastiki.html" class="nav-cta" data-i18n="nav-cta">Κλείσε Ραντεβού</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-animate="fade-up">
+            <span class="hero-badge" data-i18n="hero-badge">33 Χρόνια Πολύτιμη Εμπειρία</span>
+            <h1 class="hero-title">
+                <span data-i18n="hero-title-1">ΓΙΑΤΙ Η ΠΟΙΟΤΗΤΑ</span><br>
+                <span class="text-yellow" data-i18n="hero-title-2">ΜΕΤΡΑΕΙ ΠΑΝΩ ΑΠ' ΟΛΑ</span>
+            </h1>
+            <div class="hero-ctas">
+                <a href="dokimastiki.html" class="btn btn-yellow" data-i18n="hero-cta-trial">Δοκιμαστική Προπόνηση</a>
+                <a href="gymnastiria.html" class="btn btn-outline" data-i18n="hero-cta-gyms">Τα Γυμναστήρια Μας</a>
+            </div>
+            <div class="hero-stats" data-animate="fade-up" data-delay="200">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">7</span>
+                    <span class="hero-stat-label" data-i18n="hero-stat-locations">Τοποθεσίες</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">33+</span>
+                    <span class="hero-stat-label" data-i18n="hero-stat-years">Χρόνια Εμπειρίας</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">5</span>
+                    <span class="hero-stat-label" data-i18n="hero-stat-fat">Τόνοι Λίπους Κάηκαν</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-i18n="scroll-down">Κάντε scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- MARQUEE BANNER -->
+    <section class="marquee-banner">
+        <div class="marquee-track">
+            <span>GROUP PERSONAL TRAINING</span>
+            <span>&bull;</span>
+            <span>PERSONAL TRAINING</span>
+            <span>&bull;</span>
+            <span>TRANSFORMATION</span>
+            <span>&bull;</span>
+            <span>PILATES STUDIO</span>
+            <span>&bull;</span>
+            <span>TRX</span>
+            <span>&bull;</span>
+            <span>MEGA ZONE</span>
+            <span>&bull;</span>
+            <span>MEGA CAGE</span>
+            <span>&bull;</span>
+            <span>SKILLMILL</span>
+            <span>&bull;</span>
+            <span>CIRCUIT CROSS TRAINING</span>
+            <span>&bull;</span>
+            <span>MEGA SLED</span>
+            <span>&bull;</span>
+            <span>GROUP PERSONAL TRAINING</span>
+            <span>&bull;</span>
+            <span>PERSONAL TRAINING</span>
+            <span>&bull;</span>
+            <span>TRANSFORMATION</span>
+            <span>&bull;</span>
+            <span>PILATES STUDIO</span>
+            <span>&bull;</span>
+            <span>TRX</span>
+            <span>&bull;</span>
+            <span>MEGA ZONE</span>
+            <span>&bull;</span>
+            <span>MEGA CAGE</span>
+            <span>&bull;</span>
+            <span>SKILLMILL</span>
+            <span>&bull;</span>
+            <span>CIRCUIT CROSS TRAINING</span>
+            <span>&bull;</span>
+            <span>MEGA SLED</span>
+            <span>&bull;</span>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text" data-animate="fade-up">
+                    <span class="section-tag" data-i18n="about-tag">Ποιοι Είμαστε</span>
+                    <h2 class="section-title" data-i18n="about-title">Τα Καλύτερα Ελληνικά Γυμναστήρια</h2>
+                    <p class="about-lead" data-i18n="about-lead">
+                        Με <strong>33 χρόνια εμπειρίας</strong> και 7 κορυφαίες εγκαταστάσεις στην Αθήνα, τα MEGA GYM αποτελούν σημείο αναφοράς στον χώρο του fitness. Εστιάζουμε στα αποτελέσματα, όχι στις υποσχέσεις.
+                    </p>
+                    <p data-i18n="about-desc">
+                        Κορυφαίος εξοπλισμός, έμπειροι γυμναστές και μοναδικά προγράμματα Group Personal Training — δωρεάν με τη συνδρομή σας. Αυτό μας κάνει διαφορετικούς.
+                    </p>
+                    <div class="about-metrics" data-animate="fade-up" data-delay="100">
+                        <div class="about-metric">
+                            <span class="about-metric-number">5</span>
+                            <span class="about-metric-unit" data-i18n="metric-fat">Τόνοι Λίπους</span>
+                            <span class="about-metric-desc" data-i18n="metric-fat-desc">κάηκαν φέτος</span>
+                        </div>
+                        <div class="about-metric">
+                            <span class="about-metric-number">2</span>
+                            <span class="about-metric-unit" data-i18n="metric-muscle">Τόνοι Μυών</span>
+                            <span class="about-metric-desc" data-i18n="metric-muscle-desc">προστέθηκαν φέτος</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-animate="fade-left">
+                    <img src="assets/MegaGymPhotos/Mega-Gym-02.jpg" alt="MEGA GYM εσωτερικός χώρος" loading="lazy">
+                    <div class="about-accent-card">
+                        <span class="accent-number">33+</span>
+                        <span class="accent-label" data-i18n="accent-years">Χρόνια Εμπειρίας</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="services-overview section" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag" data-i18n="services-tag">Υπηρεσίες</span>
+                <h2 class="section-title" data-i18n="services-title">Τι Προσφέρουμε</h2>
+                <p class="section-subtitle" data-i18n="services-subtitle">Ολοκληρωμένες υπηρεσίες γυμναστικής για κάθε στόχο</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                    </div>
+                    <span class="service-badge" data-i18n="service-free-badge">ΔΩΡΕΑΝ με Συνδρομή</span>
+                    <h3 data-i18n="service-group-title">Group Personal Training</h3>
+                    <p data-i18n="service-group-desc">Ομαδική προπόνηση με προσωπική καθοδήγηση. Προγράμματα υψηλής έντασης σχεδιασμένα για αποτελέσματα.</p>
+                    <ul class="service-programs">
+                        <li>TRX</li>
+                        <li>MEGA ZONE</li>
+                        <li>MEGA CAGE</li>
+                        <li>SKILLMILL</li>
+                        <li>CIRCUIT CROSS TRAINING</li>
+                        <li>MEGA SLED</li>
+                    </ul>
+                    <a href="proponisi.html" class="btn btn-dark" data-i18n="service-cta-more">Μάθε Περισσότερα</a>
+                </div>
+                <div class="service-card service-card-featured" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <h3 data-i18n="service-pt-title">Personal Training & Transformation</h3>
+                    <p data-i18n="service-pt-desc">Αποκλειστικά κέντρα EXCLUSIVE με την πιο σύγχρονη τεχνολογία. Προγράμματα μεταμόρφωσης 45 και 90 ημερών με εγγυημένα αποτελέσματα.</p>
+                    <ul class="service-programs">
+                        <li data-i18n="service-pt-item1">EXCLUSIVE Κέντρα</li>
+                        <li data-i18n="service-pt-item2">Πρόγραμμα 45 Ημερών</li>
+                        <li data-i18n="service-pt-item3">Πρόγραμμα 90 Ημερών</li>
+                        <li data-i18n="service-pt-item4">Διατροφική Καθοδήγηση</li>
+                    </ul>
+                    <a href="personal-training.html" class="btn btn-yellow" data-i18n="service-cta-more">Μάθε Περισσότερα</a>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
+                    <h3 data-i18n="service-pilates-title">Pilates Studio</h3>
+                    <p data-i18n="service-pilates-desc">Εξειδικευμένο στούντιο Pilates με πλήρη εξοπλισμό. Ατομικά και ομαδικά μαθήματα για κάθε επίπεδο.</p>
+                    <ul class="service-programs">
+                        <li>Reformer</li>
+                        <li>Cadillac</li>
+                        <li>Combo Chair</li>
+                        <li>Ladder Barrel</li>
+                    </ul>
+                    <a href="pilates.html" class="btn btn-dark" data-i18n="service-cta-more">Μάθε Περισσότερα</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GYM TYPES PREVIEW -->
+    <section class="gym-types section section-dark">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag" data-i18n="gymtypes-tag">Εγκαταστάσεις</span>
+                <h2 class="section-title" data-i18n="gymtypes-title">Δύο Τύποι Γυμναστηρίων</h2>
+            </div>
+            <div class="gym-types-grid">
+                <div class="gym-type-card" data-animate="fade-up" data-delay="0">
+                    <div class="gym-type-header">
+                        <h3>MEGA GYM<br><span class="text-yellow">Fitness Clubs</span></h3>
+                    </div>
+                    <ul class="gym-type-features">
+                        <li data-i18n="gymtype-fc-1">Κορυφαίος εξοπλισμός Technogym</li>
+                        <li data-i18n="gymtype-fc-2">Group Personal Training ΔΩΡΕΑΝ</li>
+                        <li data-i18n="gymtype-fc-3">Έμπειροι γυμναστές</li>
+                        <li data-i18n="gymtype-fc-4">Εντυπωσιακοί χώροι</li>
+                        <li data-i18n="gymtype-fc-5">Locker rooms & amenities</li>
+                    </ul>
+                    <a href="gymnastiria.html" class="btn btn-yellow" data-i18n="gymtype-cta">Δες τα Γυμναστήρια</a>
+                </div>
+                <div class="gym-type-card" data-animate="fade-up" data-delay="100">
+                    <div class="gym-type-header">
+                        <h3>MEGA GYM EXCLUSIVE<br><span class="text-yellow">Transformation Centers</span></h3>
+                    </div>
+                    <ul class="gym-type-features">
+                        <li data-i18n="gymtype-ex-1">Ανεξάρτητοι χώροι αποκλειστικά για PT</li>
+                        <li data-i18n="gymtype-ex-2">Σύγχρονη τεχνολογία αιχμής</li>
+                        <li data-i18n="gymtype-ex-3">Προγράμματα 45 & 90 ημερών</li>
+                        <li data-i18n="gymtype-ex-4">Μεγαλύτερο PT studio στην Ελλάδα (Κηφισιά)</li>
+                        <li data-i18n="gymtype-ex-5">Ανοιχτά 7 ημέρες</li>
+                    </ul>
+                    <a href="gymnastiria.html" class="btn btn-outline" data-i18n="gymtype-cta">Δες τα Γυμναστήρια</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE STRIP -->
+    <section class="image-strip">
+        <div class="image-strip-grid">
+            <div class="image-strip-item">
+                <img src="assets/MegaGymPhotos/Mega-Gym-02.jpg" alt="MEGA GYM εσωτερικό" loading="lazy">
+            </div>
+            <div class="image-strip-item">
+                <img src="assets/MegaGymPhotos/maxresdefault.jpg" alt="MEGA GYM εξοπλισμός" loading="lazy">
+            </div>
+            <div class="image-strip-item">
+                <img src="assets/MegaGymPhotos/maxresdefault (1).jpg" alt="MEGA GYM προπόνηση" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATIONS PREVIEW -->
+    <section class="transformations section" id="transformations">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag" data-i18n="transform-tag">Αποτελέσματα</span>
+                <h2 class="section-title" data-i18n="transform-title">Πραγματικές Μεταμορφώσεις</h2>
+                <p class="section-subtitle" data-i18n="transform-subtitle">Φέτος κάψαμε 5 τόνους λίπος και προσθέσαμε 2 τόνους μυών</p>
+            </div>
+            <div class="transform-grid">
+                <div class="transform-card" data-animate="fade-up" data-delay="0">
+                    <div class="transform-image-placeholder">
+                        <span class="transform-duration">45 <span data-i18n="transform-days">ημέρες</span></span>
+                    </div>
+                    <div class="transform-info">
+                        <h4>Ιωάννα</h4>
+                        <p data-i18n="transform-ioanna">Απώλεια λίπους & τόνωση σε 45 ημέρες με το πρόγραμμα Transformation</p>
+                        <span class="transform-program">Transformation Program</span>
+                    </div>
+                </div>
+                <div class="transform-card" data-animate="fade-up" data-delay="100">
+                    <div class="transform-image-placeholder">
+                        <span class="transform-duration">90 <span data-i18n="transform-days">ημέρες</span></span>
+                    </div>
+                    <div class="transform-info">
+                        <h4>Γιάννης</h4>
+                        <p data-i18n="transform-giannis">Ολική μεταμόρφωση σε 90 ημέρες — μυϊκή ανάπτυξη & απώλεια λίπους</p>
+                        <span class="transform-program">Transformation Program</span>
+                    </div>
+                </div>
+                <div class="transform-card" data-animate="fade-up" data-delay="200">
+                    <div class="transform-image-placeholder">
+                        <span class="transform-duration">-43kg</span>
+                    </div>
+                    <div class="transform-info">
+                        <h4 data-i18n="transform-member">Μέλος MEGA GYM</h4>
+                        <p data-i18n="transform-43kg">Απώλεια 43 κιλών με συνεχή καθοδήγηση και αφοσίωση</p>
+                        <span class="transform-program">Long-term Program</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transform-tv" data-animate="fade-up" data-delay="300">
+                <span data-i18n="transform-tv-label">Όπως είδατε στα:</span>
+                <div class="tv-logos">
+                    <span class="tv-logo">ANT1</span>
+                    <span class="tv-logo">ALPHA</span>
+                    <span class="tv-logo">STAR</span>
+                    <span class="tv-logo">EPSILON</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRIAL CTA -->
+    <section class="trial-cta">
+        <div class="container">
+            <div class="trial-cta-content" data-animate="fade-up">
+                <h2 data-i18n="trial-cta-title">Δοκιμαστική Προπόνηση</h2>
+                <p data-i18n="trial-cta-desc">Έλα να δοκιμάσεις δωρεάν και να δεις γιατί χιλιάδες μέλη μας εμπιστεύονται</p>
+                <div class="trial-cta-actions">
+                    <a href="dokimastiki.html" class="btn btn-dark" data-i18n="trial-cta-book">Κλείσε Ραντεβού</a>
+                    <a href="tel:+302108073926" class="btn btn-dark-outline">210 807 3926</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATIONS PREVIEW -->
+    <section class="locations-preview section" id="locations">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag" data-i18n="locations-tag">Τοποθεσίες</span>
+                <h2 class="section-title" data-i18n="locations-title">Τα Γυμναστήρια Μας</h2>
+                <p class="section-subtitle" data-i18n="locations-subtitle">7 κορυφαίες εγκαταστάσεις σε όλη την Αθήνα</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card location-card-featured" data-animate="fade-up" data-delay="0">
+                    <div class="location-badge" data-i18n="location-hq">Κεντρικό</div>
+                    <h3>Κηφισιά</h3>
+                    <p class="location-address">Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</p>
+                    <a href="tel:+302108073926" class="location-phone">210 807 3926</a>
+                    <div class="location-tags">
+                        <span class="tag tag-fc">Fitness Club</span>
+                        <span class="tag tag-ex">EXCLUSIVE</span>
+                        <span class="tag tag-pl">Pilates Studio</span>
+                    </div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="50">
+                    <h3>Μεταμόρφωση</h3>
+                    <p class="location-address">12ο χλμ Εθνικής Οδού Αθηνών-Λαμίας</p>
+                    <a href="tel:+302102801044" class="location-phone">210 280 1044</a>
+                    <div class="location-tags">
+                        <span class="tag tag-fc">Fitness Club</span>
+                        <span class="tag tag-ex">EXCLUSIVE</span>
+                    </div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="100">
+                    <h3>Γλυφάδα</h3>
+                    <p class="location-address">Λ. Βουλιαγμένης 124</p>
+                    <a href="tel:+302109631243" class="location-phone">210 963 1243</a>
+                    <div class="location-tags">
+                        <span class="tag tag-fc">Fitness Club</span>
+                        <span class="tag tag-ex">EXCLUSIVE</span>
+                    </div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="150">
+                    <h3>Βριλήσσια-Μελίσσια</h3>
+                    <p class="location-address">Λ. Πεντέλης 23</p>
+                    <a href="tel:+302108048331" class="location-phone">210 804 8331</a>
+                    <div class="location-tags">
+                        <span class="tag tag-ex">EXCLUSIVE</span>
+                    </div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="200">
+                    <h3>Αγία Παρασκευή</h3>
+                    <p class="location-address">Λ. Μεσογείων 412</p>
+                    <a href="tel:+302106081443" class="location-phone">210 608 1443</a>
+                    <div class="location-tags">
+                        <span class="tag tag-fc">Fitness Club</span>
+                        <span class="tag tag-ex">EXCLUSIVE</span>
+                    </div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="250">
+                    <h3>Άλιμος</h3>
+                    <p class="location-address">Λ. Αλίμου 89</p>
+                    <a href="tel:+302109934733" class="location-phone">210 993 4733</a>
+                    <div class="location-tags">
+                        <span class="tag tag-fc">Fitness Club</span>
+                    </div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="300">
+                    <h3>Γέρακας</h3>
+                    <p class="location-address">Λ. Μαραθώνος 135 & Θεσσαλονίκης</p>
+                    <a href="tel:+302106654440" class="location-phone">210 665 4440</a>
+                    <div class="location-tags">
+                        <span class="tag tag-fc">Fitness Club</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta" data-animate="fade-up">
+                <a href="gymnastiria.html" class="btn btn-yellow" data-i18n="locations-cta">Δες Όλα τα Γυμναστήρια</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT QUICK -->
+    <section class="contact-quick section section-dark" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-up">
+                    <span class="section-tag" data-i18n="contact-tag">Επικοινωνία</span>
+                    <h2 class="section-title" data-i18n="contact-title">Επικοινωνήστε Μαζί Μας</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+302108073926">210 807 3926</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:selficon@gmail.com">selficon@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.facebook.com/MEGAGYMFITNESSCLUBS/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/megagym__official" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/user/launmaster1/videos" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap" data-animate="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName" data-i18n="form-name">Ονοματεπώνυμο</label>
+                            <input type="text" id="contactName" name="name" required placeholder="Το όνομά σας">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail" data-i18n="form-email">Email</label>
+                            <input type="email" id="contactEmail" name="email" required placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone" data-i18n="form-phone">Τηλέφωνο</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="69x xxx xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage" data-i18n="form-message">Μήνυμα</label>
+                            <textarea id="contactMessage" name="message" rows="4" placeholder="Πώς μπορούμε να βοηθήσουμε;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-yellow btn-full" data-i18n="form-submit">Αποστολή</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="footer-logo-img">
+                    <p data-i18n="footer-desc">Τα καλύτερα Ελληνικά γυμναστήρια. 7 κορυφαίες εγκαταστάσεις στην Αθήνα.</p>
+                    <div class="social-row">
+                        <a href="https://www.facebook.com/MEGAGYMFITNESSCLUBS/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.instagram.com/megagym__official" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="https://www.youtube.com/user/launmaster1/videos" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-nav">Πλοήγηση</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Αρχική</a></li>
+                        <li><a href="gymnastiria.html" data-i18n="nav-gyms">Γυμναστήρια</a></li>
+                        <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
+                        <li><a href="personal-training.html" data-i18n="nav-pt">Personal Training</a></li>
+                        <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-programs">Υπηρεσίες</h4>
+                    <ul>
+                        <li><a href="proponisi.html">Group Personal</a></li>
+                        <li><a href="personal-training.html">Transformation</a></li>
+                        <li><a href="pilates.html">Pilates Reformer</a></li>
+                        <li><a href="dokimastiki.html" data-i18n="nav-trial">Δοκιμαστική</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer-contact">Επικοινωνία</h4>
+                    <ul>
+                        <li><a href="tel:+302108073926">210 807 3926</a></li>
+                        <li><a href="mailto:selficon@gmail.com">selficon@gmail.com</a></li>
+                        <li><span>Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MEGA GYM Fitness Clubs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

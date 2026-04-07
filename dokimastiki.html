@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Δοκιμαστική Προπόνηση | MEGA GYM Fitness Clubs</title>
+    <meta name="description" content="Κλείσε τη δοκιμαστική σου προπόνηση στα MEGA GYM. 33 χρόνια εμπειρίας, 15.000+ μέλη, 7 τοποθεσίες στην Αθήνα.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="preloader-logo-img">
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="nav-logo-img"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="nav-home">Αρχική</a></li>
+                <li><a href="gymnastiria.html" data-i18n="nav-gyms">Γυμναστήρια</a></li>
+                <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
+                <li><a href="personal-training.html" data-i18n="nav-pt">Personal Training</a></li>
+                <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                <li><a href="dokimastiki.html" data-i18n="nav-trial">Δοκιμαστική</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN | <span class="lang-active">GR</span></button>
+                <a href="dokimastiki.html" class="nav-cta" data-i18n="nav-cta">Κλείσε Ραντεβού</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Hero - Yellow/Inverted -->
+    <section class="page-hero page-hero--yellow" data-animate="fade-in">
+        <div class="container">
+            <h1 class="page-hero__title" data-i18n="trial-hero-title">ΔΟΚΙΜΑΣΤΙΚΗ ΠΡΟΠΟΝΗΣΗ</h1>
+            <p class="page-hero__subtitle" data-i18n="trial-hero-subtitle">Έλα να σου δείξουμε τι μπορείς να καταφέρεις! Μία επίσκεψη θα σας πείσει!</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="section section--white" data-animate="fade-up">
+        <div class="container">
+            <div class="trial-layout">
+                <!-- Trust Signals -->
+                <div class="trust-signals" data-animate="fade-up">
+                    <div class="trust-signal">
+                        <span class="trust-signal__number">33</span>
+                        <span class="trust-signal__label" data-i18n="trial-trust-years">Χρόνια Εμπειρίας</span>
+                    </div>
+                    <div class="trust-signal">
+                        <span class="trust-signal__number">15.000<sup>+</sup></span>
+                        <span class="trust-signal__label" data-i18n="trial-trust-members">Μέλη</span>
+                    </div>
+                    <div class="trust-signal">
+                        <span class="trust-signal__number">7</span>
+                        <span class="trust-signal__label" data-i18n="trial-trust-locations">Τοποθεσίες</span>
+                    </div>
+                </div>
+
+                <!-- Trial Form -->
+                <form class="trial-form" id="trialForm" data-animate="fade-up">
+                    <h2 class="trial-form__title" data-i18n="trial-form-title">Κλείσε τη Δοκιμαστική σου</h2>
+                    <p class="trial-form__subtitle" data-i18n="trial-form-subtitle">Συμπλήρωσε τα στοιχεία σου και θα επικοινωνήσουμε μαζί σου άμεσα.</p>
+
+                    <div class="form-group">
+                        <label for="fullName" data-i18n="trial-form-name-label">Ονοματεπώνυμο</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="π.χ. Γιάννης Παπαδόπουλος" data-i18n-placeholder="trial-form-name-placeholder">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" data-i18n="trial-form-email-label">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-i18n="trial-form-phone-label">Τηλέφωνο <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="69x xxx xxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location" data-i18n="trial-form-location-label">Τοποθεσία</label>
+                            <select id="location" name="location">
+                                <option value="" data-i18n="trial-form-location-default">Επιλέξτε τοποθεσία</option>
+                                <option value="kifisia">Κηφισιά</option>
+                                <option value="metamorfosi">Μεταμόρφωση</option>
+                                <option value="glyfada">Γλυφάδα</option>
+                                <option value="vrilissia">Βριλήσσια-Μελίσσια</option>
+                                <option value="agia-paraskevi">Αγία Παρασκευή</option>
+                                <option value="alimos">Άλιμος</option>
+                                <option value="gerakas">Γέρακας</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest" data-i18n="trial-form-interest-label">Ενδιαφέρον</label>
+                            <select id="interest" name="interest">
+                                <option value="" data-i18n="trial-form-interest-default">Επιλέξτε υπηρεσία</option>
+                                <option value="group-personal" data-i18n="trial-form-interest-gp">Group Personal</option>
+                                <option value="personal-training" data-i18n="trial-form-interest-pt">Personal Training</option>
+                                <option value="pilates" data-i18n="trial-form-interest-pilates">Pilates</option>
+                                <option value="transformation" data-i18n="trial-form-interest-trans">Transformation</option>
+                                <option value="general" data-i18n="trial-form-interest-general">Γενική Γυμναστική</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredTime" data-i18n="trial-form-time-label">Προτιμώμενη Ημέρα / Ώρα</label>
+                        <input type="text" id="preferredTime" name="preferredTime" placeholder="π.χ. Δευτέρα 18:00" data-i18n-placeholder="trial-form-time-placeholder">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-i18n="trial-form-message-label">Μήνυμα</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Πείτε μας τους στόχους σας..." data-i18n-placeholder="trial-form-message-placeholder"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--yellow btn--full" data-i18n="trial-form-submit">ΚΛΕΙΣΕ ΤΗ ΔΟΚΙΜΑΣΤΙΚΗ ΣΟΥ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Try Section -->
+    <section class="section section--gray" data-animate="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="trial-why-tag">ΓΙΑΤΙ MEGA GYM</span>
+                <h2 class="section-title" data-i18n="trial-why-title">Γιατί να δοκιμάσεις;</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-animate="fade-up">
+                    <div class="why-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#F5C518" stroke-width="3"/><path d="M24 14v10l7 7" fill="none" stroke="#F5C518" stroke-width="3" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3 class="why-card__title" data-i18n="trial-why1-title">Εμπιστεύσου τον εαυτό σου</h3>
+                    <p class="why-card__text" data-i18n="trial-why1-text">Μπορείς να τα καταφέρεις. Χρειάζεσαι απλά να βρεθείς στο σωστό περιβάλλον, με τους σωστούς ανθρώπους δίπλα σου.</p>
+                </div>
+                <div class="why-card" data-animate="fade-up">
+                    <div class="why-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><path d="M8 36 L16 20 L24 28 L32 12 L40 24" fill="none" stroke="#F5C518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="24" r="3" fill="#F5C518"/></svg>
+                    </div>
+                    <h3 class="why-card__title" data-i18n="trial-why2-title">Χειροπιαστά Αποτελέσματα</h3>
+                    <p class="why-card__text" data-i18n="trial-why2-text">33 χρόνια χειροπιαστά αποτελέσματα για χιλιάδες μέλη. Δοκιμασμένες μέθοδοι που αποδίδουν πραγματικά.</p>
+                </div>
+                <div class="why-card" data-animate="fade-up">
+                    <div class="why-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><path d="M12 36 L20 28 L28 32 L36 16" fill="none" stroke="#F5C518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><polygon points="36,12 40,16 36,20 32,16" fill="#F5C518"/></svg>
+                    </div>
+                    <h3 class="why-card__title" data-i18n="trial-why3-title">Ένα Σκαλοπάτι Κάθε Φορά</h3>
+                    <p class="why-card__text" data-i18n="trial-why3-text">Βήμα βήμα, μέχρι να φτάσεις στον στόχο σου. Χωρίς βιασύνη, χωρίς πίεση. Με σχέδιο και υποστήριξη.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Locations -->
+    <section class="section section--white" data-animate="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="trial-locations-tag">ΤΟΠΟΘΕΣΙΕΣ</span>
+                <h2 class="section-title" data-i18n="trial-locations-title">Βρες μας κοντά σου</h2>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Κηφισιά</h3>
+                    <a href="tel:+302108073926" class="location-card__phone">210 807 3926</a>
+                </div>
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Μεταμόρφωση</h3>
+                    <a href="tel:+302102818822" class="location-card__phone">210 281 8822</a>
+                </div>
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Γλυφάδα</h3>
+                    <a href="tel:+302109681808" class="location-card__phone">210 968 1808</a>
+                </div>
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Βριλήσσια-Μελίσσια</h3>
+                    <a href="tel:+302106137707" class="location-card__phone">210 613 7707</a>
+                </div>
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Αγία Παρασκευή</h3>
+                    <a href="tel:+302106017316" class="location-card__phone">210 601 7316</a>
+                </div>
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Άλιμος</h3>
+                    <a href="tel:+302109853333" class="location-card__phone">210 985 3333</a>
+                </div>
+                <div class="location-card" data-animate="fade-up">
+                    <h3 class="location-card__name">Γέρακας</h3>
+                    <a href="tel:+302106612477" class="location-card__phone">210 661 2477</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phone CTA -->
+    <section class="section section--dark" data-animate="fade-up">
+        <div class="container cta-container">
+            <h2 class="cta-title cta-title--light" data-i18n="trial-phone-title">Ή τηλεφώνησέ μας!</h2>
+            <a href="tel:+302108073926" class="phone-cta-number">210 807 3926</a>
+            <div class="phone-cta-locations">
+                <div class="phone-cta-item">
+                    <span>Κηφισιά</span>
+                    <a href="tel:+302108073926">210 807 3926</a>
+                </div>
+                <div class="phone-cta-item">
+                    <span>Μεταμόρφωση</span>
+                    <a href="tel:+302102818822">210 281 8822</a>
+                </div>
+                <div class="phone-cta-item">
+                    <span>Γλυφάδα</span>
+                    <a href="tel:+302109681808">210 968 1808</a>
+                </div>
+                <div class="phone-cta-item">
+                    <span>Βριλήσσια-Μελίσσια</span>
+                    <a href="tel:+302106137707">210 613 7707</a>
+                </div>
+                <div class="phone-cta-item">
+                    <span>Αγία Παρασκευή</span>
+                    <a href="tel:+302106017316">210 601 7316</a>
+                </div>
+                <div class="phone-cta-item">
+                    <span>Άλιμος</span>
+                    <a href="tel:+302109853333">210 985 3333</a>
+                </div>
+                <div class="phone-cta-item">
+                    <span>Γέρακας</span>
+                    <a href="tel:+302106612477">210 661 2477</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="footer-logo-img">
+                    <p>Τα καλύτερα Ελληνικά γυμναστήρια. 7 κορυφαίες εγκαταστάσεις στην Αθήνα.</p>
+                    <div class="social-row">
+                        <a href="https://www.facebook.com/MEGAGYMFITNESSCLUBS/" target="_blank" rel="noopener" class="social-btn">FB</a>
+                        <a href="https://www.instagram.com/megagym__official" target="_blank" rel="noopener" class="social-btn">IG</a>
+                        <a href="https://www.youtube.com/user/launmaster1/videos" target="_blank" rel="noopener" class="social-btn">YT</a>
+                    </div>
+                </div>
+                <div class="footer-col"><h4>Πλοήγηση</h4><ul><li><a href="index.html">Αρχική</a></li><li><a href="gymnastiria.html">Γυμναστήρια</a></li><li><a href="proponisi.html">Προπόνηση</a></li><li><a href="personal-training.html">Personal Training</a></li><li><a href="pilates.html">Pilates Studio</a></li></ul></div>
+                <div class="footer-col"><h4>Υπηρεσίες</h4><ul><li><a href="proponisi.html">Group Personal</a></li><li><a href="personal-training.html">Transformation</a></li><li><a href="pilates.html">Pilates Reformer</a></li><li><a href="dokimastiki.html">Δοκιμαστική</a></li></ul></div>
+                <div class="footer-col"><h4>Επικοινωνία</h4><ul><li><a href="tel:+302108073926">210 807 3926</a></li><li><a href="mailto:selficon@gmail.com">selficon@gmail.com</a></li><li><span>Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</span></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 MEGA GYM Fitness Clubs. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

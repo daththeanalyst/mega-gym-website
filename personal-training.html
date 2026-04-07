@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA GYM | Personal Training & Transformation Centers</title>
+    <meta name="description" content="Τρεις επιλογές Personal Training στα MEGA GYM. Group Personal, EXCLUSIVE Transformation Centers, Pilates Studio. Αποδεδειγμένα αποτελέσματα.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="nav-logo-img"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="nav-home">Αρχική</a></li>
+                <li><a href="gymnastiria.html" data-i18n="nav-gyms">Γυμναστήρια</a></li>
+                <li><a href="proponisi.html" data-i18n="nav-training">Προπόνηση</a></li>
+                <li><a href="personal-training.html" data-i18n="nav-pt" class="active">Personal Training</a></li>
+                <li><a href="pilates.html" data-i18n="nav-pilates">Pilates Studio</a></li>
+                <li><a href="dokimastiki.html" data-i18n="nav-trial">Δοκιμαστική</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN | <span class="lang-active">GR</span></button>
+                <a href="dokimastiki.html" class="nav-cta" data-i18n="nav-cta">Κλείσε Ραντεβού</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background: var(--black); min-height: 50vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,.95) 0%, rgba(10,10,10,.8) 100%);"></div>
+        <div style="position: absolute; bottom: -20%; left: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(245,197,24,.06) 0%, transparent 70%); pointer-events: none;"></div>
+        <div style="position: absolute; top: -20%; right: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,197,24,.04) 0%, transparent 70%); pointer-events: none;"></div>
+        <div class="container" style="position: relative; z-index: 2; text-align: center; padding-top: 80px;">
+            <nav class="breadcrumb" style="margin-bottom: 24px;" data-animate="fade-up">
+                <a href="index.html" style="color: var(--gray-400); font-size: .82rem; transition: color .3s;" data-i18n="breadcrumb-home">Αρχική</a>
+                <span style="color: var(--gray-600); margin: 0 10px; font-size: .82rem;">/</span>
+                <span style="color: var(--yellow); font-size: .82rem; font-weight: 500;" data-i18n="breadcrumb-pt">Personal Training</span>
+            </nav>
+            <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5.5rem); color: var(--white); letter-spacing: .06em; line-height: 1;" data-animate="fade-up" data-delay="100" data-i18n="pt-hero-title">PERSONAL TRAINING</h1>
+            <p style="color: var(--gray-400); font-size: 1.05rem; max-width: 600px; margin: 20px auto 0; line-height: 1.7;" data-animate="fade-up" data-delay="200" data-i18n="pt-hero-subtitle">Στα MEGA GYM έχεις τρεις επιλογές Personal Training.</p>
+        </div>
+    </section>
+
+    <!-- Three Options Overview -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <span class="tag" data-i18n="pt-options-tag">Οι Επιλογές Σου</span>
+                <h2 class="section-title" data-i18n="pt-options-title">Τρεις Δρόμοι Προς Το Αποτέλεσμα</h2>
+            </div>
+
+            <!-- Option 01 - Group Personal -->
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--gray-200);" data-animate="fade-up" data-delay="0">
+                <div style="font-family: var(--font-display); font-size: 4rem; color: var(--gray-200); line-height: 1; letter-spacing: .04em;">01</div>
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap;">
+                        <h3 style="font-family: var(--font-display); font-size: 1.6rem; letter-spacing: .04em;" data-i18n="pt-opt1-title">GROUP PERSONAL</h3>
+                        <span style="display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 14px; border-radius: 50px; background: rgba(245,197,24,.15); color: var(--yellow-dark);" data-i18n="pt-opt1-badge">ΔΩΡΕΑΝ</span>
+                    </div>
+                    <p style="font-size: .95rem; color: var(--gray-600); line-height: 1.75; max-width: 600px;" data-i18n="pt-opt1-desc">Τα καλύτερα Group Personal Training προγράμματα - ΔΩΡΕΑΝ σε όλα τα MEGA GYM Fitness Clubs. TRX, MEGA ZONE, MEGA CAGE, SKILLMILL, Circuit Cross Training, MEGA SLED.</p>
+                    <a href="proponisi.html" class="btn btn-outline-dark" style="margin-top: 20px;" data-i18n="pt-opt1-cta">Μάθε Περισσότερα</a>
+                </div>
+            </div>
+
+            <!-- Option 02 - EXCLUSIVE Transformation -->
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--gray-200);" data-animate="fade-up" data-delay="100">
+                <div style="font-family: var(--font-display); font-size: 4rem; color: var(--yellow); line-height: 1; letter-spacing: .04em;">02</div>
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap;">
+                        <h3 style="font-family: var(--font-display); font-size: 1.6rem; letter-spacing: .04em;" data-i18n="pt-opt2-title">MEGA GYM EXCLUSIVE</h3>
+                        <span style="display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 14px; border-radius: 50px; background: var(--black); color: var(--yellow);">TRANSFORMATION CENTERS</span>
+                    </div>
+                    <p style="font-size: .95rem; color: var(--gray-600); line-height: 1.75; max-width: 650px; margin-bottom: 16px;" data-i18n="pt-opt2-desc">Ανεξάρτητα γυμναστήρια εξοπλισμένα με την τελευταία λέξη της τεχνολογίας. Ατομικά προγράμματα Personal Training Transformation με εγγυημένα αποτελέσματα.</p>
+                    <p style="font-size: .95rem; color: var(--gray-600); line-height: 1.75; max-width: 650px; margin-bottom: 16px;" data-i18n="pt-opt2-desc2">Το MEGA GYM EXCLUSIVE Κηφισιάς είναι το <strong>μεγαλύτερο Personal Training Studio στην Ελλάδα</strong>. Λειτουργία <strong>7 μέρες την εβδομάδα</strong>, ακόμα και Κυριακή.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
+                        <span style="font-size: .78rem; font-weight: 500; padding: 6px 16px; border-radius: 50px; background: var(--gray-100); color: var(--gray-700);">Κηφισιά</span>
+                        <span style="font-size: .78rem; font-weight: 500; padding: 6px 16px; border-radius: 50px; background: var(--gray-100); color: var(--gray-700);">Μεταμόρφωση</span>
+                        <span style="font-size: .78rem; font-weight: 500; padding: 6px 16px; border-radius: 50px; background: var(--gray-100); color: var(--gray-700);">Γλυφάδα</span>
+                        <span style="font-size: .78rem; font-weight: 500; padding: 6px 16px; border-radius: 50px; background: var(--gray-100); color: var(--gray-700);">Βριλήσσια / Μελίσσια</span>
+                        <span style="font-size: .78rem; font-weight: 500; padding: 6px 16px; border-radius: 50px; background: var(--gray-100); color: var(--gray-700);">Αγ. Παρασκευή</span>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="font-size: .78rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; background: var(--yellow); color: var(--black);">Personal Training Transformation</span>
+                        <span style="font-size: .78rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; background: var(--yellow); color: var(--black);">45 Ημέρες</span>
+                        <span style="font-size: .78rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; background: var(--yellow); color: var(--black);">90 Ημέρες</span>
+                    </div>
+                    <a href="#exclusive-deep" class="btn btn-primary" style="margin-top: 24px;" data-i18n="pt-opt2-cta">Ανακάλυψε Τα EXCLUSIVE</a>
+                </div>
+            </div>
+
+            <!-- Option 03 - Pilates -->
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start;" data-animate="fade-up" data-delay="200">
+                <div style="font-family: var(--font-display); font-size: 4rem; color: var(--gray-200); line-height: 1; letter-spacing: .04em;">03</div>
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap;">
+                        <h3 style="font-family: var(--font-display); font-size: 1.6rem; letter-spacing: .04em;" data-i18n="pt-opt3-title">PILATES STUDIO</h3>
+                        <span style="display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 14px; border-radius: 50px; background: rgba(245,197,24,.12); color: var(--yellow-dark);">MEGA PILATES</span>
+                    </div>
+                    <p style="font-size: .95rem; color: var(--gray-600); line-height: 1.75; max-width: 600px;" data-i18n="pt-opt3-desc">Πανέμορφες αίθουσες Pilates με κρεβάτια Reformer, Cadillac, Combo Chair και Ladder Barrel. Μαθήματα όλη μέρα, για ένα έως πέντε άτομα.</p>
+                    <a href="pilates.html" class="btn btn-outline-dark" style="margin-top: 20px;" data-i18n="pt-opt3-cta">Μάθε Περισσότερα</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXCLUSIVE Deep Dive -->
+    <section class="section section-black" id="exclusive-deep" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -30%; right: -15%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(245,197,24,.06) 0%, transparent 70%); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -20%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(245,197,24,.04) 0%, transparent 70%); pointer-events: none;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header center" data-animate="fade-up">
+                <span class="tag tag-light" data-i18n="pt-exclusive-tag">MEGA GYM EXCLUSIVE</span>
+                <h2 class="section-title text-white" data-i18n="pt-exclusive-title">Transformation Centers</h2>
+                <p style="color: var(--gray-400); max-width: 600px; margin: 16px auto 0; font-size: .95rem; line-height: 1.7;" data-i18n="pt-exclusive-desc">Ανεξάρτητα γυμναστήρια εξοπλισμένα με την τελευταία λέξη της τεχνολογίας. Σχεδιασμένα αποκλειστικά για Personal Training Transformation.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px;">
+                <div style="background: var(--gray-900); border-radius: var(--radius); padding: 40px 32px; border: 1px solid var(--gray-800); transition: all .3s;" data-animate="fade-up" data-delay="0">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 1.4rem; font-weight: 700; color: var(--black);">&#9889;</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .04em; color: var(--white); margin-bottom: 12px;" data-i18n="pt-excl-feat1-title">Τεχνολογία Αιχμής</h3>
+                    <p style="font-size: .88rem; color: var(--gray-400); line-height: 1.75;" data-i18n="pt-excl-feat1-desc">Εξοπλισμένα με τα πιο προηγμένα μηχανήματα και τεχνολογίες γυμναστικής. Cutting-edge technology σε κάθε εγκατάσταση.</p>
+                </div>
+                <div style="background: var(--gray-900); border-radius: var(--radius); padding: 40px 32px; border: 1px solid var(--gray-800); transition: all .3s;" data-animate="fade-up" data-delay="150">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 1.4rem; font-weight: 700; color: var(--black);">&#128197;</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .04em; color: var(--white); margin-bottom: 12px;" data-i18n="pt-excl-feat2-title">Προγράμματα 45 & 90 Ημερών</h3>
+                    <p style="font-size: .88rem; color: var(--gray-400); line-height: 1.75;" data-i18n="pt-excl-feat2-desc">Δομημένα προγράμματα μεταμόρφωσης με συγκεκριμένους στόχους και μετρήσιμα αποτελέσματα. Κάθε πρόγραμμα σχεδιάζεται ειδικά για εσένα.</p>
+                </div>
+                <div style="background: var(--gray-900); border-radius: var(--radius); padding: 40px 32px; border: 1px solid var(--gray-800); transition: all .3s;" data-animate="fade-up" data-delay="300">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 1.4rem; font-weight: 700; color: var(--black);">7</div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .04em; color: var(--white); margin-bottom: 12px;" data-i18n="pt-excl-feat3-title">Ανοιχτά 7 Μέρες</h3>
+                    <p style="font-size: .88rem; color: var(--gray-400); line-height: 1.75;" data-i18n="pt-excl-feat3-desc">Λειτουργία 7 μέρες την εβδομάδα, συμπεριλαμβανομένης της Κυριακής. Προσαρμόζουμε το πρόγραμμα στη δική σου καθημερινότητα.</p>
+                </div>
+            </div>
+
+            <!-- Biggest PT Studio callout -->
+            <div style="margin-top: 56px; background: linear-gradient(135deg, var(--yellow) 0%, #e8b400 100%); border-radius: var(--radius); padding: 48px 40px; text-align: center;" data-animate="fade-up" data-delay="100">
+                <h3 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: .04em; color: var(--black); margin-bottom: 12px;" data-i18n="pt-excl-kifisia-title">Το Μεγαλύτερο PT Studio Στην Ελλάδα</h3>
+                <p style="font-size: 1rem; color: var(--gray-800); max-width: 560px; margin: 0 auto; line-height: 1.7;" data-i18n="pt-excl-kifisia-desc">Το MEGA GYM EXCLUSIVE Κηφισιάς είναι το μεγαλύτερο Personal Training Studio σε ολόκληρη την Ελλάδα. Κορυφαίος εξοπλισμός, κορυφαίοι γυμναστές, κορυφαία αποτελέσματα.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Results -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <span class="tag" data-i18n="pt-results-tag">Αποδεδειγμένα Αποτελέσματα</span>
+                <h2 class="section-title" data-i18n="pt-results-title">Πραγματικές Μεταμορφώσεις</h2>
+                <p class="section-desc" data-i18n="pt-results-desc">Χιλιάδες μέλη μας έχουν πετύχει εκπληκτικά αποτελέσματα στα MEGA GYM EXCLUSIVE Transformation Centers</p>
+            </div>
+
+            <!-- Headline stat -->
+            <div style="text-align: center; margin-bottom: 56px; padding: 40px; background: var(--black); border-radius: var(--radius);" data-animate="fade-up">
+                <p style="font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); color: var(--yellow); letter-spacing: .04em; line-height: 1.3;" data-i18n="pt-results-headline">Φέτος κάψαμε <span style="font-size: 1.4em;">5 ΤΟΝΟΥΣ</span> λίπος και προσθέσαμε <span style="font-size: 1.4em;">2 ΤΟΝΟΥΣ</span> μυών</p>
+            </div>
+
+            <!-- Result Cards -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;">
+                <!-- Ioanna -->
+                <div style="background: var(--gray-100); border-radius: var(--radius); padding: 36px 32px; transition: all .3s; border: 1px solid transparent;" data-animate="fade-up" data-delay="0"
+                     onmouseover="this.style.borderColor='var(--yellow)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,.08)'"
+                     onmouseout="this.style.borderColor='transparent';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.3rem; color: var(--black); flex-shrink: 0;">I</div>
+                        <div>
+                            <h4 style="font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .04em;" data-i18n="pt-result1-name">Ιωάννα</h4>
+                            <span style="font-size: .78rem; color: var(--gray-500);" data-i18n="pt-result1-duration">Μεταμόρφωση σε 45 ημέρες</span>
+                        </div>
+                    </div>
+                    <p style="font-size: .9rem; color: var(--gray-600); line-height: 1.75;" data-i18n="pt-result1-desc">Εντυπωσιακή μεταμόρφωση με πρόγραμμα κάυσης λίπους 45 ημερών. Ορατά αποτελέσματα από τις πρώτες εβδομάδες με εξατομικευμένο πρόγραμμα διατροφής και προπόνησης.</p>
+                    <div style="margin-top: 16px; display: inline-block; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; padding: 5px 14px; border-radius: 50px; background: rgba(245,197,24,.15); color: var(--yellow-dark);">Fat Burn</div>
+                </div>
+
+                <!-- Giannis -->
+                <div style="background: var(--gray-100); border-radius: var(--radius); padding: 36px 32px; transition: all .3s; border: 1px solid transparent;" data-animate="fade-up" data-delay="100"
+                     onmouseover="this.style.borderColor='var(--yellow)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,.08)'"
+                     onmouseout="this.style.borderColor='transparent';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--black); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.3rem; color: var(--yellow); flex-shrink: 0;">G</div>
+                        <div>
+                            <h4 style="font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .04em;" data-i18n="pt-result2-name">Γιάννης</h4>
+                            <span style="font-size: .78rem; color: var(--gray-500);" data-i18n="pt-result2-duration">Μεταμόρφωση σε 90 ημέρες</span>
+                        </div>
+                    </div>
+                    <p style="font-size: .9rem; color: var(--gray-600); line-height: 1.75;" data-i18n="pt-result2-desc">Σημαντική αύξηση μυϊκής μάζας με πρόγραμμα 90 ημερών. Πλήρης αναδιαμόρφωση σώματος με επιστημονική προσέγγιση στη διατροφή και την προπόνηση.</p>
+                    <div style="margin-top: 16px; display: inline-block; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; padding: 5px 14px; border-radius: 50px; background: var(--black); color: var(--yellow);">Muscle Gain</div>
+                </div>
+
+                <!-- 43kg Reduction -->
+                <div style="background: var(--black); border-radius: var(--radius); padding: 36px 32px; transition: all .3s; border: 1px solid var(--gray-800);" data-animate="fade-up" data-delay="200"
+                     onmouseover="this.style.borderColor='var(--yellow)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(245,197,24,.15)'"
+                     onmouseout="this.style.borderColor='var(--gray-800)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                    <div style="font-family: var(--font-display); font-size: 3.5rem; color: var(--yellow); letter-spacing: .04em; line-height: 1;" data-i18n="pt-result3-num">-43KG</div>
+                    <div style="display: flex; gap: 24px; margin: 16px 0; flex-wrap: wrap;">
+                        <div>
+                            <span style="font-size: .72rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .1em; display: block;" data-i18n="pt-result3-fat-label">Λίπος</span>
+                            <span style="font-family: var(--font-display); font-size: 1.3rem; color: var(--white); letter-spacing: .04em;">39% &rarr; 11%</span>
+                        </div>
+                        <div>
+                            <span style="font-size: .72rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .1em; display: block;" data-i18n="pt-result3-weight-label">Βάρος</span>
+                            <span style="font-family: var(--font-display); font-size: 1.3rem; color: var(--white); letter-spacing: .04em;">124kg &rarr; 81kg</span>
+                        </div>
+                    </div>
+                    <p style="font-size: .88rem; color: var(--gray-400); line-height: 1.75;" data-i18n="pt-result3-desc">Μείωση 43 κιλών - από 39% σωματικό λίπος σε 11%. Από 124kg σε 81kg. Μια από τις πιο εντυπωσιακές μεταμορφώσεις στα MEGA GYM EXCLUSIVE.</p>
+                </div>
+
+                <!-- Stelios -->
+                <div style="background: var(--gray-100); border-radius: var(--radius); padding: 36px 32px; transition: all .3s; border: 1px solid transparent;" data-animate="fade-up" data-delay="300"
+                     onmouseover="this.style.borderColor='var(--yellow)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,.08)'"
+                     onmouseout="this.style.borderColor='transparent';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.3rem; color: var(--black); flex-shrink: 0;">&#931;</div>
+                        <div>
+                            <h4 style="font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .04em;" data-i18n="pt-result4-name">Στέλιος</h4>
+                            <span style="font-size: .78rem; color: var(--gray-500);" data-i18n="pt-result4-duration">Έκαψε 38 κιλά</span>
+                        </div>
+                    </div>
+                    <p style="font-size: .9rem; color: var(--gray-600); line-height: 1.75;" data-i18n="pt-result4-desc">Ο Στέλιος έκαψε 38 κιλά με το πρόγραμμα Personal Training Transformation. Αλλαγή ζωής μέσω σωστής προπόνησης και διατροφής.</p>
+                    <div style="margin-top: 16px; display: inline-block; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; padding: 5px 14px; border-radius: 50px; background: rgba(245,197,24,.15); color: var(--yellow-dark);">-38KG</div>
+                </div>
+            </div>
+
+            <!-- Celebrity Transformation -->
+            <div style="margin-top: 40px; background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%); border-radius: var(--radius); padding: 40px 36px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;" data-animate="fade-up" data-delay="100">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--black); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-display); font-size: 1.6rem; color: var(--yellow);">&#9733;</span>
+                </div>
+                <div style="flex: 1; min-width: 280px;">
+                    <h4 style="font-family: var(--font-display); font-size: 1.3rem; letter-spacing: .04em; margin-bottom: 8px;" data-i18n="pt-celeb-name">Παύλος Σταματόπουλος</h4>
+                    <p style="font-size: .82rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px;" data-i18n="pt-celeb-title">Δημοσιογράφος</p>
+                    <p style="font-size: .9rem; color: var(--gray-600); line-height: 1.75;" data-i18n="pt-celeb-desc">Ο γνωστός δημοσιογράφος Παύλος Σταματόπουλος εμπιστεύτηκε τα MEGA GYM EXCLUSIVE για τη δική του μεταμόρφωση. Εντυπωσιακά αποτελέσματα με το πρόγραμμα Personal Training Transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-yellow" style="padding: 72px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" data-animate="fade-up" data-i18n="pt-cta-title">Ξεκίνα Τη Μεταμόρφωσή Σου</h2>
+            <p style="font-size: 1.05rem; max-width: 560px; margin: 16px auto 0; line-height: 1.7; color: var(--gray-800);" data-animate="fade-up" data-delay="100" data-i18n="pt-cta-desc">Κλείσε μια δωρεάν δοκιμαστική συνεδρία στο πλησιέστερο MEGA GYM EXCLUSIVE Transformation Center και ξεκίνα σήμερα.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap;" data-animate="fade-up" data-delay="200">
+                <a href="dokimastiki.html" class="btn btn-dark" data-i18n="pt-cta-btn1">Κλείσε Δοκιμαστική</a>
+                <a href="tel:+302108073926" class="btn btn-outline-dark" data-i18n="pt-cta-btn2">210 807 3926</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/MegaGymPhotos/mega-gym-logo.jpg" alt="MEGA GYM" class="footer-logo-img">
+                    <p>Τα καλύτερα Ελληνικά γυμναστήρια. 7 κορυφαίες εγκαταστάσεις στην Αθήνα.</p>
+                    <div class="social-row">
+                        <a href="https://www.facebook.com/MEGAGYMFITNESSCLUBS/" target="_blank" rel="noopener" class="social-btn">FB</a>
+                        <a href="https://www.instagram.com/megagym__official" target="_blank" rel="noopener" class="social-btn">IG</a>
+                        <a href="https://www.youtube.com/user/launmaster1/videos" target="_blank" rel="noopener" class="social-btn">YT</a>
+                    </div>
+                </div>
+                <div class="footer-col"><h4>Πλοήγηση</h4><ul><li><a href="index.html">Αρχική</a></li><li><a href="gymnastiria.html">Γυμναστήρια</a></li><li><a href="proponisi.html">Προπόνηση</a></li><li><a href="personal-training.html">Personal Training</a></li><li><a href="pilates.html">Pilates Studio</a></li></ul></div>
+                <div class="footer-col"><h4>Υπηρεσίες</h4><ul><li><a href="proponisi.html">Group Personal</a></li><li><a href="personal-training.html">Transformation</a></li><li><a href="pilates.html">Pilates Reformer</a></li><li><a href="dokimastiki.html">Δοκιμαστική</a></li></ul></div>
+                <div class="footer-col"><h4>Επικοινωνία</h4><ul><li><a href="tel:+302108073926">210 807 3926</a></li><li><a href="mailto:selficon@gmail.com">selficon@gmail.com</a></li><li><span>Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</span></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 MEGA GYM Fitness Clubs. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
