@@ -1066,19 +1066,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ---------------------------------------------------------------
-       12c. AI CHATBOT BUBBLE
+       12c. FLOATING ACTION BUTTON (FAB)
     --------------------------------------------------------------- */
-    const chatbotBubble = document.getElementById('chatbotBubble');
-    if (chatbotBubble) {
-        const chatBtn = chatbotBubble.querySelector('.chatbot-btn');
-        chatBtn.addEventListener('click', () => {
-            chatbotBubble.classList.toggle('open');
+    const fabContainer = document.getElementById('fabContainer');
+    const fabToggle = document.getElementById('fabToggle');
+    const fabTop = document.getElementById('fabTop');
+
+    if (fabToggle && fabContainer) {
+        fabToggle.addEventListener('click', () => {
+            fabContainer.classList.toggle('open');
         });
-        // Close when clicking outside
         document.addEventListener('click', (e) => {
-            if (!chatbotBubble.contains(e.target)) {
-                chatbotBubble.classList.remove('open');
+            if (!fabContainer.contains(e.target)) {
+                fabContainer.classList.remove('open');
             }
+        });
+    }
+    if (fabTop) {
+        fabTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            fabContainer.classList.remove('open');
         });
     }
 
@@ -1099,22 +1106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ---------------------------------------------------------------
-       14. BACK TO TOP BUTTON
+       14. (Removed - FAB replaces back-to-top)
     --------------------------------------------------------------- */
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 600) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        }, { passive: true });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
 
 
     /* ---------------------------------------------------------------
