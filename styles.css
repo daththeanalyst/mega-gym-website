@@ -34,172 +34,181 @@
     --transition: .3s cubic-bezier(.4,0,.2,1);
 }
 
-/* Dark mode - inverted color scheme */
+/* ===================================================================
+   DARK MODE
+   =================================================================== */
 body.dark-mode {
-    --white: #0a0a0a;
-    --black: #f5f5f5;
-    --gray-100: #1a1a1a;
-    --gray-200: #262626;
-    --gray-300: #404040;
-    --gray-400: #737373;
-    --gray-500: #a3a3a3;
-    --gray-600: #d4d4d4;
-    --gray-700: #e5e5e5;
-    --gray-800: #f0f0f0;
-    --gray-900: #fafafa;
-    --shadow-sm: 0 1px 3px rgba(255,255,255,.04);
-    --shadow-md: 0 4px 20px rgba(255,255,255,.06);
-    --shadow-lg: 0 8px 40px rgba(255,255,255,.06);
-    --shadow-xl: 0 20px 60px rgba(255,255,255,.08);
+    background: #0e0e0e;
+    color: #e8e8e8;
 }
-body.dark-mode { background: #0a0a0a; color: #f5f5f5; }
-body.dark-mode .navbar.scrolled { background: rgba(10, 10, 10, .95); }
-body.dark-mode .navbar.scrolled .nav-links a { color: #f5f5f5; }
-body.dark-mode .navbar.scrolled .nav-toggle span { background: #f5f5f5; }
-body.dark-mode .navbar.scrolled .lang-toggle { color: #a3a3a3; border-color: #404040; }
-body.dark-mode .navbar.scrolled .lang-active { color: #f5f5f5; }
-body.dark-mode .navbar.scrolled .theme-toggle { color: #f5f5f5; }
-body.dark-mode .nav-dropdown-menu { background: #1a1a1a; border: 1px solid #262626; }
-body.dark-mode .nav-dropdown-menu a { color: #f5f5f5 !important; }
-body.dark-mode .nav-dropdown-menu a:hover { background: #262626; }
+
+/* Navbar */
+body.dark-mode .navbar.scrolled {
+    background: rgba(14, 14, 14, .92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 1px 0 rgba(255,255,255,.06);
+}
+body.dark-mode .navbar.scrolled .nav-links > li > a { color: #e8e8e8; }
+body.dark-mode .navbar.scrolled .nav-toggle span { background: #e8e8e8; }
+body.dark-mode .navbar.scrolled .lang-toggle { color: #999; border-color: #333; }
+body.dark-mode .navbar.scrolled .lang-active { color: #e8e8e8; }
+body.dark-mode .navbar.scrolled .theme-toggle { color: #e8e8e8; border-color: #333; }
+body.dark-mode .navbar.scrolled .nav-cta { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .nav-dropdown-menu { background: #1a1a1a; border: 1px solid #2a2a2a; }
+body.dark-mode .nav-dropdown-menu a { color: #ccc !important; }
+body.dark-mode .nav-dropdown-menu a:hover { background: #252525; color: var(--yellow) !important; }
+body.dark-mode .nav-links { background: #0e0e0e; }
+body.dark-mode .nav-links a { color: #e8e8e8 !important; }
+
+/* Sections & backgrounds */
+body.dark-mode .section,
 body.dark-mode .section-white,
-body.dark-mode .section--white { background: #0a0a0a; color: #f5f5f5; }
+body.dark-mode .section--white { background: #0e0e0e; color: #e8e8e8; }
 body.dark-mode .section-gray,
-body.dark-mode .section--gray { background: #111; }
-body.dark-mode .social-proof { background: #111; }
+body.dark-mode .section--gray,
+body.dark-mode .social-proof { background: #141414; color: #e8e8e8; }
+body.dark-mode .section-dark { background: #080808; }
+body.dark-mode .marquee-banner { background: #141414; }
+body.dark-mode .comparison-strip { background: #080808; }
+body.dark-mode .video-section { background: #080808; }
+
+/* Section text */
+body.dark-mode .section-title { color: #f0f0f0; }
+body.dark-mode .section-subtitle { color: #999; }
+body.dark-mode .section-tag { color: var(--yellow); }
+body.dark-mode .about-lead { color: #bbb; }
+body.dark-mode .about-text p { color: #999; }
+
+/* Cards */
 body.dark-mode .service-card,
 body.dark-mode .pricing-card,
 body.dark-mode .transform-card,
 body.dark-mode .location-card,
 body.dark-mode .trainer-card,
 body.dark-mode .directory-card,
-body.dark-mode .why-card { background: #1a1a1a; border-color: #262626; }
+body.dark-mode .why-card,
+body.dark-mode .gym-type-card {
+    background: #181818;
+    border-color: #2a2a2a;
+    color: #e8e8e8;
+}
+body.dark-mode .service-card h3,
+body.dark-mode .location-card h3,
+body.dark-mode .trainer-name,
+body.dark-mode .transform-info h4,
+body.dark-mode .directory-card h3,
+body.dark-mode .gym-type-card h3,
+body.dark-mode .gym-type-header h3 { color: #f0f0f0; }
+body.dark-mode .service-card p,
+body.dark-mode .location-address,
+body.dark-mode .transform-info p,
+body.dark-mode .trainer-role { color: #999; }
+body.dark-mode .service-programs li { background: #252525; color: #ccc; }
 body.dark-mode .pricing-card-featured { border-color: var(--yellow); box-shadow: 0 0 0 2px var(--yellow); }
-body.dark-mode .service-programs li { background: #262626; color: #d4d4d4; }
-body.dark-mode .faq-item { border-color: #262626; }
-body.dark-mode .faq-question { color: #f5f5f5; }
-body.dark-mode .contact-form-wrap { background: #1a1a1a !important; }
-body.dark-mode .footer { background: #050505; }
-body.dark-mode .cookie-banner { background: #1a1a1a; }
-body.dark-mode .social-proof-icon { background: #262626; }
-body.dark-mode .fab-toggle { background: var(--yellow); color: #0a0a0a; }
+body.dark-mode .pricing-card-price { color: #f0f0f0; }
+body.dark-mode .pricing-card-title { color: #999; }
+body.dark-mode .pricing-card-period { color: #777; }
+body.dark-mode .pricing-card-features li { color: #bbb; border-color: #2a2a2a; }
 
-/* Dark mode: buttons that are black need to become visible */
-body.dark-mode .btn-dark,
-body.dark-mode .btn--black {
-    background: var(--yellow);
-    color: #0a0a0a;
-}
-body.dark-mode .btn-dark:hover,
-body.dark-mode .btn--black:hover {
-    background: #d4a80e;
-}
-body.dark-mode .btn-dark-outline,
-body.dark-mode .btn-outline-dark,
-body.dark-mode .btn--outline-black {
-    border-color: var(--yellow);
-    color: var(--yellow);
-}
-body.dark-mode .btn-dark-outline:hover,
-body.dark-mode .btn-outline-dark:hover {
-    background: var(--yellow);
-    color: #0a0a0a;
-}
-body.dark-mode .btn-outline {
-    border-color: rgba(255,255,255,.4);
-    color: #f5f5f5;
-}
-body.dark-mode .btn-primary {
-    background: var(--yellow);
-    color: #0a0a0a;
-}
+/* Trainer section - FIX CONTRAST */
+body.dark-mode .trainer-avatar { background: #252525; border-color: var(--yellow); }
+body.dark-mode .trainer-specialty { color: var(--yellow); }
 
-/* Dark mode: image overlays for contrast */
-body.dark-mode .about-image img,
-body.dark-mode .image-strip-item img {
-    opacity: .8;
-    filter: brightness(.85);
-}
-body.dark-mode .about-image img:hover,
-body.dark-mode .image-strip-item img:hover {
-    opacity: 1;
-    filter: brightness(1);
-}
+/* Gym type features */
+body.dark-mode .gym-type-features li { color: #bbb; border-color: #2a2a2a; }
 
-/* Dark mode: social buttons in footer */
-body.dark-mode .social-btn {
-    color: #a3a3a3;
-    border-color: #404040;
-}
-body.dark-mode .social-btn:hover {
-    color: var(--yellow);
-    border-color: var(--yellow);
-}
-body.dark-mode .social-row .social-btn {
-    color: #a3a3a3;
-}
-body.dark-mode .social-row .social-btn svg {
-    fill: #a3a3a3;
-}
-body.dark-mode .social-row .social-btn:hover svg {
-    fill: var(--yellow);
-}
-body.dark-mode .contact-social .social-btn svg {
-    fill: #a3a3a3;
-}
-body.dark-mode .contact-social .social-btn:hover svg {
-    fill: var(--yellow);
-}
+/* Location tags */
+body.dark-mode .tag-fc { background: #252525; color: #ccc; }
+body.dark-mode .tag-ex { background: rgba(245,197,24,.15); color: var(--yellow); }
+body.dark-mode .tag-pl { background: rgba(34,197,94,.12); color: #4ade80; }
+body.dark-mode .location-hours { color: #888; }
 
-/* Dark mode: gym type card buttons */
-body.dark-mode .gym-type-card .btn-outline {
-    border-color: var(--yellow);
-    color: var(--yellow);
-}
-body.dark-mode .gym-type-card .btn-outline:hover {
-    background: var(--yellow);
-    color: #0a0a0a;
-}
+/* About section */
+body.dark-mode .about-image img { border-radius: var(--radius); }
+body.dark-mode .about-accent-card { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .about-metric-number { color: var(--yellow); }
+body.dark-mode .about-metric-unit { color: #e8e8e8; }
+body.dark-mode .about-metric-desc { color: #888; }
 
-/* Dark mode: accent card */
-body.dark-mode .about-accent-card {
-    background: var(--yellow);
-    color: #0a0a0a;
-}
+/* Image strip */
+body.dark-mode .image-strip-item img { filter: brightness(.9); }
+body.dark-mode .image-strip-item:hover img { filter: brightness(1.05); }
 
-/* Dark mode: transform placeholder */
-body.dark-mode .transform-image-placeholder {
-    background: linear-gradient(135deg, #1a1a1a, #262626);
-}
+/* Transforms */
+body.dark-mode .transform-image-placeholder { background: linear-gradient(135deg, #1a1a1a, #252525); }
+body.dark-mode .transform-tv { background: #141414; }
 
-/* Dark mode: trial CTA yellow section stays yellow */
-body.dark-mode .trial-cta {
-    background: var(--yellow);
-    color: #0a0a0a;
-}
+/* Social proof */
+body.dark-mode .social-proof-icon { background: #252525; }
+body.dark-mode .social-proof-num { color: #f0f0f0; }
+body.dark-mode .social-proof-label { color: #888; }
+
+/* Trial CTA - stays yellow */
+body.dark-mode .trial-cta { background: var(--yellow); color: #0e0e0e; }
 body.dark-mode .trial-cta h2,
-body.dark-mode .trial-cta p { color: #0a0a0a; }
+body.dark-mode .trial-cta p { color: #0e0e0e; }
+body.dark-mode .trial-cta .btn-dark { background: #0e0e0e; color: #f0f0f0; }
+body.dark-mode .trial-cta .btn-dark-outline { border-color: #0e0e0e; color: #0e0e0e; }
 
-/* Dark mode: comparison strip */
-body.dark-mode .comparison-strip { background: #111; }
+/* Buttons */
+body.dark-mode .btn-dark { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .btn-dark:hover { background: #d4a80e; }
+body.dark-mode .btn-primary { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .btn-dark-outline,
+body.dark-mode .btn-outline-dark { border-color: var(--yellow); color: var(--yellow); }
+body.dark-mode .btn-dark-outline:hover,
+body.dark-mode .btn-outline-dark:hover { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .btn-outline { border-color: rgba(255,255,255,.3); color: #e8e8e8; }
+body.dark-mode .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+body.dark-mode .btn-yellow { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .gym-type-card .btn-outline { border-color: var(--yellow); color: var(--yellow); }
+body.dark-mode .gym-type-card .btn-outline:hover { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .gym-type-card .btn-yellow { background: var(--yellow); color: #0e0e0e; }
 
-/* Dark mode: pricing card text */
-body.dark-mode .pricing-card-price { color: #f5f5f5; }
-body.dark-mode .pricing-card-title { color: #a3a3a3; }
-body.dark-mode .pricing-card-features li { color: #d4d4d4; border-color: #262626; }
+/* FAQ */
+body.dark-mode .faq-item { border-color: #2a2a2a; }
+body.dark-mode .faq-question { color: #e8e8e8; }
+body.dark-mode .faq-answer p { color: #999; }
 
-/* Dark mode: location tags */
-body.dark-mode .tag-fc { background: #262626; color: #d4d4d4; }
+/* Contact section */
+body.dark-mode .contact-form-wrap { background: #141414 !important; border-color: #2a2a2a !important; }
+body.dark-mode .contact-form label { color: #999 !important; }
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea { background: #1a1a1a; border-color: #2a2a2a; color: #e8e8e8; }
+body.dark-mode .contact-item { color: #ccc; }
+body.dark-mode .contact-item a { color: #ccc; }
 
-/* Dark mode: nav mobile overlay */
-body.dark-mode .nav-links { background: #0a0a0a; }
-body.dark-mode .nav-links a { color: #f5f5f5 !important; }
+/* Social buttons */
+body.dark-mode .social-btn { color: #888; }
+body.dark-mode .social-btn svg { fill: #888; }
+body.dark-mode .social-btn:hover { color: var(--yellow); }
+body.dark-mode .social-btn:hover svg { fill: var(--yellow); }
 
-/* Dark mode: trainer avatar */
-body.dark-mode .trainer-avatar { background: #262626; }
+/* Footer */
+body.dark-mode .footer { background: #080808; color: #999; }
+body.dark-mode .footer h4 { color: #e8e8e8; }
+body.dark-mode .footer a { color: #999; }
+body.dark-mode .footer a:hover { color: var(--yellow); }
+body.dark-mode .footer-bottom { border-color: #1a1a1a; }
 
-/* Dark mode: marquee */
-body.dark-mode .marquee-banner { background: #111; }
+/* Cookie banner */
+body.dark-mode .cookie-banner { background: #1a1a1a; color: #ccc; }
+
+/* FAB */
+body.dark-mode .fab-toggle { background: var(--yellow); color: #0e0e0e; }
+
+/* Comparison strip text */
+body.dark-mode .comparison-other { color: #888; }
+body.dark-mode .comparison-other-val { color: #666; }
+body.dark-mode .comparison-vs { color: #555; }
+body.dark-mode .comparison-mega-sub { color: #888; }
+
+/* Breadcrumb */
+body.dark-mode .breadcrumb { color: #888; }
+
+/* Page hero on subpages */
+body.dark-mode .page-hero { background: #080808; }
 
 /* Theme toggle button */
 .theme-toggle {
