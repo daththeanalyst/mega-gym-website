@@ -841,18 +841,21 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const el = entry.target;
-                    const target = parseInt(el.dataset.count);
-                    const duration = 1800;
+                    const target = parseFloat(el.dataset.count);
+                    const suffix = el.dataset.suffix || '';
+                    const isDecimal = el.dataset.decimal === 'true';
+                    const duration = 2000;
                     const start = performance.now();
 
                     function updateCounter(now) {
                         const elapsed = now - start;
                         const progress = Math.min(elapsed / duration, 1);
-                        // Ease-out cubic
                         const eased = 1 - Math.pow(1 - progress, 3);
-                        const current = Math.round(eased * target);
+                        const current = isDecimal
+                            ? (eased * target).toFixed(1)
+                            : Math.round(eased * target);
 
-                        el.textContent = current;
+                        el.textContent = current + suffix;
 
                         if (progress < 1) {
                             requestAnimationFrame(updateCounter);
@@ -864,7 +867,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, {
-            threshold: 0.5
+            threshold: 0.3
         });
 
         counterElements.forEach(el => counterObserver.observe(el));
@@ -1048,6 +1051,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+
+    /* ---------------------------------------------------------------
+       12a. DARK MODE TOGGLE
+    --------------------------------------------------------------- */
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        // Load saved theme
+        if (localStorage.getItem('megagym-theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('megagym-theme',
+                document.body.classList.contains('dark-mode') ? 'dark' : 'light'
+            );
+        });
+    }
 
 
     /* ---------------------------------------------------------------
