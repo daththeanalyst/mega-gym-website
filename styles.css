@@ -207,8 +207,185 @@ body.dark-mode .comparison-mega-sub { color: #888; }
 /* Breadcrumb */
 body.dark-mode .breadcrumb { color: #888; }
 
-/* Page hero on subpages */
+/* Page hero variants */
 body.dark-mode .page-hero { background: #080808; }
+body.dark-mode .page-hero--dark { background: #080808; }
+body.dark-mode .page-hero--yellow { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .page-hero--yellow .page-hero__title,
+body.dark-mode .page-hero--yellow .page-hero__subtitle { color: #0e0e0e; }
+body.dark-mode .page-hero-title { color: #f0f0f0; }
+body.dark-mode .page-hero-sub { color: #999; }
+
+/* Preloader */
+body.dark-mode .preloader { background: #0e0e0e; }
+
+/* Pilates page: equipment cards */
+body.dark-mode .equipment-card {
+    background: #181818;
+    border-color: #2a2a2a;
+}
+body.dark-mode .equipment-card__title,
+body.dark-mode .equipment-card h3 { color: #f0f0f0; }
+body.dark-mode .equipment-card__text,
+body.dark-mode .equipment-card p { color: #999; }
+
+/* Pilates page: benefit cards */
+body.dark-mode .benefit-card {
+    background: #181818;
+    border-color: #2a2a2a;
+}
+body.dark-mode .benefit-card__title,
+body.dark-mode .benefit-card h3 { color: #f0f0f0; }
+body.dark-mode .benefit-card__text,
+body.dark-mode .benefit-card p { color: #999; }
+
+/* Pilates page: accessory items */
+body.dark-mode .accessory-item {
+    background: #181818;
+    color: #e8e8e8;
+    border-color: #2a2a2a;
+}
+
+/* Pilates page: intro highlights */
+body.dark-mode .intro-highlight-item {
+    background: #181818;
+}
+body.dark-mode .intro-highlight-item h3 { color: #f0f0f0; }
+body.dark-mode .intro-highlight-item p { color: #999; }
+
+/* Pilates page: group pilates (dark section) */
+body.dark-mode .section--dark { background: #080808; color: #e8e8e8; }
+body.dark-mode .group-pilates-lead { color: #f0f0f0; }
+body.dark-mode .group-pilates-text { color: #999; }
+
+/* Pilates page: experience badge */
+body.dark-mode .experience-badge { background: #181818; border-color: #2a2a2a; }
+body.dark-mode .experience-badge__text p { color: #999; }
+
+/* Dokimastiki: trust signals */
+body.dark-mode .trust-signal {
+    background: #181818;
+    color: #e8e8e8;
+}
+body.dark-mode .trust-signal__number { color: #f0f0f0; }
+body.dark-mode .trust-signal__label { color: #999; }
+
+/* Dokimastiki: trial form */
+body.dark-mode .trial-form {
+    background: #141414 !important;
+    border-color: #2a2a2a !important;
+    color: #e8e8e8;
+}
+body.dark-mode .trial-form__title,
+body.dark-mode .trial-form h2 { color: #f0f0f0; }
+body.dark-mode .trial-form__subtitle,
+body.dark-mode .trial-form p { color: #999; }
+
+/* ALL forms: inputs, selects, textareas */
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea,
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="tel"],
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #1a1a1a !important;
+    border-color: #2a2a2a !important;
+    color: #e8e8e8 !important;
+}
+body.dark-mode .form-group label,
+body.dark-mode label { color: #999 !important; }
+body.dark-mode select option { background: #1a1a1a; color: #e8e8e8; }
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder { color: #666 !important; }
+
+/* Why card text (dokimastiki) */
+body.dark-mode .why-card__title { color: #f0f0f0; }
+body.dark-mode .why-card__text { color: #999; }
+body.dark-mode .why-card__icon svg { stroke: var(--yellow); }
+
+/* Directory cards (gymnastiria, epikoinonia) */
+body.dark-mode .dir-address { color: #999; }
+body.dark-mode .dir-phone a { color: var(--yellow); }
+body.dark-mode .loc-badge { background: var(--yellow); color: #0e0e0e; }
+body.dark-mode .loc-tags span { background: #252525; color: #ccc; }
+body.dark-mode .directory-featured { border-color: var(--yellow); }
+
+/* Section yellow (gymnastiria CTA, pilates CTA) */
+body.dark-mode .section-yellow,
+body.dark-mode .section--yellow {
+    background: var(--yellow);
+    color: #0e0e0e;
+}
+body.dark-mode .section-yellow h2,
+body.dark-mode .section--yellow h2,
+body.dark-mode .section-yellow p,
+body.dark-mode .section--yellow p { color: #0e0e0e; }
+
+/* Proponisi: program cards */
+body.dark-mode .program-card {
+    background: #181818;
+    border-color: #2a2a2a;
+}
+body.dark-mode .program-card h3 { color: #f0f0f0; }
+body.dark-mode .program-card p { color: #999; }
+body.dark-mode .program-num { color: #333; }
+body.dark-mode .program-list li { color: #bbb; border-color: #2a2a2a; }
+body.dark-mode .program-price-tag { background: rgba(245,197,24,.15); color: var(--yellow); }
+
+/* Proponisi: intro section */
+body.dark-mode .lead { color: #bbb; }
+body.dark-mode .body-text { color: #999; }
+body.dark-mode .intro-wrap { color: #e8e8e8; }
+
+/* Proponisi: CTA section */
+body.dark-mode .cta-desc { color: #999; }
+
+/* Proponisi: service link cards */
+body.dark-mode .service-link-card {
+    background: #181818;
+    border-color: #2a2a2a;
+}
+body.dark-mode .service-link-card h3 { color: #f0f0f0; }
+body.dark-mode .service-link-card p { color: #999; }
+
+/* Personal training: all PT-specific cards */
+body.dark-mode .pt-option { background: #181818; border-color: #2a2a2a; }
+body.dark-mode .pt-option-title { color: #f0f0f0; }
+body.dark-mode .pt-desc { color: #999; }
+body.dark-mode .pt-feature-card { background: #141414; border-color: #2a2a2a; }
+body.dark-mode .pt-feature-title { color: #f0f0f0; }
+body.dark-mode .pt-feature-desc { color: #999; }
+body.dark-mode .pt-result-card { background: #181818; border-color: #2a2a2a; }
+body.dark-mode .pt-result-card:hover { border-color: var(--yellow); }
+body.dark-mode .pt-result-card--dark { background: #141414; }
+body.dark-mode .pt-card-name { color: #f0f0f0; }
+body.dark-mode .pt-card-sub { color: #999; }
+body.dark-mode .pt-card-text { color: #888; }
+body.dark-mode .pt-callout { background: linear-gradient(135deg, #2a2200, #1a1500); }
+body.dark-mode .pt-callout-title { color: #f0f0f0; }
+body.dark-mode .pt-callout-desc { color: #999; }
+body.dark-mode .pt-celeb-card { background: #181818; border-color: #2a2a2a; }
+body.dark-mode .pt-section-desc { color: #999; }
+body.dark-mode .pt-stat-text { color: #bbb; }
+body.dark-mode .pt-location-tag { background: #252525; color: #ccc; }
+body.dark-mode .pt-program-tag { background: rgba(245,197,24,.15); color: var(--yellow); }
+
+/* Epikoinonia: contact form */
+body.dark-mode .contact-section { background: #0e0e0e; }
+body.dark-mode .contact-section .section-desc { color: #999; }
+
+/* Epikoinonia: career section */
+body.dark-mode .career-section { background: #0e0e0e; }
+body.dark-mode .career-section .section-desc { color: #999; }
+
+/* Epikoinonia: CTA section */
+body.dark-mode .cta-section { background: #0e0e0e; }
+
+/* Map popup text (inline styles in JS) - override with attribute selectors */
+body.dark-mode .leaflet-popup-content-wrapper { background: #1a1a1a !important; color: #e8e8e8 !important; }
+body.dark-mode .leaflet-popup-tip { background: #1a1a1a !important; }
 
 /* Theme toggle button */
 .theme-toggle {
