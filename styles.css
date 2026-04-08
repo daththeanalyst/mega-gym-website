@@ -3085,7 +3085,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 24px;
-    flex: 1;
 }
 .service-programs li {
     font-size: .75rem;
@@ -4789,3 +4788,173 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 @media (max-width: 480px) {
     .chatbot-popup { width: 260px; right: -8px; }
 }
+
+
+/* ===================================================================
+   SCROLL PROGRESS BAR
+   =================================================================== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--yellow);
+    z-index: 10000;
+    width: 0%;
+    transition: width .05s linear;
+}
+body.dark-mode .scroll-progress { background: var(--yellow); }
+
+
+/* ===================================================================
+   SMOOTH PAGE TRANSITIONS
+   =================================================================== */
+.page-transition {
+    animation: pageIn .5s ease-out;
+}
+@keyframes pageIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced scroll animations */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+[data-animate].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+[data-animate="fade-left"] {
+    transform: translateX(40px);
+}
+[data-animate="fade-left"].animated {
+    transform: translateX(0);
+}
+[data-animate="fade-right"] {
+    transform: translateX(-40px);
+}
+[data-animate="fade-right"].animated {
+    transform: translateX(0);
+}
+
+/* Stagger animation for grid children */
+.stagger-children > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children > *:nth-child(2) { transition-delay: .1s; }
+.stagger-children > *:nth-child(3) { transition-delay: .2s; }
+.stagger-children > *:nth-child(4) { transition-delay: .3s; }
+.stagger-children > *:nth-child(5) { transition-delay: .4s; }
+.stagger-children > *:nth-child(6) { transition-delay: .5s; }
+.stagger-children > *:nth-child(7) { transition-delay: .6s; }
+
+
+/* ===================================================================
+   STICKY MOBILE CTA
+   =================================================================== */
+.sticky-cta {
+    display: none;
+}
+@media (max-width: 768px) {
+    .sticky-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 998;
+        background: var(--yellow);
+        padding: 12px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,.15);
+        transform: translateY(100%);
+        transition: transform .3s ease;
+    }
+    .sticky-cta.visible {
+        transform: translateY(0);
+    }
+    .sticky-cta a {
+        font-weight: 700;
+        font-size: .9rem;
+        color: #0a0a0a;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .sticky-cta-phone {
+        font-weight: 600;
+        font-size: .82rem;
+        color: rgba(0,0,0,.6);
+        border-left: 1px solid rgba(0,0,0,.15);
+        padding-left: 12px;
+    }
+    body.dark-mode .sticky-cta {
+        background: var(--yellow);
+    }
+    body.dark-mode .sticky-cta a { color: #0a0a0a; }
+    body.dark-mode .sticky-cta-phone { color: rgba(0,0,0,.6); }
+
+    /* Push FAB up above sticky CTA */
+    .fab-container { bottom: 72px; }
+
+    /* Push cookie banner up */
+    .cookie-banner { bottom: 52px; }
+}
+
+
+/* ===================================================================
+   EXTRA DARK MODE POLISH
+   =================================================================== */
+/* Smooth color transitions when toggling */
+body {
+    transition: background-color .4s ease, color .4s ease;
+}
+.navbar, .section, .service-card, .pricing-card, .location-card,
+.trainer-card, .transform-card, .footer, .contact-form-wrap,
+.faq-item, .why-card, .gym-type-card, .directory-card {
+    transition: background-color .4s ease, color .4s ease, border-color .4s ease;
+}
+
+/* Dark mode: section title yellow accent bar */
+body.dark-mode .section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--yellow);
+    margin-top: 12px;
+}
+body.dark-mode .section-header { text-align: center; }
+body.dark-mode .section-title::after { margin-left: auto; margin-right: auto; }
+
+/* Dark mode: subtle card glow on hover */
+body.dark-mode .service-card:hover,
+body.dark-mode .pricing-card:hover,
+body.dark-mode .location-card:hover,
+body.dark-mode .transform-card:hover,
+body.dark-mode .trainer-card:hover {
+    box-shadow: 0 8px 32px rgba(245, 197, 24, .08);
+    border-color: #3a3a3a;
+}
+
+/* Dark mode: form focus glow */
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: var(--yellow) !important;
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, .15) !important;
+}
+
+/* Dark mode: scrollbar */
+body.dark-mode::-webkit-scrollbar { width: 8px; }
+body.dark-mode::-webkit-scrollbar-track { background: #0e0e0e; }
+body.dark-mode::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+body.dark-mode::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Dark mode: text selection */
+body.dark-mode ::selection { background: rgba(245, 197, 24, .3); color: #fff; }

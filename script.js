@@ -1127,8 +1127,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ---------------------------------------------------------------
-       14. (Removed - FAB replaces back-to-top)
+       14. SCROLL PROGRESS BAR
     --------------------------------------------------------------- */
+    const scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        }, { passive: true });
+    }
+
+
+    /* ---------------------------------------------------------------
+       15. STICKY MOBILE CTA
+    --------------------------------------------------------------- */
+    const stickyCta = document.getElementById('stickyCta');
+    if (stickyCta) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        }, { passive: true });
+    }
 
 
     /* ---------------------------------------------------------------
