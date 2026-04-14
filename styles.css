@@ -4958,3 +4958,24 @@ body.dark-mode::-webkit-scrollbar-thumb:hover { background: #555; }
 
 /* Dark mode: text selection */
 body.dark-mode ::selection { background: rgba(245, 197, 24, .3); color: #fff; }
+
+/* ===================================================================
+   CUSTOM DUMBBELL CURSOR (native, retina-aware)
+   =================================================================== */
+@media (hover: hover) and (pointer: fine) {
+    html, body {
+        cursor: url('cursor.png') 16 16, auto;
+        cursor: -webkit-image-set(
+            url('cursor.png') 1x,
+            url('cursor@2x.png') 2x
+        ) 16 16, auto;
+        cursor: image-set(
+            url('cursor.png') 1x,
+            url('cursor@2x.png') 2x
+        ) 16 16, auto;
+    }
+    /* Keep text I-beam in form fields for usability */
+    input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]),
+    textarea { cursor: text; }
+    /* Default arrow for disabled/non-interactive spots is fine as fallback */
+}
