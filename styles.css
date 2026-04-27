@@ -4960,6 +4960,92 @@ body.dark-mode::-webkit-scrollbar-thumb:hover { background: #555; }
 body.dark-mode ::selection { background: rgba(245, 197, 24, .3); color: #fff; }
 
 /* ===================================================================
+   HERO LOCATIONS MARQUEE — replaces the old 3-stat block
+   =================================================================== */
+.hero-locations {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+}
+.hero-locations-label {
+    font-family: var(--font-body);
+    font-size: .72rem;
+    color: rgba(255, 255, 255, .5);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+.hero-locations-marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.hero-locations-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    white-space: nowrap;
+    animation: hero-loc-scroll 42s linear infinite;
+    will-change: transform;
+}
+.hero-locations-marquee:hover .hero-locations-track {
+    animation-play-state: paused;
+}
+.hero-locations-track .loc {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: color .25s ease, transform .25s ease;
+    flex-shrink: 0;
+}
+.hero-locations-track .loc:hover {
+    color: var(--yellow);
+    transform: translateY(-2px);
+}
+.hero-locations-track .loc-dot {
+    color: var(--yellow);
+    font-size: .55rem;
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: .9;
+}
+@keyframes hero-loc-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+    .hero-locations-track { gap: 22px; }
+    .hero-locations-track .loc { font-size: 1.05rem; }
+    .hero-locations-label { font-size: .68rem; margin-bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-locations-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        white-space: normal;
+    }
+}
+
+/* Tons emphasis in transformations subtitle */
+.section-subtitle .emph {
+    font-weight: 800;
+    color: var(--black);
+    white-space: nowrap;
+}
+.section-dark .section-subtitle .emph,
+body.dark-mode .section-subtitle .emph {
+    color: var(--yellow);
+}
+
+/* ===================================================================
    CUSTOM DUMBBELL CURSOR (native, retina-aware)
    =================================================================== */
 @media (hover: hover) and (pointer: fine) {

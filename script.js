@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-stat-locations': 'Τοποθεσίες',
             'hero-stat-years': 'Χρόνια Εμπειρίας',
             'hero-stat-fat': 'Τόνοι Λίπους Κάηκαν',
+            'hero-locations-label': '7 Γυμναστήρια Σε Όλη Την Αθήνα',
             'scroll-down': 'Κάντε scroll',
 
             // --- INDEX: ABOUT ---
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- INDEX: TRANSFORMATIONS ---
             'transform-tag': 'Αποτελέσματα',
             'transform-title': 'Πραγματικές Μεταμορφώσεις',
-            'transform-subtitle': 'Φέτος κάψαμε 5 τόνους λίπος και προσθέσαμε 2 τόνους μυών',
+            'transform-subtitle': 'Φέτος κάψαμε <strong class="emph">5 τόνους</strong> λίπος και προσθέσαμε <strong class="emph">2 τόνους</strong> μυών',
             'transform-days': 'ημέρες',
             'transform-ioanna': 'Απώλεια λίπους & τόνωση σε 45 ημέρες με το πρόγραμμα Transformation',
             'transform-giannis': 'Ολική μεταμόρφωση σε 90 ημέρες — μυϊκή ανάπτυξη & απώλεια λίπους',
@@ -366,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-stat-locations': 'Locations',
             'hero-stat-years': 'Years Experience',
             'hero-stat-fat': 'Tons of Fat Burned',
+            'hero-locations-label': '7 Premium Gyms Across Athens',
             'scroll-down': 'Scroll down',
 
             // --- INDEX: ABOUT ---
@@ -414,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- INDEX: TRANSFORMATIONS ---
             'transform-tag': 'Results',
             'transform-title': 'Real Transformations',
-            'transform-subtitle': 'This year we burned 5 tons of fat and added 2 tons of muscle',
+            'transform-subtitle': 'This year we burned <strong class="emph">5 tons</strong> of fat and added <strong class="emph">2 tons</strong> of muscle',
             'transform-days': 'days',
             'transform-ioanna': 'Fat loss & toning in 45 days with the Transformation program',
             'transform-giannis': 'Total transformation in 90 days — muscle growth & fat loss',
