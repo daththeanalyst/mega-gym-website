@@ -32,6 +32,14 @@
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- NAV -->
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-track">
+            <div class="preloader-fill"></div>
+            <img src="assets/MegaGymPhotos/mega-gym-m-transparent.png" alt="MEGA GYM" class="preloader-logo-img">
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -83,33 +91,33 @@
                 <div class="hero-locations-label" data-i18n="hero-locations-label">7 Γυμναστήρια Σε Όλη Την Αθήνα</div>
                 <div class="hero-locations-marquee">
                     <div class="hero-locations-track">
-                        <a href="gymnastiria.html" class="loc">Κηφισιά</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-kifissia">Κηφισιά</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc">Μεταμόρφωση</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-metamorfosi">Μεταμόρφωση</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc">Γλυφάδα</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-glyfada">Γλυφάδα</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc">Βριλήσσια – Μελίσσια</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-vrilissia-melissia">Βριλήσσια – Μελίσσια</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc">Αγία Παρασκευή</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-agia-paraskevi">Αγία Παρασκευή</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc">Άλιμος</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-alimos">Άλιμος</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc">Γέρακας</a>
+                        <a href="gymnastiria.html" class="loc" data-i18n="loc-gerakas">Γέρακας</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Κηφισιά</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-kifissia">Κηφισιά</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Μεταμόρφωση</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-metamorfosi">Μεταμόρφωση</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Γλυφάδα</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-glyfada">Γλυφάδα</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Βριλήσσια – Μελίσσια</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-vrilissia-melissia">Βριλήσσια – Μελίσσια</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Αγία Παρασκευή</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-agia-paraskevi">Αγία Παρασκευή</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Άλιμος</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-alimos">Άλιμος</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
-                        <a href="gymnastiria.html" class="loc" aria-hidden="true">Γέρακας</a>
+                        <a href="gymnastiria.html" class="loc" aria-hidden="true" data-i18n="loc-gerakas">Γέρακας</a>
                         <span class="loc-dot" aria-hidden="true">●</span>
                     </div>
                 </div>
@@ -157,7 +165,14 @@
             <div class="services-grid">
                 <div class="service-card" data-animate="fade-up" data-delay="0">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="6" r="2.5"/>
+                            <path d="M9 21v-3a3 3 0 0 1 3-3 3 3 0 0 1 3 3v3"/>
+                            <circle cx="5" cy="9" r="2"/>
+                            <path d="M2 21v-2.5a2.5 2.5 0 0 1 2.5-2.5"/>
+                            <circle cx="19" cy="9" r="2"/>
+                            <path d="M22 21v-2.5a2.5 2.5 0 0 0-2.5-2.5"/>
+                        </svg>
                     </div>
                     <span class="service-badge" data-i18n="service-free-badge">ΔΩΡΕΑΝ με Συνδρομή</span>
                     <h3 data-i18n="service-group-title">Group Personal Training</h3>
@@ -188,7 +203,14 @@
                 </div>
                 <div class="service-card" data-animate="fade-up" data-delay="200">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="5" r="2"/>
+                            <path d="M12 7v5"/>
+                            <path d="M9 9.5h6"/>
+                            <path d="M12 12 L4 18"/>
+                            <path d="M12 12 L20 18"/>
+                            <path d="M2 20h20"/>
+                        </svg>
                     </div>
                     <h3 data-i18n="service-pilates-title">Pilates Studio</h3>
                     <p data-i18n="service-pilates-desc">Εξειδικευμένο στούντιο Pilates με πλήρη εξοπλισμό. Ατομικά και ομαδικά μαθήματα για κάθε επίπεδο.</p>
@@ -223,7 +245,6 @@
                         <li data-i18n="gymtype-fc-4">Εντυπωσιακοί χώροι</li>
                         <li data-i18n="gymtype-fc-5">Locker rooms & amenities</li>
                     </ul>
-                    <a href="gymnastiria.html" class="btn btn-yellow" data-i18n="gymtype-cta">Δες τα Γυμναστήρια</a>
                 </div>
                 <div class="gym-type-card" data-animate="fade-up" data-delay="100">
                     <div class="gym-type-header">
@@ -236,8 +257,10 @@
                         <li data-i18n="gymtype-ex-4">Μεγαλύτερο PT studio στην Ελλάδα (Κηφισιά)</li>
                         <li data-i18n="gymtype-ex-5">Ανοιχτά 7 ημέρες</li>
                     </ul>
-                    <a href="gymnastiria.html" class="btn btn-outline" data-i18n="gymtype-cta">Δες τα Γυμναστήρια</a>
                 </div>
+            </div>
+            <div class="section-cta" data-animate="fade-up">
+                <a href="gymnastiria.html" class="btn btn-yellow" data-i18n="gymtype-cta">Δες τα Γυμναστήρια</a>
             </div>
         </div>
     </section>
@@ -284,9 +307,9 @@
                         <span class="transform-duration">45 <span data-i18n="transform-days">ημέρες</span></span>
                     </div>
                     <div class="transform-info">
-                        <h4>Ιωάννα</h4>
+                        <h4 data-i18n="transform-ioanna-name">Ιωάννα</h4>
                         <p data-i18n="transform-ioanna">Απώλεια λίπους & τόνωση σε 45 ημέρες με το πρόγραμμα Transformation</p>
-                        <span class="transform-program">Transformation Program</span>
+                        <span class="transform-program" data-i18n="transform-prog-tx">Transformation Program</span>
                     </div>
                 </div>
                 <div class="transform-card" data-animate="fade-up" data-delay="100">
@@ -294,9 +317,9 @@
                         <span class="transform-duration">90 <span data-i18n="transform-days">ημέρες</span></span>
                     </div>
                     <div class="transform-info">
-                        <h4>Γιάννης</h4>
+                        <h4 data-i18n="transform-giannis-name">Γιάννης</h4>
                         <p data-i18n="transform-giannis">Ολική μεταμόρφωση σε 90 ημέρες — μυϊκή ανάπτυξη & απώλεια λίπους</p>
-                        <span class="transform-program">Transformation Program</span>
+                        <span class="transform-program" data-i18n="transform-prog-tx">Transformation Program</span>
                     </div>
                 </div>
                 <div class="transform-card" data-animate="fade-up" data-delay="200">
@@ -306,7 +329,7 @@
                     <div class="transform-info">
                         <h4 data-i18n="transform-member">Μέλος MEGA GYM</h4>
                         <p data-i18n="transform-43kg">Απώλεια 43 κιλών με συνεχή καθοδήγηση και αφοσίωση</p>
-                        <span class="transform-program">Long-term Program</span>
+                        <span class="transform-program" data-i18n="transform-prog-long">Long-term Program</span>
                     </div>
                 </div>
             </div>
@@ -397,7 +420,7 @@
                         <li data-i18n="pricing-feat-gpt">Group Personal Training</li>
                         <li data-i18n="pricing-feat-locker">Locker room & amenities</li>
                     </ul>
-                    <a href="dokimastiki.html" class="btn btn-dark" data-i18n="pricing-cta">Ξεκίνα Τώρα</a>
+                    <a href="dokimastiki.html" class="btn btn-yellow btn-full" data-i18n="pricing-cta">Ξεκίνα Τώρα</a>
                 </div>
                 <div class="pricing-card pricing-card-featured">
                     <div class="pricing-card-badge" data-i18n="pricing-popular">Δημοφιλές</div>
@@ -411,7 +434,7 @@
                         <li data-i18n="pricing-feat-free-gpt">Group PT ΔΩΡΕΑΝ</li>
                         <li data-i18n="pricing-feat-best">Καλύτερη τιμή ανά μήνα</li>
                     </ul>
-                    <a href="dokimastiki.html" class="btn btn-yellow" data-i18n="pricing-cta">Ξεκίνα Τώρα</a>
+                    <a href="dokimastiki.html" class="btn btn-yellow btn-full" data-i18n="pricing-cta">Ξεκίνα Τώρα</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-card-title" data-i18n="pricing-month-title">Μηνιαία</div>
@@ -423,7 +446,7 @@
                         <li data-i18n="pricing-feat-locker">Locker room & amenities</li>
                         <li data-i18n="pricing-feat-flex">Χωρίς δέσμευση</li>
                     </ul>
-                    <a href="dokimastiki.html" class="btn btn-dark" data-i18n="pricing-cta">Ξεκίνα Τώρα</a>
+                    <a href="dokimastiki.html" class="btn btn-yellow btn-full" data-i18n="pricing-cta">Ξεκίνα Τώρα</a>
                 </div>
             </div>
         </div>
@@ -530,148 +553,168 @@
     }
     </script>
 
-    <!-- LOCATIONS PREVIEW -->
-    <section class="locations-preview section" id="locations">
+    <!-- LOCATIONS FINDER — list + linked map -->
+    <section class="section section-dark locations-finder-section" id="locations">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag" data-i18n="locations-tag">Τοποθεσίες</span>
-                <h2 class="section-title" data-i18n="locations-title">Τα Γυμναστήρια Μας</h2>
-                <p class="section-subtitle" data-i18n="locations-subtitle">7 κορυφαίες εγκαταστάσεις σε όλη την Αθήνα</p>
+            <div class="section-header center" data-animate="fade-up">
+                <span class="tag" data-i18n="epi-dir-tag">7 Τοποθεσίες</span>
+                <h2 class="section-title" data-i18n="epi-dir-title">Βρες το MEGA GYM Σου</h2>
             </div>
-            <div class="locations-grid">
-                <div class="location-card location-card-featured" data-animate="fade-up" data-delay="0">
-                    <div class="location-badge" data-i18n="location-hq">Κεντρικό</div>
-                    <h3>Κηφισιά</h3>
-                    <p class="location-address">Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</p>
-                    <div class="location-hours">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span>Δ-Π 06:30-00:00 · Σ 08:00-20:00 · Κ 11:00-17:00</span>
-                    </div>
-                    <a href="tel:+302108073926" class="location-phone">210 807 3926</a>
-                    <div class="location-tags">
-                        <span class="tag tag-fc">Fitness Club</span>
-                        <span class="tag tag-ex">EXCLUSIVE</span>
-                        <span class="tag tag-pl">Pilates Studio</span>
-                    </div>
+            <div class="mg-loc-finder">
+                <div class="mg-loc-list" id="locationsList" role="list"></div>
+                <div class="mg-loc-map">
+                    <div id="megaMap"></div>
                 </div>
-                <div class="location-card" data-animate="fade-up" data-delay="50">
-                    <h3>Μεταμόρφωση</h3>
-                    <p class="location-address">12ο χλμ Εθνικής Οδού Αθηνών-Λαμίας</p>
-                    <a href="tel:+302102801044" class="location-phone">210 280 1044</a>
-                    <div class="location-tags">
-                        <span class="tag tag-fc">Fitness Club</span>
-                        <span class="tag tag-ex">EXCLUSIVE</span>
-                    </div>
-                </div>
-                <div class="location-card" data-animate="fade-up" data-delay="100">
-                    <h3>Γλυφάδα</h3>
-                    <p class="location-address">Λ. Βουλιαγμένης 124</p>
-                    <a href="tel:+302109631243" class="location-phone">210 963 1243</a>
-                    <div class="location-tags">
-                        <span class="tag tag-fc">Fitness Club</span>
-                        <span class="tag tag-ex">EXCLUSIVE</span>
-                    </div>
-                </div>
-                <div class="location-card" data-animate="fade-up" data-delay="150">
-                    <h3>Βριλήσσια-Μελίσσια</h3>
-                    <p class="location-address">Λ. Πεντέλης 23</p>
-                    <a href="tel:+302108048331" class="location-phone">210 804 8331</a>
-                    <div class="location-tags">
-                        <span class="tag tag-ex">EXCLUSIVE</span>
-                    </div>
-                </div>
-                <div class="location-card" data-animate="fade-up" data-delay="200">
-                    <h3>Αγία Παρασκευή</h3>
-                    <p class="location-address">Λ. Μεσογείων 412</p>
-                    <a href="tel:+302106081443" class="location-phone">210 608 1443</a>
-                    <div class="location-tags">
-                        <span class="tag tag-fc">Fitness Club</span>
-                        <span class="tag tag-ex">EXCLUSIVE</span>
-                    </div>
-                </div>
-                <div class="location-card" data-animate="fade-up" data-delay="250">
-                    <h3>Άλιμος</h3>
-                    <p class="location-address">Λ. Αλίμου 89</p>
-                    <a href="tel:+302109934733" class="location-phone">210 993 4733</a>
-                    <div class="location-tags">
-                        <span class="tag tag-fc">Fitness Club</span>
-                    </div>
-                </div>
-                <div class="location-card" data-animate="fade-up" data-delay="300">
-                    <h3>Γέρακας</h3>
-                    <p class="location-address">Λ. Μαραθώνος 135 & Θεσσαλονίκης</p>
-                    <a href="tel:+302106654440" class="location-phone">210 665 4440</a>
-                    <div class="location-tags">
-                        <span class="tag tag-fc">Fitness Club</span>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta" data-animate="fade-up">
-                <a href="gymnastiria.html" class="btn btn-yellow" data-i18n="locations-cta">Δες Όλα τα Γυμναστήρια</a>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT QUICK -->
-    <section class="contact-quick section section-dark" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info" data-animate="fade-up">
-                    <span class="section-tag" data-i18n="contact-tag">Επικοινωνία</span>
-                    <h2 class="section-title" data-i18n="contact-title">Επικοινωνήστε Μαζί Μας</h2>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            <a href="tel:+302108073926">210 807 3926</a>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            <a href="mailto:selficon@gmail.com">selficon@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C518" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Αιολίας 20 & Ιλισίων, Ν. Κηφισιά</span>
-                        </div>
-                    </div>
-                    <div class="contact-social">
-                        <a href="https://www.facebook.com/MEGAGYMFITNESSCLUBS/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/megagym__official" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        <a href="https://www.youtube.com/user/launmaster1/videos" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        </a>
-                        <a href="https://www.tiktok.com/@megagymofficial" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.19 8.19 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.16z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form-wrap" data-animate="fade-left">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="contactName" data-i18n="form-name">Ονοματεπώνυμο</label>
-                            <input type="text" id="contactName" name="name" required placeholder="Το όνομά σας">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactEmail" data-i18n="form-email">Email</label>
-                            <input type="email" id="contactEmail" name="email" required placeholder="email@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactPhone" data-i18n="form-phone">Τηλέφωνο</label>
-                            <input type="tel" id="contactPhone" name="phone" placeholder="69x xxx xxxx">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactMessage" data-i18n="form-message">Μήνυμα</label>
-                            <textarea id="contactMessage" name="message" rows="4" placeholder="Πώς μπορούμε να βοηθήσουμε;"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-yellow btn-full" data-i18n="form-submit">Αποστολή</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var gyms = [
+            { lat: 38.09139940114981, lng: 23.793385122122718, area: { el: 'Κηφισιά', en: 'Kifissia' }, addr: 'Αιολίας 20 & Ιλισίων', tel: '210 807 3926', tags: 'Fitness Club · EXCLUSIVE · Pilates', hq: true },
+            { lat: 38.0703228912949, lng: 23.76470836661594, area: { el: 'Μεταμόρφωση', en: 'Metamorfosi' }, addr: '12ο χλμ Εθνικής Οδού', tel: '210 280 1044', tags: 'Fitness Club · EXCLUSIVE' },
+            { lat: 37.86437548588831, lng: 23.761235400000004, area: { el: 'Γλυφάδα', en: 'Glyfada' }, addr: 'Λ. Βουλιαγμένης 124', tel: '210 963 1243', tags: 'Fitness Club · EXCLUSIVE' },
+            { lat: 38.05011304544085, lng: 23.837842165034154, area: { el: 'Βριλήσσια-Μελίσσια', en: 'Vrilissia-Melissia' }, addr: 'Λ. Πεντέλης 23', tel: '210 804 8331', tags: 'EXCLUSIVE' },
+            { lat: 38.01631061538768, lng: 23.820676027150405, area: { el: 'Αγία Παρασκευή', en: 'Agia Paraskevi' }, addr: 'Λ. Μεσογείων 412', tel: '210 608 1443', tags: 'Fitness Club · EXCLUSIVE' },
+            { lat: 37.908337602073786, lng: 23.735741022425792, area: { el: 'Άλιμος', en: 'Alimos' }, addr: 'Λ. Αλίμου 89', tel: '210 993 4733', tags: 'Fitness Club' },
+            { lat: 38.01144178066723, lng: 23.858098207736965, area: { el: 'Γέρακας', en: 'Gerakas' }, addr: 'Λ. Μαραθώνος 135', tel: '210 665 4440', tags: 'Fitness Club' }
+        ];
+
+        function getLang() {
+            return localStorage.getItem('megagym-lang') || document.documentElement.lang || 'el';
+        }
+        function gymName(g, lang) { return 'MEGA GYM ' + g.area[lang]; }
+        function dirsLabel(lang) { return lang === 'en' ? '→ Get Directions' : '→ Οδηγίες'; }
+
+        function buildPopupHTML(g, lang) {
+            var hqBadge = g.hq ? '<span style="background:#F5C518;color:#0a0a0a;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle;">HQ</span>' : '';
+            var dirsHref = 'https://www.google.com/maps/search/?api=1&query=' + g.lat + ',' + g.lng;
+            return '<div style="font-family:Inter,sans-serif;min-width:200px;line-height:1.5;">' +
+                '<strong style="font-size:14px;">' + gymName(g, lang) + '</strong>' + hqBadge +
+                '<div style="color:#666;font-size:12px;margin-top:4px;">' + g.addr + '</div>' +
+                '<a href="tel:+30' + g.tel.replace(/ /g, '') + '" style="color:#F5C518;font-weight:600;font-size:13px;display:block;margin-top:4px;">' + g.tel + '</a>' +
+                '<div style="font-size:11px;color:#888;margin-top:4px;">' + g.tags + '</div>' +
+                '<a href="' + dirsHref + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;padding:6px 12px;background:#F5C518;color:#0a0a0a;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:.04em;">' + dirsLabel(lang) + '</a>' +
+                '</div>';
+        }
+
+        var listEl = document.getElementById('locationsList');
+        function renderCards() {
+            var lang = getLang();
+            listEl.innerHTML = '';
+            gyms.forEach(function(g, i) {
+                var card = document.createElement('article');
+                card.className = 'mg-loc-card';
+                card.dataset.gymId = i;
+                card.setAttribute('role', 'listitem');
+                card.setAttribute('tabindex', '0');
+                var num = String(i + 1).padStart(2, '0');
+                card.innerHTML =
+                    '<span class="mg-loc-card__num" aria-hidden="true">' + num + '</span>' +
+                    '<h3 class="mg-loc-card__name">' + gymName(g, lang) + '</h3>' +
+                    (g.hq ? '<span class="mg-loc-card__hq" title="Headquarters">HQ</span>' : '<span></span>') +
+                    '<span class="mg-loc-card__chevron" aria-hidden="true">→</span>';
+                listEl.appendChild(card);
+            });
+            wireCardEvents();
+        }
+
+        var map = L.map('megaMap', { scrollWheelZoom: false }).setView([37.98, 23.82], 11);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap &copy; CARTO',
+            maxZoom: 19
+        }).addTo(map);
+
+        var pinLogoSrc = 'assets/MegaGymPhotos/mega-gym-m-cursor.png';
+        var pinShapeSvg = '<svg class="mg-pin__shape" viewBox="0 0 32 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+            '<path d="M16 1 C 7.7 1, 1 7.7, 1 16 C 1 24, 8 33, 16 43 C 24 33, 31 24, 31 16 C 31 7.7, 24.3 1, 16 1 Z" fill="#0a0a0a" stroke="#F5C518" stroke-width="2" stroke-linejoin="round"/>' +
+            '</svg>';
+
+        function buildPinHtml(g, i) {
+            var classes = 'mg-pin' + (g.hq ? ' is-hq' : '');
+            return '<div class="' + classes + '" data-gym-id="' + i + '">' +
+                       '<span class="mg-pin__halo" aria-hidden="true"></span>' +
+                       pinShapeSvg +
+                       '<img class="mg-pin__logo" src="' + pinLogoSrc + '" alt="" />' +
+                   '</div>';
+        }
+
+        var markers = gyms.map(function(g, i) {
+            var w = g.hq ? 50 : 36;
+            var h = g.hq ? 66 : 48;
+            var icon = L.divIcon({
+                html: buildPinHtml(g, i),
+                className: 'mg-pin-wrap',
+                iconSize: [w, h],
+                iconAnchor: [w / 2, h],
+                popupAnchor: [0, -h + 8]
+            });
+            var marker = L.marker([g.lat, g.lng], { icon: icon }).addTo(map);
+            marker.bindPopup(buildPopupHTML(g, getLang()));
+            return marker;
+        });
+
+        function refreshPopups() {
+            var lang = getLang();
+            markers.forEach(function(m, i) { m.setPopupContent(buildPopupHTML(gyms[i], lang)); });
+        }
+
+        function setPinActive(i, on) {
+            var el = markers[i].getElement();
+            if (!el) return;
+            el.classList.toggle('is-active', !!on);
+        }
+        function setCardActive(i, on, scrollIntoView) {
+            var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
+            if (!card) return;
+            card.classList.toggle('is-active', !!on);
+            if (on && scrollIntoView) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+        function clearAllActive() {
+            listEl.querySelectorAll('.mg-loc-card.is-active').forEach(function(c) { c.classList.remove('is-active'); });
+            markers.forEach(function(m) { var el = m.getElement(); if (el) el.classList.remove('is-active'); });
+        }
+
+        function wireCardEvents() {
+            listEl.querySelectorAll('.mg-loc-card').forEach(function(card) {
+                var i = parseInt(card.dataset.gymId, 10);
+                card.addEventListener('mouseenter', function() { setPinActive(i, true); });
+                card.addEventListener('mouseleave', function() { setPinActive(i, false); });
+                card.addEventListener('focus', function() { setPinActive(i, true); });
+                card.addEventListener('blur', function() { setPinActive(i, false); });
+                card.addEventListener('click', function(ev) {
+                    if (ev.target.closest('a')) return;
+                    clearAllActive();
+                    setCardActive(i, true, false);
+                    setPinActive(i, true);
+                    map.flyTo([gyms[i].lat, gyms[i].lng], 14, { duration: 0.6 });
+                    markers[i].openPopup();
+                });
+            });
+        }
+
+        renderCards();
+        document.addEventListener('mg:langchange', function() {
+            renderCards();
+            refreshPopups();
+        });
+
+        markers.forEach(function(marker, i) {
+            marker.on('mouseover', function() { setCardActive(i, true, false); });
+            marker.on('mouseout', function() { setCardActive(i, false, false); });
+            marker.on('click', function() {
+                clearAllActive();
+                setCardActive(i, true, true);
+                setPinActive(i, true);
+            });
+        });
+    });
+    </script>
 
     <!-- FOOTER -->
     <footer class="footer">

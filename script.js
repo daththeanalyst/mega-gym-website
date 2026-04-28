@@ -37,6 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-locations-label': '7 Γυμναστήρια Σε Όλη Την Αθήνα',
             'scroll-down': 'Κάντε scroll',
 
+            // --- LOCATION AREA NAMES (used across pages) ---
+            'loc-kifissia': 'Κηφισιά',
+            'loc-metamorfosi': 'Μεταμόρφωση',
+            'loc-glyfada': 'Γλυφάδα',
+            'loc-vrilissia-melissia': 'Βριλήσσια-Μελίσσια',
+            'loc-agia-paraskevi': 'Αγία Παρασκευή',
+            'loc-alimos': 'Άλιμος',
+            'loc-gerakas': 'Γέρακας',
+
             // --- INDEX: ABOUT ---
             'about-tag': 'Ποιοι Είμαστε',
             'about-title': 'Τα Καλύτερα Ελληνικά Γυμναστήρια',
@@ -85,11 +94,77 @@ document.addEventListener('DOMContentLoaded', () => {
             'transform-title': 'Πραγματικές Μεταμορφώσεις',
             'transform-subtitle': 'Φέτος κάψαμε <strong class="emph">5 τόνους</strong> λίπος και προσθέσαμε <strong class="emph">2 τόνους</strong> μυών',
             'transform-days': 'ημέρες',
+            'transform-ioanna-name': 'Ιωάννα',
+            'transform-giannis-name': 'Γιάννης',
             'transform-ioanna': 'Απώλεια λίπους & τόνωση σε 45 ημέρες με το πρόγραμμα Transformation',
             'transform-giannis': 'Ολική μεταμόρφωση σε 90 ημέρες — μυϊκή ανάπτυξη & απώλεια λίπους',
             'transform-43kg': 'Απώλεια 43 κιλών με συνεχή καθοδήγηση και αφοσίωση',
             'transform-member': 'Μέλος MEGA GYM',
+            'transform-prog-tx': 'Transformation Program',
+            'transform-prog-long': 'Long-term Program',
             'transform-tv-label': 'Όπως είδατε στα:',
+
+            // --- INDEX: VIDEO ---
+            'video-tag': 'Εικονική Περιήγηση',
+            'video-title': 'Δες Τον Χώρο Μας',
+
+            // --- INDEX: PRICING ---
+            'pricing-tag': 'Συνδρομές',
+            'pricing-title': 'Επέλεξε Το Πλάνο Σου',
+            'pricing-sub': 'Ξεκίνα σήμερα — χωρίς δεσμεύσεις',
+            'pricing-day-title': 'Day Pass',
+            'pricing-day-period': 'ανά επίσκεψη',
+            'pricing-feat-access': 'Πλήρης πρόσβαση στον εξοπλισμό',
+            'pricing-feat-gpt': 'Group Personal Training',
+            'pricing-feat-locker': 'Locker room & amenities',
+            'pricing-cta': 'Ξεκίνα Τώρα',
+            'pricing-popular': 'Δημοφιλές',
+            'pricing-annual-title': 'Ετήσια',
+            'pricing-annual-period': 'ανά μήνα (€229/έτος)',
+            'pricing-feat-free-gpt': 'Group PT ΔΩΡΕΑΝ',
+            'pricing-feat-best': 'Καλύτερη τιμή ανά μήνα',
+            'pricing-month-title': 'Μηνιαία',
+            'pricing-month-period': 'ανά μήνα',
+            'pricing-feat-flex': 'Χωρίς δέσμευση',
+
+            // --- INDEX: TRAINERS ---
+            'trainers-tag': 'Η Ομάδα Μας',
+            'trainers-title': 'Έμπειροι Επαγγελματίες',
+            'trainers-sub': 'Πιστοποιημένοι γυμναστές με χρόνια εξειδίκευσης',
+            'trainer-role-pt': 'Personal Trainers',
+            'trainer-pt-desc': 'Εξειδικευμένοι σε Transformation',
+            'trainer-role-gp': 'Group Personal',
+            'trainer-gp-desc': 'TRX, MEGA ZONE, CAGE & more',
+            'trainer-role-pil': 'Pilates Instructors',
+            'trainer-pil-desc': 'Πιστοποιημένοι εκπαιδευτές Pilates',
+            'trainer-role-nut': 'Nutrition Coaches',
+            'trainer-nut-desc': 'Διατροφική καθοδήγηση & πλάνα',
+
+            // --- INDEX: FAQ ---
+            'faq-tag': 'Συχνές Ερωτήσεις',
+            'faq-title': 'Έχεις Απορίες;',
+            'faq-q1': 'Πόσο κοστίζει η συνδρομή;',
+            'faq-a1': 'Η ετήσια συνδρομή κοστίζει €229 (€19/μήνα), η μηνιαία €50 και το day pass €10. Όλα τα πλάνα περιλαμβάνουν Group Personal Training δωρεάν.',
+            'faq-q2': 'Μπορώ να δοκιμάσω δωρεάν;',
+            'faq-a2': 'Ναι! Προσφέρουμε δωρεάν δοκιμαστική προπόνηση σε οποιοδήποτε MEGA GYM. Κλείστε ραντεβού online ή καλέστε στο 210 807 3926.',
+            'faq-q3': 'Ποιες είναι οι ώρες λειτουργίας;',
+            'faq-a3': 'Δευτέρα - Παρασκευή 06:30 - 00:00, Σάββατο 08:00 - 20:00, Κυριακή 11:00 - 17:00. Τα ωράρια μπορεί να διαφέρουν ανά τοποθεσία.',
+            'faq-q4': 'Τι είναι το Group Personal Training;',
+            'faq-a4': 'Ομαδική προπόνηση με προσωπική καθοδήγηση. Περιλαμβάνει TRX, MEGA ZONE, MEGA CAGE, SKILLMILL, Circuit Cross Training και MEGA SLED. Προσφέρεται ΔΩΡΕΑΝ με τη συνδρομή σας.',
+            'faq-q5': 'Τι χρειάζομαι για να ξεκινήσω;',
+            'faq-a5': 'Μόνο αθλητικά ρούχα και παπούτσια! Πετσέτες και ντουλάπια παρέχονται. Ελάτε 15 λεπτά νωρίτερα την πρώτη φορά για μια σύντομη ξενάγηση.',
+            'faq-q6': 'Υπάρχει πάρκινγκ;',
+            'faq-a6': 'Ναι, τα περισσότερα MEGA GYM διαθέτουν δωρεάν parking ή εύκολη πρόσβαση σε κοντινό χώρο στάθμευσης.',
+
+            // --- INDEX: ADDRESSES + LOCATION HOURS ---
+            'loc-hours': 'Δ-Π 06:30-00:00 · Σ 08:00-20:00 · Κ 11:00-17:00',
+            'addr-kifissia': 'Αιολίας 20 & Ιλισίων, Ν. Κηφισιά',
+            'addr-metamorfosi': '12ο χλμ Εθνικής Οδού Αθηνών-Λαμίας',
+            'addr-glyfada': 'Λ. Βουλιαγμένης 124',
+            'addr-vrilissia': 'Λ. Πεντέλης 23',
+            'addr-agia-paraskevi': 'Λ. Μεσογείων 412',
+            'addr-alimos': 'Λ. Αλίμου 89',
+            'addr-gerakas': 'Λ. Μαραθώνος 135 & Θεσσαλονίκης',
 
             // --- INDEX: TRIAL CTA ---
             'trial-cta-title': 'Δοκιμαστική Προπόνηση',
@@ -303,6 +378,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'dok-form-interest': 'Ενδιαφέρον',
             'dok-form-interest-placeholder': 'Επιλέξτε υπηρεσία',
             'dok-form-interest-general': 'Γενική Γυμναστική',
+            'trial-form-location-default': 'Επιλέξτε τοποθεσία',
+            'trial-form-interest-default': 'Επιλέξτε υπηρεσία',
+            'trial-form-interest-gp': 'Group Personal',
+            'trial-form-interest-pt': 'Personal Training',
+            'trial-form-interest-pilates': 'Pilates',
+            'trial-form-interest-trans': 'Transformation',
             'dok-form-datetime': 'Προτιμώμενη Ημέρα / Ώρα',
             'dok-form-message': 'Μήνυμα',
             'dok-form-submit': 'ΚΛΕΙΣΕ ΤΗ ΔΟΚΙΜΑΣΤΙΚΗ ΣΟΥ',
@@ -328,7 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'epi-form-name': 'Ονοματεπώνυμο',
             'epi-form-email': 'Email',
             'epi-form-phone': 'Τηλέφωνο',
-            'epi-form-location': 'Επιλέξτε Τοποθεσία',
+            'epi-form-location': 'Τοποθεσία',
+            'epi-form-location-default': 'Επιλέξτε Τοποθεσία',
             'epi-form-message': 'Μήνυμα',
             'epi-form-submit': 'Αποστολή Μηνύματος',
             'epi-dir-tag': '7 Τοποθεσίες',
@@ -369,6 +451,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-stat-fat': 'Tons of Fat Burned',
             'hero-locations-label': '7 Premium Gyms Across Athens',
             'scroll-down': 'Scroll down',
+
+            // --- LOCATION AREA NAMES (used across pages) ---
+            'loc-kifissia': 'Kifissia',
+            'loc-metamorfosi': 'Metamorfosi',
+            'loc-glyfada': 'Glyfada',
+            'loc-vrilissia-melissia': 'Vrilissia-Melissia',
+            'loc-agia-paraskevi': 'Agia Paraskevi',
+            'loc-alimos': 'Alimos',
+            'loc-gerakas': 'Gerakas',
 
             // --- INDEX: ABOUT ---
             'about-tag': 'Who We Are',
@@ -418,11 +509,77 @@ document.addEventListener('DOMContentLoaded', () => {
             'transform-title': 'Real Transformations',
             'transform-subtitle': 'This year we burned <strong class="emph">5 tons</strong> of fat and added <strong class="emph">2 tons</strong> of muscle',
             'transform-days': 'days',
+            'transform-ioanna-name': 'Ioanna',
+            'transform-giannis-name': 'Giannis',
             'transform-ioanna': 'Fat loss & toning in 45 days with the Transformation program',
             'transform-giannis': 'Total transformation in 90 days — muscle growth & fat loss',
             'transform-43kg': 'Lost 43kg with continuous guidance and dedication',
             'transform-member': 'MEGA GYM Member',
+            'transform-prog-tx': 'Transformation Program',
+            'transform-prog-long': 'Long-term Program',
             'transform-tv-label': 'As seen on:',
+
+            // --- INDEX: VIDEO ---
+            'video-tag': 'Virtual Tour',
+            'video-title': 'See Our Space',
+
+            // --- INDEX: PRICING ---
+            'pricing-tag': 'Memberships',
+            'pricing-title': 'Choose Your Plan',
+            'pricing-sub': 'Start today — no commitments',
+            'pricing-day-title': 'Day Pass',
+            'pricing-day-period': 'per visit',
+            'pricing-feat-access': 'Full equipment access',
+            'pricing-feat-gpt': 'Group Personal Training',
+            'pricing-feat-locker': 'Locker room & amenities',
+            'pricing-cta': 'Get Started',
+            'pricing-popular': 'Most Popular',
+            'pricing-annual-title': 'Annual',
+            'pricing-annual-period': 'per month (€229/year)',
+            'pricing-feat-free-gpt': 'Group PT FREE',
+            'pricing-feat-best': 'Best price per month',
+            'pricing-month-title': 'Monthly',
+            'pricing-month-period': 'per month',
+            'pricing-feat-flex': 'No commitment',
+
+            // --- INDEX: TRAINERS ---
+            'trainers-tag': 'Our Team',
+            'trainers-title': 'Experienced Professionals',
+            'trainers-sub': 'Certified trainers with years of expertise',
+            'trainer-role-pt': 'Personal Trainers',
+            'trainer-pt-desc': 'Specialized in Transformation',
+            'trainer-role-gp': 'Group Personal',
+            'trainer-gp-desc': 'TRX, MEGA ZONE, CAGE & more',
+            'trainer-role-pil': 'Pilates Instructors',
+            'trainer-pil-desc': 'Certified Pilates instructors',
+            'trainer-role-nut': 'Nutrition Coaches',
+            'trainer-nut-desc': 'Nutritional guidance & meal plans',
+
+            // --- INDEX: FAQ ---
+            'faq-tag': 'FAQ',
+            'faq-title': 'Got Questions?',
+            'faq-q1': 'How much does a membership cost?',
+            'faq-a1': 'Annual membership is €229 (€19/month), monthly is €50, and a day pass is €10. All plans include free Group Personal Training.',
+            'faq-q2': 'Can I try for free?',
+            'faq-a2': 'Yes! We offer free trial sessions at any MEGA GYM location. Book online or call 210 807 3926.',
+            'faq-q3': 'What are the opening hours?',
+            'faq-a3': 'Monday-Friday 06:30-00:00, Saturday 08:00-20:00, Sunday 11:00-17:00. Hours may vary by location.',
+            'faq-q4': 'What is Group Personal Training?',
+            'faq-a4': 'Group training with personal guidance — including TRX, MEGA ZONE, MEGA CAGE, SKILLMILL, Circuit Cross Training and MEGA SLED. Offered FREE with your membership.',
+            'faq-q5': 'What do I need to get started?',
+            'faq-a5': 'Just athletic clothes and shoes! Towels and lockers are provided. Arrive 15 minutes early on your first visit for a brief tour.',
+            'faq-q6': 'Is there parking?',
+            'faq-a6': 'Yes, most MEGA GYM locations offer free parking or easy access to nearby parking areas.',
+
+            // --- INDEX: ADDRESSES + LOCATION HOURS ---
+            'loc-hours': 'Mon-Fri 06:30-00:00 · Sat 08:00-20:00 · Sun 11:00-17:00',
+            'addr-kifissia': '20 Aiolias & Ilision, N. Kifissia',
+            'addr-metamorfosi': '12th km Athens-Lamia National Rd',
+            'addr-glyfada': '124 Vouliagmenis Ave',
+            'addr-vrilissia': '23 Pentelis Ave',
+            'addr-agia-paraskevi': '412 Mesogeion Ave',
+            'addr-alimos': '89 Alimou Ave',
+            'addr-gerakas': '135 Marathonos Ave & Thessalonikis',
 
             // --- INDEX: TRIAL CTA ---
             'trial-cta-title': 'Free Trial Session',
@@ -636,6 +793,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'dok-form-interest': 'Interest',
             'dok-form-interest-placeholder': 'Select service',
             'dok-form-interest-general': 'General Fitness',
+            'trial-form-location-default': 'Select location',
+            'trial-form-interest-default': 'Select service',
+            'trial-form-interest-gp': 'Group Personal',
+            'trial-form-interest-pt': 'Personal Training',
+            'trial-form-interest-pilates': 'Pilates',
+            'trial-form-interest-trans': 'Transformation',
             'dok-form-datetime': 'Preferred Day / Time',
             'dok-form-message': 'Message',
             'dok-form-submit': 'BOOK YOUR FREE TRIAL',
@@ -661,7 +824,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'epi-form-name': 'Full Name',
             'epi-form-email': 'Email',
             'epi-form-phone': 'Phone',
-            'epi-form-location': 'Select Location',
+            'epi-form-location': 'Location',
+            'epi-form-location-default': 'Select Location',
             'epi-form-message': 'Message',
             'epi-form-submit': 'Send Message',
             'epi-dir-tag': '7 Locations',
@@ -679,6 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const placeholderTranslations = {
         el: {
             'form-name': 'Το όνομά σας',
+            'form-email': 'email@example.com',
             'form-phone': '69x xxx xxxx',
             'form-message': 'Πώς μπορούμε να βοηθήσουμε;',
             'form-location': 'Επιλέξτε Τοποθεσία',
@@ -688,9 +853,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'dok-form-interest': 'Επιλέξτε υπηρεσία',
             'dok-form-datetime': 'π.χ. Δευτέρα 18:00',
             'dok-form-message': 'Πείτε μας τους στόχους σας...',
+            'epi-form-name': 'Ονοματεπώνυμο',
+            'epi-form-email': 'email@example.com',
+            'epi-form-phone': '69x xxx xxxx',
+            'epi-form-location': 'Επιλέξτε Τοποθεσία',
+            'epi-form-message': 'Γράψτε το μήνυμά σας...',
         },
         en: {
             'form-name': 'Your name',
+            'form-email': 'email@example.com',
             'form-phone': 'Phone number',
             'form-message': 'How can we help?',
             'form-location': 'Select Location',
@@ -700,6 +871,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'dok-form-interest': 'Select service',
             'dok-form-datetime': 'e.g. Monday 18:00',
             'dok-form-message': 'Tell us your goals...',
+            'epi-form-name': 'Your full name',
+            'epi-form-email': 'email@example.com',
+            'epi-form-phone': 'Phone number',
+            'epi-form-location': 'Select Location',
+            'epi-form-message': 'Type your message...',
         }
     };
 
@@ -718,7 +894,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionStorage.setItem('megagym-loaded', '1');
             setTimeout(() => {
                 preloader.classList.add('hidden');
-            }, 2000);
+            }, 1900);
         }
     }
 
@@ -1002,6 +1178,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update html lang attribute
         document.documentElement.lang = lang;
         currentLang = lang;
+
+        // Notify JS-rendered content (e.g. epikoinonia map cards/popups)
+        // so they can re-render with the new language.
+        document.dispatchEvent(new CustomEvent('mg:langchange', { detail: { lang: lang } }));
     }
 
     // Load saved language from localStorage

@@ -495,35 +495,55 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     pointer-events: none;
 }
 
-.preloader-inner { text-align: center; }
-
-.preloader-logo-img {
-    height: 60px;
-    width: auto;
-    margin-bottom: 28px;
-    object-fit: contain;
-}
-
-.preloader-bar {
-    width: 220px;
-    height: 3px;
-    background: var(--gray-200);
-    border-radius: 4px;
-    overflow: hidden;
+/* Track — the logo travels left→right and pulls the yellow fill behind it */
+.preloader-track {
+    position: relative;
+    width: 280px;
+    height: 48px;
     margin: 0 auto;
+}
+.preloader-track::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: var(--gray-200);
+    border-radius: 2px;
+    transform: translateY(-50%);
 }
 
 .preloader-fill {
-    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 2px;
     width: 0;
     background: var(--yellow);
-    border-radius: 4px;
-    animation: preloaderFill 1.8s ease-in-out forwards;
+    border-radius: 2px;
+    transform: translateY(-50%);
+    animation: preloaderFill 1.8s cubic-bezier(.45, 0, .25, 1) forwards;
+}
+
+.preloader-logo-img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    transform: translateY(-50%);
+    animation: preloaderLogoTravel 1.8s cubic-bezier(.45, 0, .25, 1) forwards;
 }
 
 @keyframes preloaderFill {
     0%   { width: 0; }
-    100% { width: 100%; }
+    100% { width: calc(100% - 44px); }
+}
+@keyframes preloaderLogoTravel {
+    0%   { left: 0; }
+    100% { left: calc(100% - 44px); }
 }
 
 
@@ -596,7 +616,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     position: relative;
 }
 .nav-dropdown-toggle {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     cursor: pointer;
@@ -1677,7 +1697,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .contact-row span { font-size: .95rem; }
 .contact-row a:hover { color: var(--yellow) !important; }
 
-.social-row { display: flex; gap: 12px; }
+.social-row { display: flex; gap: 12px; margin-top: 24px; }
 
 .social-btn {
     width: 46px;
@@ -2116,6 +2136,9 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .section--dark  { background: var(--black); color: var(--white); }
 .section--gray  { background: var(--gray-100); color: var(--black); }
 .section--yellow { background: var(--yellow); color: var(--black); }
+/* Phone CTA on dokimastiki — tighter vertical padding than the default 100px */
+.phone-cta-section.section { padding: 56px 0; }
+.phone-cta-section .cta-container { padding: 0; }
 
 /* --- Button Variants (BEM aliases) --- */
 .btn-yellow {
@@ -3079,13 +3102,15 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     background: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius);
-    padding: 40px 32px;
+    padding: 36px 28px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     transition: transform var(--transition), box-shadow var(--transition);
     min-width: 0;
+    position: relative;
+    overflow: hidden;
 }
 .service-card:hover {
     transform: translateY(-6px);
@@ -3096,20 +3121,33 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     box-shadow: 0 0 0 1px var(--yellow);
 }
 .service-icon {
-    margin-bottom: 20px;
-}
-.service-badge {
-    display: inline-block;
-    font-size: .7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    color: var(--white);
-    background: #22c55e;
-    padding: 4px 12px;
-    border-radius: var(--radius-pill);
     margin-bottom: 12px;
-    width: fit-content;
+}
+/* Badge — top-right corner ribbon, out of normal flow so it doesn't
+   shift any of the card content. Brand yellow on black for premium feel. */
+.service-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--black);
+    background: var(--yellow);
+    padding: 5px 11px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 2px 10px rgba(245, 197, 24, .35);
+    z-index: 1;
+}
+.service-badge::before {
+    content: '✓';
+    font-size: .7rem;
+    font-weight: 900;
+    line-height: 1;
 }
 .service-card h3 {
     font-family: var(--font-display);
@@ -3118,12 +3156,17 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     font-weight: 600;
     letter-spacing: .04em;
     margin-bottom: 12px;
+    min-height: 2.4em;       /* reserve 2 lines so 1- and 2-line titles align */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .service-card p {
     font-size: .9rem;
     color: var(--gray-500);
     line-height: 1.7;
     margin-bottom: 16px;
+    min-height: 4.5em;       /* reserve ~3 lines so descriptions align */
 }
 .service-programs {
     display: flex;
@@ -3132,6 +3175,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     margin-bottom: 24px;
     justify-content: center;
 }
+/* Push the "Learn More" button to the bottom so it aligns across all 3 cards */
+.service-card > .btn { margin-top: auto; }
 .service-programs li {
     font-size: .75rem;
     font-weight: 600;
@@ -3159,7 +3204,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     margin-bottom: 20px;
 }
 .gym-type-features {
-    margin-bottom: 28px;
+    margin-bottom: 0;
 }
 .gym-type-features li {
     font-size: .9rem;
@@ -3309,6 +3354,10 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 /* Locations preview */
+/* Yellow accent line marks the section break from FAQ above */
+.locations-preview {
+    border-top: 4px solid var(--yellow);
+}
 .locations-preview .locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -3330,6 +3379,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     border-color: var(--yellow);
     box-shadow: 0 0 0 1px var(--yellow);
 }
+/* Make room for the absolute-positioned "Κεντρικό" badge so it never overlaps the title */
+.location-card-featured > h3 { padding-right: 90px; }
 .location-badge {
     position: absolute;
     top: 16px;
@@ -4693,30 +4744,33 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: var(--gray-100);
+    background: var(--black);
     margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     font-size: 1.8rem;
     color: var(--yellow);
     border: 3px solid var(--yellow);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
 }
 .trainer-name {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 1.1rem;
     letter-spacing: .04em;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    color: var(--black);
 }
 .trainer-role {
-    font-size: .82rem;
-    color: var(--gray-500);
-    margin-bottom: 8px;
+    font-size: .85rem;
+    color: var(--gray-700);
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 .trainer-specialty {
     font-size: .75rem;
@@ -5012,6 +5066,225 @@ body.dark-mode::-webkit-scrollbar-thumb:hover { background: #555; }
 
 /* Dark mode: text selection */
 body.dark-mode ::selection { background: rgba(245, 197, 24, .3); color: #fff; }
+
+/* ===================================================================
+   LOCATIONS FINDER (epikoinonia.html) — list ↔ map linked
+   Namespaced under .mg-loc-* so it doesn't collide with the home page's
+   existing .location-card cards.
+   =================================================================== */
+.mg-loc-finder {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 28px;
+    margin-top: 40px;
+    align-items: start;
+}
+.mg-loc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 600px;            /* match map height */
+}
+.mg-loc-list .mg-loc-card {
+    flex: 1 1 0;              /* equal share — 7 cards fill 600px */
+    min-height: 0;
+}
+
+.mg-loc-map {
+    position: sticky;
+    top: 110px;
+    height: 600px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .4);
+}
+#megaMap { width: 100%; height: 100%; background: #0a0a0a; }
+
+.mg-loc-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--radius);
+    padding: 16px 22px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color .3s ease, background .3s ease, padding-left .3s ease, transform .3s ease;
+}
+.mg-loc-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--yellow);
+    transform: translateX(-100%);
+    transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+}
+.mg-loc-card:hover::before,
+.mg-loc-card.is-active::before {
+    transform: translateX(0);
+}
+.mg-loc-card:hover,
+.mg-loc-card.is-active,
+.mg-loc-card:focus-visible {
+    border-color: rgba(245, 197, 24, .35);
+    background: rgba(245, 197, 24, .06);
+    padding-left: 28px;
+    outline: none;
+}
+.mg-loc-card.is-active {
+    box-shadow: 0 8px 28px rgba(245, 197, 24, .18);
+}
+.mg-loc-card__num {
+    font-family: var(--font-display);
+    font-size: .92rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .3);
+    letter-spacing: .04em;
+    transition: color .3s ease;
+    min-width: 22px;
+}
+.mg-loc-card:hover .mg-loc-card__num,
+.mg-loc-card.is-active .mg-loc-card__num,
+.mg-loc-card:focus-visible .mg-loc-card__num {
+    color: var(--yellow);
+}
+.mg-loc-card__name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    line-height: 1.25;
+    margin: 0;
+}
+.mg-loc-card__hq {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    font-size: .58rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.mg-loc-card__chevron {
+    color: rgba(255, 255, 255, .25);
+    font-size: 1.05rem;
+    line-height: 1;
+    transition: color .3s ease, transform .3s ease;
+}
+.mg-loc-card:hover .mg-loc-card__chevron,
+.mg-loc-card.is-active .mg-loc-card__chevron,
+.mg-loc-card:focus-visible .mg-loc-card__chevron {
+    color: var(--yellow);
+    transform: translateX(4px);
+}
+
+/* Map pin — classic teardrop shape: black body, yellow border, yellow M logo */
+.mg-pin-wrap { background: transparent !important; border: none !important; }
+.mg-pin {
+    position: relative;
+    width: 36px;
+    height: 48px;
+    transition: transform .25s ease, filter .25s ease;
+    transform-origin: 50% 100%;  /* anchor at the point */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .45));
+}
+.mg-pin__shape {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+.mg-pin__logo {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(calc(-50% - 1px));  /* very slight visual centering */
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.mg-pin__halo {
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--yellow);
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* HQ pin — bigger + permanent yellow glow (no pulse) */
+.mg-pin.is-hq {
+    width: 50px;
+    height: 66px;
+    filter:
+        drop-shadow(0 0 8px rgba(245, 197, 24, .4))
+        drop-shadow(0 0 18px rgba(245, 197, 24, .2))
+        drop-shadow(0 4px 10px rgba(0, 0, 0, .5));
+}
+.mg-pin.is-hq .mg-pin__logo {
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    transform: translateX(calc(-50% - 2px));
+}
+/* Hide the halo since we're not pulsing anymore */
+.mg-pin.is-hq .mg-pin__halo { display: none; }
+
+/* Hover / active state */
+.leaflet-marker-icon.is-active .mg-pin,
+.leaflet-marker-icon:hover .mg-pin {
+    transform: scale(1.15);
+    filter: drop-shadow(0 6px 14px rgba(245, 197, 24, .8));
+    z-index: 1000;
+}
+
+/* Leaflet popup theming (dark) */
+.leaflet-popup-content-wrapper {
+    background: #fff;
+    border-radius: 8px;
+}
+.leaflet-popup-tip { background: #fff; }
+
+/* Mobile: stack list above map */
+@media (max-width: 900px) {
+    .mg-loc-finder {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .mg-loc-list {
+        height: auto;       /* let cards size naturally on mobile */
+    }
+    .mg-loc-list .mg-loc-card {
+        flex: 0 0 auto;
+    }
+    .mg-loc-map {
+        position: relative;
+        top: auto;
+        height: 380px;
+    }
+}
+@media (max-width: 600px) {
+    .mg-loc-map { height: 320px; }
+    .mg-loc-card { padding: 12px 16px; }
+    .mg-loc-card__name { font-size: .92rem; }
+}
 
 /* ===================================================================
    HERO LOCATIONS MARQUEE — replaces the old 3-stat block
