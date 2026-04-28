@@ -1,4 +1,4 @@
-/* ===================================================================
+﻿/* ===================================================================
    MEGA GYM - Website Interactions & i18n
    =================================================================== */
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // --- INDEX: HERO ---
             'hero-badge': '33 Χρόνια Πολύτιμη Εμπειρία',
-            'hero-title-1': 'ΓΙΑΤΙ Η ΠΟΙΟΤΗΤΑ ΣΤΗ ΖΩΗ ΜΟΥ',
+            'hero-title-1': 'ΓΙΑΤΙ Η ΠΟΙΟΤΗΤΑ ΣΤΗ ΖΩΗ&nbsp;ΜΟΥ',
             'hero-title-2': 'ΜΕΤΡΑΕΙ ΠΑΝΩ ΑΠΟ ΟΛΑ!',
             'hero-cta-trial': 'Δοκιμαστική Προπόνηση',
             'hero-cta-gyms': 'Τα Γυμναστήρια Μας',
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'pro-bc': 'Προπόνηση',
             'pro-intro-tag': 'Group Personal Training',
             'pro-intro-title': 'Δωρεάν Σε Όλα Τα MEGA GYM Fitness Clubs',
-            'pro-intro-p1': 'Το Group Personal Training προσφέρεται ΔΩΡΕΑΝ σε όλα τα MEGA GYM Fitness Clubs. Σε άλλα γυμναστήρια χρεώνεται τουλάχιστον 10€ ανά συνεδρία.',
+            'pro-intro-p1': 'Το Group Personal Training προσφέρεται ΔΩΡΕΑΝ σε όλα τα MEGA GYM Fitness Clubs.',
             'pro-intro-p2': 'Τα καλύτερα προγράμματα, στους καλύτερους χώρους, με τον καλύτερο εξοπλισμό και τους πιο έμπειρους γυμναστές. Αυτό είναι η πρωτοπορία MEGA GYM - η κορυφαία εμπειρία γυμναστικής χωρίς επιπλέον κόστος.',
             'pro-programs-tag': 'Προγράμματα',
             'pro-programs-title': '6 Κορυφαία Group Personal Προγράμματα',
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'dok-why3-desc': 'Βήμα βήμα, μέχρι να φτάσεις στον στόχο σου. Χωρίς βιασύνη, χωρίς πίεση. Με σχέδιο και υποστήριξη.',
             'dok-loc-tag': 'ΤΟΠΟΘΕΣΙΕΣ',
             'dok-loc-title': 'Βρες μας κοντά σου',
-            'dok-phone-title': 'Ή τηλεφώνησέ μας!',
+            'dok-phone-title': 'Κλείσε Ραντεβού Τηλεφωνικά',
 
             // --- EPIKOINONIA PAGE ---
             'epi-page-title': 'ΕΠΙΚΟΙΝΩΝΙΑ',
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'epi-dir-title': 'Βρες το MEGA GYM Σου',
             'epi-dir-hq': 'Κεντρικό',
             'epi-career-tag': 'Καριέρα',
-            'epi-career-title': 'ΚΑΡΙΕΡΑ - Θέσεις Εργασίας',
+            'epi-career-title': 'Θέσεις Εργασίας',
             'epi-career-desc': 'Ψάχνουμε πάντα ταλαντούχους ανθρώπους να ενταχθούν στην ομάδα MEGA GYM. Αν είσαι γυμναστής, personal trainer ή θέλεις να εργαστείς στον χώρο του fitness, στείλε μας το βιογραφικό σου.',
             'epi-cta-title': 'ΓΙΝΕ ΜΕΛΟΣ ΣΗΜΕΡΑ',
             'epi-cta-desc': 'Κάνε το πρώτο βήμα για μια καλύτερη ζωή. Κλείσε τη δοκιμαστική σου προπόνηση σήμερα!',
@@ -360,8 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // --- INDEX: HERO ---
             'hero-badge': '33 Years of Valuable Experience',
-            'hero-title-1': 'BECAUSE QUALITY IN MY LIFE',
-            'hero-title-2': 'MATTERS ABOVE ALL!',
+            'hero-title-1': 'BECAUSE IN MY LIFE',
+            'hero-title-2': 'QUALITY MATTERS ABOVE&nbsp;ALL',
             'hero-cta-trial': 'Free Trial Session',
             'hero-cta-gyms': 'Our Gyms',
             'hero-stat-locations': 'Locations',
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'pro-bc': 'Training',
             'pro-intro-tag': 'Group Personal Training',
             'pro-intro-title': 'Free At All MEGA GYM Fitness Clubs',
-            'pro-intro-p1': 'Group Personal Training is offered FREE at all MEGA GYM Fitness Clubs. At other gyms it costs at least \u20AC10 per session.',
+            'pro-intro-p1': 'Group Personal Training is offered FREE at all MEGA GYM Fitness Clubs.',
             'pro-intro-p2': 'The best programs, in the best spaces, with the best equipment and most experienced trainers. This is the MEGA GYM innovation - the ultimate fitness experience at no extra cost.',
             'pro-programs-tag': 'Programs',
             'pro-programs-title': '6 Top Group Personal Programs',
@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'dok-why3-desc': 'Step by step, until you reach your goal. No rush, no pressure. With a plan and support.',
             'dok-loc-tag': 'LOCATIONS',
             'dok-loc-title': 'Find us near you',
-            'dok-phone-title': 'Or call us!',
+            'dok-phone-title': 'Book by Phone',
 
             // --- EPIKOINONIA PAGE ---
             'epi-page-title': 'CONTACT',
@@ -668,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'epi-dir-title': 'Find Your MEGA GYM',
             'epi-dir-hq': 'Headquarters',
             'epi-career-tag': 'Careers',
-            'epi-career-title': 'CAREERS - Job Openings',
+            'epi-career-title': 'Job Openings',
             'epi-career-desc': 'We\'re always looking for talented people to join the MEGA GYM team. If you\'re a trainer, personal trainer or want to work in fitness, send us your CV.',
             'epi-cta-title': 'BECOME A MEMBER TODAY',
             'epi-cta-desc': 'Take the first step towards a better life. Book your trial session today!',
