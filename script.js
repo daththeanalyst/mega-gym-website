@@ -915,10 +915,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroHeight = window.innerHeight;
 
         if (scrollY < heroHeight) {
-            const translate = scrollY * 0.3;
-            const opacity = 1 - (scrollY / heroHeight) * 0.6;
+            // Original 0.3 parallax — but capped so content never crashes
+            // into the .scroll-indicator at the bottom of the hero.
+            const translate = Math.min(scrollY * 0.3, 80);
+            const opacity = Math.max(1 - (scrollY / heroHeight) * 0.6, 0.4);
             heroContent.style.transform = `translateY(${translate}px)`;
-            heroContent.style.opacity = Math.max(opacity, 0);
+            heroContent.style.opacity = opacity;
         }
     }
 
