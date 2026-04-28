@@ -680,20 +680,39 @@
             markers.forEach(function(m) { var el = m.getElement(); if (el) el.classList.remove('is-active'); });
         }
 
+        var DEFAULT_VIEW = { center: [37.98, 23.82], zoom: 11 };
+
+        function selectGym(i) {
+            clearAllActive();
+            setCardActive(i, true, false);
+            setPinActive(i, true);
+            map.flyTo([gyms[i].lat, gyms[i].lng], 14, { duration: 0.6 });
+            markers[i].openPopup();
+        }
+        function deselectAll() {
+            clearAllActive();
+            map.closePopup();
+            map.flyTo(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom, { duration: 0.6 });
+        }
+
         function wireCardEvents() {
             listEl.querySelectorAll('.mg-loc-card').forEach(function(card) {
                 var i = parseInt(card.dataset.gymId, 10);
                 card.addEventListener('mouseenter', function() { setPinActive(i, true); });
-                card.addEventListener('mouseleave', function() { setPinActive(i, false); });
+                card.addEventListener('mouseleave', function() {
+                    if (!card.classList.contains('is-active')) setPinActive(i, false);
+                });
                 card.addEventListener('focus', function() { setPinActive(i, true); });
-                card.addEventListener('blur', function() { setPinActive(i, false); });
+                card.addEventListener('blur', function() {
+                    if (!card.classList.contains('is-active')) setPinActive(i, false);
+                });
                 card.addEventListener('click', function(ev) {
                     if (ev.target.closest('a')) return;
-                    clearAllActive();
-                    setCardActive(i, true, false);
-                    setPinActive(i, true);
-                    map.flyTo([gyms[i].lat, gyms[i].lng], 14, { duration: 0.6 });
-                    markers[i].openPopup();
+                    if (card.classList.contains('is-active')) {
+                        deselectAll();
+                    } else {
+                        selectGym(i);
+                    }
                 });
             });
         }
@@ -706,11 +725,24 @@
 
         markers.forEach(function(marker, i) {
             marker.on('mouseover', function() { setCardActive(i, true, false); });
-            marker.on('mouseout', function() { setCardActive(i, false, false); });
-            marker.on('click', function() {
-                clearAllActive();
-                setCardActive(i, true, true);
-                setPinActive(i, true);
+            marker.on('mouseout', function() {
+                var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
+                if (card && !card.classList.contains('is-active')) setCardActive(i, false, false);
+            });
+            marker.on('click', function(ev) {
+                var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
+                var isActive = card && card.classList.contains('is-active');
+                if (isActive) {
+                    if (ev && ev.originalEvent) {
+                        ev.originalEvent.preventDefault();
+                        ev.originalEvent.stopPropagation();
+                    }
+                    deselectAll();
+                } else {
+                    clearAllActive();
+                    setCardActive(i, true, true);
+                    setPinActive(i, true);
+                }
             });
         });
     });

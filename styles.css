@@ -5389,3 +5389,155 @@ body.dark-mode .section-subtitle .emph {
     input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=reset]),
     textarea { cursor: text !important; }
 }
+
+/* ===================================================================
+   MOBILE / SMALL-DEVICE READABILITY FIXES
+   Comprehensive pass to ensure perfect readability on phones and small
+   tablets. Targets the issues identified in the mobile audit.
+   =================================================================== */
+
+/* --- Hero title — tighter clamp on phones so long Greek lines don't blow up --- */
+@media (max-width: 600px) {
+    .hero-line-1,
+    .hero-line-2 {
+        font-size: clamp(1.7rem, 8vw, 2.6rem);
+        letter-spacing: .03em;
+    }
+    .hero-title { margin-bottom: 18px; }
+    .hero-badge { font-size: .68rem; padding: 6px 16px; }
+    .hero-content { padding: 24px 18px 32px; }
+}
+@media (max-width: 380px) {
+    .hero-line-1,
+    .hero-line-2 { font-size: 1.55rem; }
+}
+
+/* --- Hero locations marquee — fit on narrow phones --- */
+@media (max-width: 600px) {
+    .hero-locations-track { gap: 18px; }
+    .hero-locations-track .loc { font-size: .9rem; letter-spacing: .04em; }
+    .hero-locations-track .loc-dot { font-size: .5rem; }
+    .hero-locations-label { font-size: .62rem; margin-bottom: 12px; }
+}
+@media (max-width: 400px) {
+    .hero-locations-track { gap: 14px; }
+    .hero-locations-track .loc { font-size: .8rem; }
+}
+
+/* --- Service cards — relax min-heights at narrow widths so single-column
+   stacked layout doesn't show empty space below short titles/descriptions --- */
+@media (max-width: 600px) {
+    .service-card { padding: 28px 22px 28px; }
+    .service-card h3 { min-height: auto; font-size: 1.3rem; }
+    .service-card p { min-height: auto; }
+    .service-card .service-programs { gap: 6px; margin-bottom: 18px; }
+    /* Service badge: take it out of the corner and put it in flow above the
+       title so it never overlaps the icon on narrow cards */
+    .service-badge {
+        position: static;
+        margin: 0 auto 10px;
+        align-self: center;
+    }
+    .service-icon { margin-bottom: 8px; }
+}
+
+/* --- Phone CTA locations grid (dokimastiki) — switch from flex-wrap with
+   min-width to proper responsive grid so 7 items don't overflow --- */
+@media (max-width: 900px) {
+    .phone-cta-locations {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 12px;
+    }
+    .phone-cta-item { min-width: 0; }
+}
+@media (max-width: 480px) {
+    .phone-cta-locations { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* --- Locations finder map — prevent it eating the whole viewport on phones --- */
+@media (max-width: 600px) {
+    .mg-loc-map { height: 320px; }
+    .mg-loc-list { gap: 8px; }
+}
+@media (max-width: 400px) {
+    .mg-loc-map { height: 260px; }
+}
+
+/* --- Locations cards — chevron + HQ pill don't get crushed on narrow phones --- */
+@media (max-width: 480px) {
+    .mg-loc-card {
+        padding: 11px 14px;
+        gap: 8px;
+    }
+    .mg-loc-card__num { font-size: .82rem; min-width: 18px; }
+    .mg-loc-card__name { font-size: .9rem; letter-spacing: .03em; }
+    .mg-loc-card__hq { font-size: .54rem; padding: 2px 7px; letter-spacing: .08em; }
+    .mg-loc-card__chevron { font-size: .95rem; }
+    .mg-loc-card:hover,
+    .mg-loc-card.is-active,
+    .mg-loc-card:focus-visible { padding-left: 18px; }
+}
+
+/* --- Trainers grid — go to single column at 600px (was 480px) so 2 narrow
+   cards don't look cramped on landscape phones / small tablets --- */
+@media (max-width: 600px) {
+    .trainers-grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
+}
+
+/* --- Nav CTA — the Greek "Κλείσε Ραντεβού" is much wider than English
+   "Book Trial". Tighten on mobile so it doesn't crowd the toggle. --- */
+@media (max-width: 768px) {
+    .nav-cta {
+        font-size: .7rem;
+        padding: 9px 16px;
+        min-width: 0;
+        letter-spacing: .03em;
+    }
+}
+@media (max-width: 480px) {
+    .nav-cta { font-size: .65rem; padding: 8px 12px; }
+}
+
+/* --- Section padding — give phones a bit more breathing room without
+   the ~100px desktop padding eating viewport --- */
+@media (max-width: 600px) {
+    .section { padding: 56px 0; }
+    .phone-cta-section.section { padding: 40px 0; }
+    .section-header { margin-bottom: 32px; }
+}
+
+/* --- Pricing grid — stack to single column on phones, full-width buttons --- */
+@media (max-width: 600px) {
+    .pricing-grid { grid-template-columns: 1fr; gap: 18px; }
+    .pricing-card { padding: 32px 24px; }
+}
+
+/* --- Form rows — make sure inputs/selects are full-width and tappable --- */
+@media (max-width: 600px) {
+    .form-row,
+    .form-group { width: 100%; }
+    .form-row input,
+    .form-row select,
+    .form-row textarea,
+    .form-group input,
+    .form-group select,
+    .form-group textarea { font-size: 16px; /* prevents iOS auto-zoom on focus */ }
+}
+
+/* --- Footer — proper stacking + alignment on phones --- */
+@media (max-width: 600px) {
+    .footer-top { gap: 28px; }
+    .footer-brand p { max-width: 100%; }
+    .social-row { justify-content: flex-start; }
+}
+
+/* --- Image strip — single column on phones, no horizontal overflow --- */
+@media (max-width: 600px) {
+    .image-strip-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* --- Locations finder section header tag spacing --- */
+@media (max-width: 600px) {
+    .locations-finder-section .section-header.center { margin-bottom: 24px; }
+}
