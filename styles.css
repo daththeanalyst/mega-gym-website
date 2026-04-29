@@ -6103,9 +6103,12 @@ body.dark-mode .section-subtitle .emph {
    with an orphaned word at the previous floor. Lower floor + tighter
    letter-spacing keeps it to a clean 2-line layout on iPhone-class widths. */
 @media (max-width: 600px) {
-    /* Use dynamic viewport on mobile so iOS Safari's URL bar doesn't
-       eat the bottom of the hero (100vh problem). */
-    .hero { min-height: 100vh; min-height: 100dvh; }
+    /* Use SMALL viewport height on mobile so the hero stays a fixed size
+       as iOS Safari's URL bar collapses. With 100dvh, dvh grows during
+       scroll which stretches the hero and re-fits the cover image —
+       reads visually as the picture zooming in. svh = smallest viewport
+       (URL bar showing), so the hero never resizes mid-scroll. */
+    .hero { min-height: 100vh; min-height: 100svh; height: 100svh; }
     /* Push content below the fixed navbar (~64px) without forcing the hero
        taller than the viewport. flex-start + top padding > center because
        center alignment overflows when content is tall. */
