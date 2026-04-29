@@ -901,9 +901,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .nav-dropdown-toggle svg {
     transition: transform var(--transition);
 }
-.nav-dropdown:hover .nav-dropdown-toggle svg {
-    transform: rotate(180deg);
-}
 .nav-dropdown-menu {
     position: absolute;
     top: 100%;
@@ -919,7 +916,24 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     transition: all var(--transition);
     z-index: 1002;
 }
-.nav-dropdown:hover .nav-dropdown-menu {
+/* Hover-trigger ONLY on mouse-driven devices. Touch devices get sticky
+   :hover after a tap (the menu would float over the page until tapped
+   elsewhere), so they go through the JS click toggle instead. */
+@media (hover: hover) and (pointer: fine) {
+    .nav-dropdown:hover .nav-dropdown-toggle svg {
+        transform: rotate(180deg);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+/* Click-toggle state — works on every device, used by touch UIs. */
+.nav-dropdown.is-open .nav-dropdown-toggle svg {
+    transform: rotate(180deg);
+}
+.nav-dropdown.is-open .nav-dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);

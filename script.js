@@ -1288,13 +1288,35 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
         toggle.addEventListener('click', (e) => {
             e.preventDefault();
-            // On mobile, toggle visibility
+            e.stopPropagation();
+            const dropdown = toggle.parentElement;
             if (window.innerWidth <= 768) {
+                // Mobile: existing display toggle (separate CSS path inside the overlay)
                 const menu = toggle.nextElementSibling;
                 menu.style.display = menu.style.display === 'none' ? 'block' : (menu.style.display === 'block' ? 'none' : 'block');
+            } else {
+                // Tablet/touch-laptop: toggle is-open class. Mouse users get
+                // hover behavior via CSS @media (hover: hover); this branch is
+                // for taps where :hover would otherwise stick.
+                document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('is-open');
+                });
+                dropdown.classList.toggle('is-open');
             }
         });
     });
+
+    // Close any tap-opened dropdown on outside click or scroll, so it can't
+    // linger over the page (the bug that made the training-page link appear
+    // to randomly pop up over the map).
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.is-open').forEach(d => d.classList.remove('is-open'));
+        }
+    });
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => d.classList.remove('is-open'));
+    }, { passive: true });
 
 
     /* ---------------------------------------------------------------
