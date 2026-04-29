@@ -261,7 +261,11 @@ body.dark-mode .accessory-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: stretch;       /* both columns same height */
+}
+.pilates-intro-image {
+    align-self: stretch;
+    display: flex;
 }
 .section-header--left {
     text-align: left;
@@ -283,7 +287,8 @@ body.dark-mode .accessory-item {
 }
 .pilates-intro-image img {
     width: 100%;
-    height: 500px;
+    height: 100%;
+    min-height: 460px;
     object-fit: cover;
     border-radius: var(--radius);
     display: block;
@@ -293,20 +298,98 @@ body.dark-mode .accessory-item {
 .equipment-slideshow {
     position: relative;
     height: 520px;
-    border-radius: var(--radius);
     overflow: hidden;
+}
+/* Edge gradient masks — peek cards fade into darkness on the sides
+   instead of showing awkward content/image cutoffs. */
+.equipment-slideshow::before,
+.equipment-slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 22%;
+    z-index: 4;
+    pointer-events: none;
+}
+.equipment-slideshow::before {
+    left: 0;
+    background: linear-gradient(to right,
+        rgba(10, 10, 10, 0.7) 0%,
+        rgba(10, 10, 10, 0.4) 50%,
+        transparent 100%);
+}
+.equipment-slideshow::after {
+    right: 0;
+    background: linear-gradient(to left,
+        rgba(10, 10, 10, 0.7) 0%,
+        rgba(10, 10, 10, 0.4) 50%,
+        transparent 100%);
 }
 .equip-slide {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 50%;
+    width: 78%;
+    height: 100%;
     display: flex;
+    transform: translateX(-50%) scale(0.78);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.6s ease;
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.55s cubic-bezier(.4, 0, .2, 1),
+                opacity 0.55s ease,
+                box-shadow 0.55s ease;
+    z-index: 1;
 }
 .equip-slide.active {
+    transform: translateX(-50%) scale(1);
     opacity: 1;
     pointer-events: auto;
+    z-index: 5;                      /* above edge gradients (z=4) */
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+}
+/* Peek cards: heavy blur + darken so content is unreadable but the
+   card SHAPE (rounded corners, position, drop shadow) remains visible
+   on both sides. Symmetric atmospheric "shadow cards" hinting that
+   more slides exist. */
+.equip-slide.is-prev,
+.equip-slide.is-next {
+    opacity: 0.65;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 2;
+    filter: blur(14px) brightness(0.55) saturate(0.85);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .5);
+    transition: transform 0.55s cubic-bezier(.4, 0, .2, 1),
+                opacity 0.55s ease,
+                filter 0.55s ease,
+                box-shadow 0.55s ease;
+}
+/* Flip prev card horizontally so its image side faces the center —
+   makes the left peek symmetric with the right peek (both show the
+   image side, not the dark content stripe). The mirrored image is
+   imperceptible under the heavy blur. */
+.equip-slide.is-prev { transform: translateX(calc(-50% - 92%)) scale(0.82) scaleX(-1); }
+.equip-slide.is-next { transform: translateX(calc(-50% + 92%)) scale(0.82); }
+.equip-slide.is-prev:hover,
+.equip-slide.is-next:hover {
+    opacity: 0.95;
+    filter: blur(8px) brightness(0.75) saturate(1);
+}
+
+/* Peek cards: hide text content so only the image is recognizable.
+   The dark .equip-slide__content background stays visible (it's the
+   element itself) but its children are invisible until the slide
+   becomes active, then fade in. */
+.equip-slide:not(.active) .equip-slide__content > * {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.equip-slide.active .equip-slide__content > * {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.25s;  /* fade in slightly after slide settles */
 }
 .equip-slide__img {
     width: 60%;
@@ -1392,7 +1475,23 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     transition: transform var(--transition), box-shadow var(--transition);
     position: relative;
     overflow: hidden;
+    /* Flex column so we can equalize rows + push button to bottom */
+    display: flex;
+    flex-direction: column;
 }
+/* Symmetric row alignment between Fitness Club and EXCLUSIVE cards */
+.gym-type-card .gym-type-badge { align-self: flex-start; }
+.gym-type-card h3 { min-height: 2.4em; }                /* matches 1- and 2-line titles */
+.gym-type-card .exclusive-sub { min-height: 1.6em; }     /* present on both via placeholder on card 1 */
+.gym-type-card > p:not(.exclusive-sub) {
+    min-height: 7em;                                     /* equal description block */
+    flex: 1 1 auto;
+}
+.gym-type-card .gym-features { margin-bottom: 24px; }
+.gym-type-card > .btn,
+.gym-type-card > a.btn { margin-top: auto; align-self: flex-start; }
+/* Invisible placeholder mirrors .exclusive-sub height on the FC card */
+.exclusive-sub--placeholder { visibility: hidden; }
 
 .gym-type-card:hover {
     transform: translateY(-6px);
@@ -1412,9 +1511,17 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     margin-bottom: 22px;
 }
 
+/* EXCLUSIVE big badge — match the gold-tint chip style used on the
+   directory cards above (.loc-tags span.loc-exclusive) */
 .badge-exclusive {
-    background: var(--yellow) !important;
-    color: var(--black) !important;
+    background: rgba(184, 134, 11, 0.08) !important;
+    color: #9a6c00 !important;
+    border: 1px solid rgba(184, 134, 11, 0.35);
+}
+body.dark-mode .badge-exclusive {
+    background: rgba(184, 134, 11, 0.12) !important;
+    color: #c9a227 !important;
+    border-color: rgba(184, 134, 11, 0.4);
 }
 
 .gym-type-card h3 {
@@ -2473,13 +2580,15 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     text-align: center;
     padding: 32px 20px;
     border-radius: var(--radius);
-    background: var(--gray-100);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--yellow);
+    color: var(--black);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     cursor: default;
 }
 .intro-highlight-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    background: var(--yellow-dark);
+    box-shadow: 0 14px 36px rgba(245, 197, 24, 0.4);
 }
 .intro-highlight-icon {
     font-size: 2rem;
@@ -2488,6 +2597,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     width: 48px;
     height: 48px;
     transition: transform 0.3s ease;
+    /* Force the SVG icons to render in solid black for max contrast on yellow */
+    filter: brightness(0);
 }
 .intro-highlight-item:hover .intro-highlight-icon {
     transform: scale(1.15);
@@ -2495,16 +2606,24 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .intro-highlight-item h3 {
     font-family: var(--font-display);
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: .04em;
     margin-bottom: 8px;
+    color: var(--black);
 }
 .intro-highlight-item p {
     font-size: .9rem;
-    color: var(--gray-500);
+    color: rgba(0, 0, 0, 0.72);
     line-height: 1.6;
 }
+/* Dark-mode override: keep yellow as the brand pop, no inversion */
+body.dark-mode .intro-highlight-item {
+    background: var(--yellow);
+    color: var(--black);
+}
+body.dark-mode .intro-highlight-item h3 { color: var(--black); }
+body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
 
 /* --- Equipment Grid --- */
 .equipment-grid {
@@ -3100,6 +3219,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 .directory-featured .dir-img {
     height: 280px;
+    object-position: center 70%;  /* shift focal point slightly down so more of the building + foreground shows */
 }
 .dir-card-body {
     display: flex;
@@ -5564,12 +5684,207 @@ body.dark-mode ::selection { background: rgba(245, 197, 24, .3); color: #fff; }
     z-index: 1000;
 }
 
-/* Leaflet popup theming (dark) */
+/* Leaflet popup — zero default padding so our .mg-popup layout renders
+   edge-to-edge with a full-bleed photo on top. */
 .leaflet-popup-content-wrapper {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .35), 0 4px 12px rgba(0, 0, 0, .15);
 }
-.leaflet-popup-tip { background: #fff; }
+.leaflet-popup-content {
+    margin: 0;
+    width: 260px !important;
+    line-height: 1.45;
+}
+.leaflet-popup-tip {
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+}
+.leaflet-popup-close-button {
+    color: #fff !important;
+    background: rgba(10, 10, 10, .65) !important;
+    border-radius: 50%;
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 24px !important;
+    text-align: center;
+    top: 10px !important;
+    right: 10px !important;
+    font-size: 18px !important;
+    font-weight: 700;
+    z-index: 5;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+.leaflet-popup-close-button:hover {
+    background: rgba(10, 10, 10, .9) !important;
+    transform: scale(1.08);
+}
+
+/* ---- Popup body layout ---- */
+.mg-popup { font-family: var(--font-body, Inter, sans-serif); color: var(--black); }
+/* Image container locked to symmetric edges — no side padding/margin
+   ever, regardless of what other rules try to do. Width inherited from
+   the popup-content (260px), so left/right edges always match. */
+.mg-popup__media {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 175px;
+    margin: 0;
+    padding: 0;
+    background: var(--gray-100);
+    overflow: hidden;
+}
+.mg-popup__img {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform .6s ease;
+}
+.mg-popup:hover .mg-popup__img { transform: scale(1.04); }
+.mg-popup__hq-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 4px 9px;
+    border-radius: var(--radius-pill);
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
+}
+.mg-popup__body {
+    padding: 12px 14px 14px;
+}
+.mg-popup__title {
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    line-height: 1.25;
+}
+.mg-popup__row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: .74rem;
+    color: var(--gray-700);
+    margin-bottom: 4px;
+}
+.mg-popup__icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--yellow-dark);
+}
+.mg-popup__tel {
+    color: var(--black);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+.mg-popup__tel:hover { color: var(--yellow-dark); }
+.mg-popup__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 9px 0 0;
+}
+.mg-popup__chip {
+    font-size: .56rem;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: var(--radius-pill);
+    background: var(--gray-100);
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    line-height: 1.3;
+}
+.mg-popup__chip--ex {
+    background: rgba(245, 197, 24, .15);
+    color: var(--yellow-dark);
+    border: 1px solid rgba(245, 197, 24, .4);
+}
+.mg-popup__chip--pl {
+    background: rgba(236, 72, 153, .12);
+    color: #be185d;
+    border: 1px solid rgba(236, 72, 153, .35);
+}
+.mg-popup__dirs {
+    display: block;
+    margin-top: 11px;
+    padding: 9px 14px;
+    background: var(--yellow);
+    color: var(--black);
+    border-radius: 8px;
+    font-size: .74rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: .04em;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .08);
+}
+.mg-popup__dirs:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 197, 24, .4);
+}
+
+/* ---- Reset / View All button overlay on the map ---- */
+.mg-map-reset {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px 8px 10px;
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body, Inter, sans-serif);
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35), 0 2px 4px rgba(0, 0, 0, .2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .25s ease, visibility .25s ease, transform .25s ease, background .2s ease;
+}
+.mg-map-reset.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.mg-map-reset:hover {
+    background: var(--yellow);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(245, 197, 24, .5);
+}
+.mg-map-reset svg { color: var(--black); }
+/* .mg-loc-map already uses position:sticky which establishes a containing
+   block for our absolute reset button — no extra position rule needed. */
 
 /* Mobile: stack list above map */
 @media (max-width: 900px) {
@@ -5850,3 +6165,58 @@ body.dark-mode .section-subtitle .emph {
 @media (max-width: 600px) {
     .locations-finder-section .section-header.center { margin-bottom: 24px; }
 }
+
+/* ===================================================================
+   PT OPTION META — clean label + values block (replaces the old
+   pill-cluttered .pt-location-tags / .pt-program-tags layout)
+   =================================================================== */
+.pt-opt-meta {
+    margin: 14px 0 22px;
+    padding: 14px 18px;
+    background: rgba(245, 197, 24, 0.06);
+    border-left: 3px solid var(--yellow);
+    border-radius: 4px;
+}
+.pt-opt-meta dt {
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: .72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--yellow-dark);
+    margin: 0;
+}
+.pt-opt-meta dt:not(:first-child) { margin-top: 12px; }
+.pt-opt-meta dd {
+    margin: 4px 0 0;
+    font-size: .92rem;
+    color: var(--gray-800);
+    line-height: 1.5;
+}
+.pt-opt-meta dd span {
+    font-weight: 600;
+    color: var(--black);
+}
+
+/* Make the CTA button feel premium on this page */
+.pt-opt-cta {
+    margin-top: 4px;
+    padding: 14px 32px;
+    font-size: .92rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    box-shadow: 0 4px 14px rgba(245, 197, 24, 0.3);
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.pt-opt-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(245, 197, 24, 0.45);
+}
+
+/* Dark mode variant */
+body.dark-mode .pt-opt-meta {
+    background: rgba(245, 197, 24, 0.08);
+    border-left-color: var(--yellow);
+}
+body.dark-mode .pt-opt-meta dd { color: #ddd; }
+body.dark-mode .pt-opt-meta dd span { color: #fff; }

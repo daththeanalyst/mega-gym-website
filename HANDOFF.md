@@ -219,6 +219,31 @@ New website for MEGA GYM — a Greek gym chain with 7 locations in Athens. Clien
 
 ## Still To Do
 
+### 🆕 Session 5 — fresh batch (Dimitris, queued — DO NOT START until Dimitris says so)
+
+**Homepage (index.html)**
+- [ ] **Hero scroll-lock fix** — fix the scroll behaviour at any tab/window size so the hero never glitches or jumps regardless of viewport. (Currently parallax is capped, but Dimitris reports a scroll-lock issue still happening at certain sizes.)
+- [ ] **TV channel logos** — wire up real ANT1 / ALPHA / STAR / EPSILON logos with the correct outbound links (still on the queue from earlier; flagged again)
+- [ ] **White-on-white section divider** — the first two sections both have white backgrounds. Either add a divider between them, or make one of them yellow for clear visual break.
+- [ ] **Pricing card symmetry** — make the pricing cards on the home page perfectly symmetrical: buttons, content blocks, padding, badge positioning. Whatever currently looks asymmetric.
+- [ ] **Move "Find your gym" section** — currently at end of home page. Move it to sit right under the "Δες τον χώρο μας" / virtual-tour video section.
+- [ ] **Find-your-gym selection glitch** — small visual glitch when a card is selected (highlight, scroll-into-view, or active state misbehaves). Investigate + fix.
+
+**Gyms page (gymnastiria.html)**
+- [ ] **Move Kifissia card up a bit** — vertical alignment tweak so the featured Kifissia card sits a little higher than it currently does.
+- [ ] **Two Types of Gyms boxes** — improve symmetry/alignment between the two cards (Fitness Clubs vs EXCLUSIVE Transformation Centers). Whatever isn't lining up cleanly.
+- [ ] **EXCLUSIVE tag on the gym-type comparison card** — make it the same color/style as the EXCLUSIVE tag used elsewhere on the page (the small loc-tags style). Currently flat yellow, should match the gold-tint + thin gold border style.
+
+**Personal Training page (personal-training.html)**
+- [ ] **Fix layout / something off** — Dimitris flagged "fix whatever is happening" — needs a closer look on this page (likely spacing, alignment, or a broken-looking element). Investigate when we get to it.
+- [ ] **Make Stelios's name black** — currently rendered in a different color (yellow?), needs to be black for readability.
+
+**Pilates page (pilates.html)**
+- [ ] **Hidden card carousel needs left/right controls** — the "krimeni kartela" (hidden tab/card) behind the visible one — add left/right arrows so users can navigate through the equipment slideshow manually instead of waiting for auto-rotation.
+- [ ] **First section symmetry** — the intro split section (text + studio photo) feels uneven. Either make the photo bigger to match the text block, or shrink the text block to match the photo. Pick one — should look balanced.
+
+---
+
 ### Homepage (index.html)
 - [x] ~~Hero rework, parallax cap, stat block removal~~
 - [x] ~~Remove/reduce duplicate "33+ years" stat~~ — about-metrics + comparison-strip removed

@@ -154,6 +154,286 @@
         </div>
     </section>
 
+    <!-- LOCATIONS FINDER — list + linked map -->
+    <section class="section section-dark locations-finder-section" id="locations">
+        <div class="container">
+            <div class="section-header center" data-animate="fade-up">
+                <span class="tag" data-i18n="epi-dir-tag">7 Τοποθεσίες</span>
+                <h2 class="section-title" data-i18n="epi-dir-title">Βρες το MEGA GYM Σου</h2>
+            </div>
+            <div class="mg-loc-finder">
+                <div class="mg-loc-list" id="locationsList" role="list"></div>
+                <div class="mg-loc-map">
+                    <div id="megaMap"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var gyms = [
+            { lat: 38.09139940114981, lng: 23.793385122122718, area: { el: 'Κηφισιά', en: 'Kifissia' }, addr: 'Αιολίας 20 & Ιλισίων', tel: '210 807 3926', tags: 'Fitness Club · EXCLUSIVE · Pilates', hq: true, photo: 'assets/MegaGymPhotos/gym-ext-kifissia.png' },
+            { lat: 38.0703228912949, lng: 23.76470836661594, area: { el: 'Μεταμόρφωση', en: 'Metamorfosi' }, addr: '12ο χλμ Εθνικής Οδού', tel: '210 280 1044', tags: 'Fitness Club · EXCLUSIVE', photo: 'assets/MegaGymPhotos/gym-ext-metamorfosi.png' },
+            { lat: 37.86437548588831, lng: 23.761235400000004, area: { el: 'Γλυφάδα', en: 'Glyfada' }, addr: 'Λ. Βουλιαγμένης 124', tel: '210 963 1243', tags: 'Fitness Club · EXCLUSIVE', photo: 'assets/MegaGymPhotos/gym-ext-glyfada.png' },
+            { lat: 38.05011304544085, lng: 23.837842165034154, area: { el: 'Βριλήσσια-Μελίσσια', en: 'Vrilissia-Melissia' }, addr: 'Λ. Πεντέλης 23', tel: '210 804 8331', tags: 'EXCLUSIVE', photo: 'assets/MegaGymPhotos/gym-ext-vrilissia.png' },
+            { lat: 38.01631061538768, lng: 23.820676027150405, area: { el: 'Αγία Παρασκευή', en: 'Agia Paraskevi' }, addr: 'Λ. Μεσογείων 412', tel: '210 608 1443', tags: 'Fitness Club · EXCLUSIVE', photo: 'assets/MegaGymPhotos/gym-ext-agia-paraskevi.png' },
+            { lat: 37.908337602073786, lng: 23.735741022425792, area: { el: 'Άλιμος', en: 'Alimos' }, addr: 'Λ. Αλίμου 89', tel: '210 993 4733', tags: 'Fitness Club', photo: 'assets/MegaGymPhotos/gym-ext-alimos.png' },
+            { lat: 38.01144178066723, lng: 23.858098207736965, area: { el: 'Γέρακας', en: 'Gerakas' }, addr: 'Λ. Μαραθώνος 135', tel: '210 665 4440', tags: 'Fitness Club', photo: 'assets/MegaGymPhotos/gym-ext-gerakas.png' }
+        ];
+
+        function getLang() {
+            return localStorage.getItem('megagym-lang') || document.documentElement.lang || 'el';
+        }
+        function gymName(g, lang) { return 'MEGA GYM ' + g.area[lang]; }
+        function dirsLabel(lang) { return lang === 'en' ? '→ Get Directions' : '→ Οδηγίες'; }
+
+        function buildPopupHTML(g, lang) {
+            var dirsHref = 'https://www.google.com/maps/search/?api=1&query=' + g.lat + ',' + g.lng;
+            var photoHtml = g.photo
+                ? '<div class="mg-popup__media">' +
+                    '<img class="mg-popup__img" src="' + g.photo + '" alt="" loading="lazy" />' +
+                    (g.hq ? '<span class="mg-popup__hq-badge">★ HQ</span>' : '') +
+                  '</div>'
+                : (g.hq ? '<div class="mg-popup__media"><span class="mg-popup__hq-badge">★ HQ</span></div>' : '');
+            // Split tags into pill chips
+            var tagChips = g.tags.split('·').map(function(t) {
+                var label = t.trim();
+                var cls = 'mg-popup__chip';
+                if (/EXCLUSIVE/i.test(label)) cls += ' mg-popup__chip--ex';
+                else if (/Pilates/i.test(label)) cls += ' mg-popup__chip--pl';
+                return '<span class="' + cls + '">' + label + '</span>';
+            }).join('');
+            return '<div class="mg-popup">' +
+                photoHtml +
+                '<div class="mg-popup__body">' +
+                    '<h4 class="mg-popup__title">' + gymName(g, lang) + '</h4>' +
+                    '<div class="mg-popup__row">' +
+                        '<svg class="mg-popup__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>' +
+                        '<span>' + g.addr + '</span>' +
+                    '</div>' +
+                    '<a class="mg-popup__row mg-popup__tel" href="tel:+30' + g.tel.replace(/ /g, '') + '">' +
+                        '<svg class="mg-popup__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
+                        '<span>' + g.tel + '</span>' +
+                    '</a>' +
+                    '<div class="mg-popup__tags">' + tagChips + '</div>' +
+                    '<a class="mg-popup__dirs" href="' + dirsHref + '" target="_blank" rel="noopener">' + dirsLabel(lang) + '</a>' +
+                '</div>' +
+                '</div>';
+        }
+
+        var listEl = document.getElementById('locationsList');
+        function renderCards() {
+            var lang = getLang();
+            listEl.innerHTML = '';
+            gyms.forEach(function(g, i) {
+                var card = document.createElement('article');
+                card.className = 'mg-loc-card';
+                card.dataset.gymId = i;
+                card.setAttribute('role', 'listitem');
+                card.setAttribute('tabindex', '0');
+                var num = String(i + 1).padStart(2, '0');
+                card.innerHTML =
+                    '<span class="mg-loc-card__num" aria-hidden="true">' + num + '</span>' +
+                    '<h3 class="mg-loc-card__name">' + gymName(g, lang) + '</h3>' +
+                    (g.hq ? '<span class="mg-loc-card__hq" title="Headquarters">HQ</span>' : '<span></span>') +
+                    '<span class="mg-loc-card__chevron" aria-hidden="true">→</span>';
+                listEl.appendChild(card);
+            });
+            wireCardEvents();
+        }
+
+        var map = L.map('megaMap', { scrollWheelZoom: false }).setView([37.98, 23.82], 11);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap &copy; CARTO',
+            maxZoom: 19
+        }).addTo(map);
+
+        var pinLogoSrc = 'assets/MegaGymPhotos/mega-gym-m-cursor.png';
+        var pinShapeSvg = '<svg class="mg-pin__shape" viewBox="0 0 32 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+            '<path d="M16 1 C 7.7 1, 1 7.7, 1 16 C 1 24, 8 33, 16 43 C 24 33, 31 24, 31 16 C 31 7.7, 24.3 1, 16 1 Z" fill="#0a0a0a" stroke="#F5C518" stroke-width="2" stroke-linejoin="round"/>' +
+            '</svg>';
+
+        function buildPinHtml(g, i) {
+            var classes = 'mg-pin' + (g.hq ? ' is-hq' : '');
+            return '<div class="' + classes + '" data-gym-id="' + i + '">' +
+                       '<span class="mg-pin__halo" aria-hidden="true"></span>' +
+                       pinShapeSvg +
+                       '<img class="mg-pin__logo" src="' + pinLogoSrc + '" alt="" />' +
+                   '</div>';
+        }
+
+        var markers = gyms.map(function(g, i) {
+            var w = g.hq ? 50 : 36;
+            var h = g.hq ? 66 : 48;
+            var icon = L.divIcon({
+                html: buildPinHtml(g, i),
+                className: 'mg-pin-wrap',
+                iconSize: [w, h],
+                iconAnchor: [w / 2, h],
+                popupAnchor: [0, -h + 8]
+            });
+            var marker = L.marker([g.lat, g.lng], { icon: icon }).addTo(map);
+            // autoPan: false prevents the popup from fighting our flyTo (was
+            // causing a "shake" when both animated the camera at once).
+            // Our flyTo lands at zoom 14 on the marker, so the popup is
+            // already in view — no autopan needed.
+            marker.bindPopup(buildPopupHTML(g, getLang()), { autoPan: false, closeButton: true });
+            return marker;
+        });
+
+        function refreshPopups() {
+            var lang = getLang();
+            markers.forEach(function(m, i) { m.setPopupContent(buildPopupHTML(gyms[i], lang)); });
+        }
+
+        function setPinActive(i, on) {
+            var el = markers[i].getElement();
+            if (!el) return;
+            el.classList.toggle('is-active', !!on);
+        }
+        function setCardActive(i, on, scrollIntoView) {
+            var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
+            if (!card) return;
+            card.classList.toggle('is-active', !!on);
+            if (on && scrollIntoView) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+        function clearAllActive() {
+            listEl.querySelectorAll('.mg-loc-card.is-active').forEach(function(c) { c.classList.remove('is-active'); });
+            markers.forEach(function(m) { var el = m.getElement(); if (el) el.classList.remove('is-active'); });
+        }
+
+        var DEFAULT_VIEW = { center: [37.98, 23.82], zoom: 11 };
+        var lockedGymId = null;  // which gym (if any) is click-pinned
+        var isTransitioning = false;  // true during a select-to-select swap; suppresses the popupclose deselect
+
+        // Compute a flyTo target that puts the marker roughly 65% down the
+        // visible map area, so the popup (which opens above the marker) has
+        // room above and the photo isn't cut off.
+        function targetForGym(i, zoom) {
+            var ll = L.latLng(gyms[i].lat, gyms[i].lng);
+            var pt = map.project(ll, zoom);
+            var mapH = map.getSize().y;
+            // Shift center UP from marker by 22% of map height → marker drops
+            // about 22% below the new viewport center → ~72% down the view.
+            pt.y -= mapH * 0.22;
+            return map.unproject(pt, zoom);
+        }
+
+        // Reset button overlay — visible only when a gym is locked
+        var resetBtn = document.createElement('button');
+        resetBtn.className = 'mg-map-reset';
+        resetBtn.type = 'button';
+        resetBtn.setAttribute('aria-label', 'Reset map view');
+        resetBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg><span>View All</span>';
+        document.querySelector('.mg-loc-map').appendChild(resetBtn);
+        resetBtn.addEventListener('click', function(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            if (lockedGymId !== null) deselectAll();
+        });
+        function syncResetBtn() {
+            resetBtn.classList.toggle('is-visible', lockedGymId !== null);
+        }
+
+        // Hover helpers: only paint/clear NON-locked gyms. Always clears any
+        // stray hovers from other gyms so only one is highlighted at a time.
+        function hoverSet(i) {
+            // Clear hover state on every gym EXCEPT the click-locked one
+            for (var k = 0; k < gyms.length; k++) {
+                if (k === lockedGymId) continue;
+                setCardActive(k, false, false);
+                setPinActive(k, false);
+            }
+            // Now paint just this one
+            setCardActive(i, true, false);
+            setPinActive(i, true);
+        }
+        function hoverClear(i) {
+            if (lockedGymId === i) return;  // don't strip the locked one
+            setCardActive(i, false, false);
+            setPinActive(i, false);
+        }
+
+        function selectGym(i) {
+            isTransitioning = true;  // block popupclose-triggered deselect during swap
+            lockedGymId = i;
+            syncResetBtn();
+            clearAllActive();
+            setCardActive(i, true, false);
+            setPinActive(i, true);
+            var z = 14;
+            map.flyTo(targetForGym(i, z), z, { duration: 0.6 });
+            // Wait until flyTo finishes before opening popup — prevents the
+            // popup-pan + flyTo "shake". Then clear the transition flag once
+            // the close-then-open popup race for the previous selection is done.
+            map.once('moveend', function() {
+                if (lockedGymId === i) markers[i].openPopup();
+                setTimeout(function() { isTransitioning = false; }, 80);
+            });
+        }
+        function deselectAll() {
+            lockedGymId = null;
+            syncResetBtn();
+            clearAllActive();
+            map.closePopup();
+            map.flyTo(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom, { duration: 0.6 });
+        }
+
+        function wireCardEvents() {
+            listEl.querySelectorAll('.mg-loc-card').forEach(function(card) {
+                var i = parseInt(card.dataset.gymId, 10);
+                card.addEventListener('mouseenter', function() { hoverSet(i); });
+                card.addEventListener('mouseleave', function() { hoverClear(i); });
+                card.addEventListener('focus', function() { hoverSet(i); });
+                card.addEventListener('blur', function() { hoverClear(i); });
+                card.addEventListener('click', function(ev) {
+                    if (ev.target.closest('a')) return;
+                    if (lockedGymId === i) {
+                        deselectAll();
+                    } else {
+                        selectGym(i);
+                    }
+                });
+            });
+        }
+
+        renderCards();
+        document.addEventListener('mg:langchange', function() {
+            renderCards();
+            refreshPopups();
+        });
+
+        markers.forEach(function(marker, i) {
+            marker.on('mouseover', function() { hoverSet(i); });
+            marker.on('mouseout', function() { hoverClear(i); });
+            marker.on('click', function(ev) {
+                if (ev && ev.originalEvent) {
+                    ev.originalEvent.preventDefault();
+                    ev.originalEvent.stopPropagation();
+                }
+                if (lockedGymId === i) {
+                    deselectAll();
+                } else {
+                    selectGym(i);
+                }
+            });
+        });
+
+        // Closing the popup via its X button → fully deselect.
+        // Skipped during select-to-select transitions (Leaflet auto-closes
+        // the previous popup when openPopup is called on a new marker).
+        map.on('popupclose', function() {
+            if (isTransitioning) return;
+            if (lockedGymId !== null) deselectAll();
+        });
+    });
+    </script>
+
     <!-- SERVICES OVERVIEW -->
     <section class="services-overview section" id="services">
         <div class="container">
@@ -544,201 +824,6 @@
             {"@type": "Question", "name": "Is there parking?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, most MEGA GYM locations have free parking or easy access to nearby parking areas."}}
         ]
     }
-    </script>
-
-    <!-- LOCATIONS FINDER — list + linked map -->
-    <section class="section section-dark locations-finder-section" id="locations">
-        <div class="container">
-            <div class="section-header center" data-animate="fade-up">
-                <span class="tag" data-i18n="epi-dir-tag">7 Τοποθεσίες</span>
-                <h2 class="section-title" data-i18n="epi-dir-title">Βρες το MEGA GYM Σου</h2>
-            </div>
-            <div class="mg-loc-finder">
-                <div class="mg-loc-list" id="locationsList" role="list"></div>
-                <div class="mg-loc-map">
-                    <div id="megaMap"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var gyms = [
-            { lat: 38.09139940114981, lng: 23.793385122122718, area: { el: 'Κηφισιά', en: 'Kifissia' }, addr: 'Αιολίας 20 & Ιλισίων', tel: '210 807 3926', tags: 'Fitness Club · EXCLUSIVE · Pilates', hq: true },
-            { lat: 38.0703228912949, lng: 23.76470836661594, area: { el: 'Μεταμόρφωση', en: 'Metamorfosi' }, addr: '12ο χλμ Εθνικής Οδού', tel: '210 280 1044', tags: 'Fitness Club · EXCLUSIVE' },
-            { lat: 37.86437548588831, lng: 23.761235400000004, area: { el: 'Γλυφάδα', en: 'Glyfada' }, addr: 'Λ. Βουλιαγμένης 124', tel: '210 963 1243', tags: 'Fitness Club · EXCLUSIVE' },
-            { lat: 38.05011304544085, lng: 23.837842165034154, area: { el: 'Βριλήσσια-Μελίσσια', en: 'Vrilissia-Melissia' }, addr: 'Λ. Πεντέλης 23', tel: '210 804 8331', tags: 'EXCLUSIVE' },
-            { lat: 38.01631061538768, lng: 23.820676027150405, area: { el: 'Αγία Παρασκευή', en: 'Agia Paraskevi' }, addr: 'Λ. Μεσογείων 412', tel: '210 608 1443', tags: 'Fitness Club · EXCLUSIVE' },
-            { lat: 37.908337602073786, lng: 23.735741022425792, area: { el: 'Άλιμος', en: 'Alimos' }, addr: 'Λ. Αλίμου 89', tel: '210 993 4733', tags: 'Fitness Club' },
-            { lat: 38.01144178066723, lng: 23.858098207736965, area: { el: 'Γέρακας', en: 'Gerakas' }, addr: 'Λ. Μαραθώνος 135', tel: '210 665 4440', tags: 'Fitness Club' }
-        ];
-
-        function getLang() {
-            return localStorage.getItem('megagym-lang') || document.documentElement.lang || 'el';
-        }
-        function gymName(g, lang) { return 'MEGA GYM ' + g.area[lang]; }
-        function dirsLabel(lang) { return lang === 'en' ? '→ Get Directions' : '→ Οδηγίες'; }
-
-        function buildPopupHTML(g, lang) {
-            var hqBadge = g.hq ? '<span style="background:#F5C518;color:#0a0a0a;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle;">HQ</span>' : '';
-            var dirsHref = 'https://www.google.com/maps/search/?api=1&query=' + g.lat + ',' + g.lng;
-            return '<div style="font-family:Inter,sans-serif;min-width:200px;line-height:1.5;">' +
-                '<strong style="font-size:14px;">' + gymName(g, lang) + '</strong>' + hqBadge +
-                '<div style="color:#666;font-size:12px;margin-top:4px;">' + g.addr + '</div>' +
-                '<a href="tel:+30' + g.tel.replace(/ /g, '') + '" style="color:#F5C518;font-weight:600;font-size:13px;display:block;margin-top:4px;">' + g.tel + '</a>' +
-                '<div style="font-size:11px;color:#888;margin-top:4px;">' + g.tags + '</div>' +
-                '<a href="' + dirsHref + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;padding:6px 12px;background:#F5C518;color:#0a0a0a;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:.04em;">' + dirsLabel(lang) + '</a>' +
-                '</div>';
-        }
-
-        var listEl = document.getElementById('locationsList');
-        function renderCards() {
-            var lang = getLang();
-            listEl.innerHTML = '';
-            gyms.forEach(function(g, i) {
-                var card = document.createElement('article');
-                card.className = 'mg-loc-card';
-                card.dataset.gymId = i;
-                card.setAttribute('role', 'listitem');
-                card.setAttribute('tabindex', '0');
-                var num = String(i + 1).padStart(2, '0');
-                card.innerHTML =
-                    '<span class="mg-loc-card__num" aria-hidden="true">' + num + '</span>' +
-                    '<h3 class="mg-loc-card__name">' + gymName(g, lang) + '</h3>' +
-                    (g.hq ? '<span class="mg-loc-card__hq" title="Headquarters">HQ</span>' : '<span></span>') +
-                    '<span class="mg-loc-card__chevron" aria-hidden="true">→</span>';
-                listEl.appendChild(card);
-            });
-            wireCardEvents();
-        }
-
-        var map = L.map('megaMap', { scrollWheelZoom: false }).setView([37.98, 23.82], 11);
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; OpenStreetMap &copy; CARTO',
-            maxZoom: 19
-        }).addTo(map);
-
-        var pinLogoSrc = 'assets/MegaGymPhotos/mega-gym-m-cursor.png';
-        var pinShapeSvg = '<svg class="mg-pin__shape" viewBox="0 0 32 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-            '<path d="M16 1 C 7.7 1, 1 7.7, 1 16 C 1 24, 8 33, 16 43 C 24 33, 31 24, 31 16 C 31 7.7, 24.3 1, 16 1 Z" fill="#0a0a0a" stroke="#F5C518" stroke-width="2" stroke-linejoin="round"/>' +
-            '</svg>';
-
-        function buildPinHtml(g, i) {
-            var classes = 'mg-pin' + (g.hq ? ' is-hq' : '');
-            return '<div class="' + classes + '" data-gym-id="' + i + '">' +
-                       '<span class="mg-pin__halo" aria-hidden="true"></span>' +
-                       pinShapeSvg +
-                       '<img class="mg-pin__logo" src="' + pinLogoSrc + '" alt="" />' +
-                   '</div>';
-        }
-
-        var markers = gyms.map(function(g, i) {
-            var w = g.hq ? 50 : 36;
-            var h = g.hq ? 66 : 48;
-            var icon = L.divIcon({
-                html: buildPinHtml(g, i),
-                className: 'mg-pin-wrap',
-                iconSize: [w, h],
-                iconAnchor: [w / 2, h],
-                popupAnchor: [0, -h + 8]
-            });
-            var marker = L.marker([g.lat, g.lng], { icon: icon }).addTo(map);
-            marker.bindPopup(buildPopupHTML(g, getLang()));
-            return marker;
-        });
-
-        function refreshPopups() {
-            var lang = getLang();
-            markers.forEach(function(m, i) { m.setPopupContent(buildPopupHTML(gyms[i], lang)); });
-        }
-
-        function setPinActive(i, on) {
-            var el = markers[i].getElement();
-            if (!el) return;
-            el.classList.toggle('is-active', !!on);
-        }
-        function setCardActive(i, on, scrollIntoView) {
-            var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
-            if (!card) return;
-            card.classList.toggle('is-active', !!on);
-            if (on && scrollIntoView) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        }
-        function clearAllActive() {
-            listEl.querySelectorAll('.mg-loc-card.is-active').forEach(function(c) { c.classList.remove('is-active'); });
-            markers.forEach(function(m) { var el = m.getElement(); if (el) el.classList.remove('is-active'); });
-        }
-
-        var DEFAULT_VIEW = { center: [37.98, 23.82], zoom: 11 };
-
-        function selectGym(i) {
-            clearAllActive();
-            setCardActive(i, true, false);
-            setPinActive(i, true);
-            map.flyTo([gyms[i].lat, gyms[i].lng], 14, { duration: 0.6 });
-            markers[i].openPopup();
-        }
-        function deselectAll() {
-            clearAllActive();
-            map.closePopup();
-            map.flyTo(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom, { duration: 0.6 });
-        }
-
-        function wireCardEvents() {
-            listEl.querySelectorAll('.mg-loc-card').forEach(function(card) {
-                var i = parseInt(card.dataset.gymId, 10);
-                card.addEventListener('mouseenter', function() { setPinActive(i, true); });
-                card.addEventListener('mouseleave', function() {
-                    if (!card.classList.contains('is-active')) setPinActive(i, false);
-                });
-                card.addEventListener('focus', function() { setPinActive(i, true); });
-                card.addEventListener('blur', function() {
-                    if (!card.classList.contains('is-active')) setPinActive(i, false);
-                });
-                card.addEventListener('click', function(ev) {
-                    if (ev.target.closest('a')) return;
-                    if (card.classList.contains('is-active')) {
-                        deselectAll();
-                    } else {
-                        selectGym(i);
-                    }
-                });
-            });
-        }
-
-        renderCards();
-        document.addEventListener('mg:langchange', function() {
-            renderCards();
-            refreshPopups();
-        });
-
-        markers.forEach(function(marker, i) {
-            marker.on('mouseover', function() { setCardActive(i, true, false); });
-            marker.on('mouseout', function() {
-                var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
-                if (card && !card.classList.contains('is-active')) setCardActive(i, false, false);
-            });
-            marker.on('click', function(ev) {
-                var card = listEl.querySelector('.mg-loc-card[data-gym-id="' + i + '"]');
-                var isActive = card && card.classList.contains('is-active');
-                if (isActive) {
-                    if (ev && ev.originalEvent) {
-                        ev.originalEvent.preventDefault();
-                        ev.originalEvent.stopPropagation();
-                    }
-                    deselectAll();
-                } else {
-                    clearAllActive();
-                    setCardActive(i, true, true);
-                    setPinActive(i, true);
-                }
-            });
-        });
-    });
     </script>
 
     <!-- FOOTER -->

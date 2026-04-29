@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'gym-page-bc': 'Γυμναστήρια',
             'gym-page-bc-home': 'Αρχική',
             'gym-fc-title': 'MEGA GYM Fitness Clubs',
+            'gym-fc-sub': 'Group Training Centers',
             'gym-fc-desc': 'Κορυφαία γυμναστήρια με τον καλύτερο εξοπλισμό της αγοράς, απίθανους χώρους και τους πιο έμπειρους επαγγελματίες γυμναστές. Τα Group Personal Training προγράμματα προσφέρονται ΔΩΡΕΑΝ σε όλα τα Fitness Clubs.',
             'gym-fc-feat1': 'Group Personal Training',
             'gym-fc-free': 'ΔΩΡΕΑΝ',
@@ -279,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'pt-opt2-prog-label': 'Προγράμματα:',
             'pt-opt2-45': '45 Ημέρες',
             'pt-opt2-90': '90 Ημέρες',
-            'pt-opt2-cta': 'Κλείσε Δοκιμαστική',
+            'pt-opt2-cta': 'Ανακάλυψε Τα EXCLUSIVE',
             'pt-opt3-sub': 'MEGA PILATES',
             'pt-opt3-desc': 'Πανέμορφες αίθουσες με κρεβάτια Pilates Reformer, Cadillac, Combo Chair και Ladder Barrel. Μαθήματα όλη μέρα, από 1 έως 5 άτομα.',
             'pt-opt3-cta': 'Δες το Pilates Studio',
@@ -307,6 +308,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'pt-r3-desc': 'Μείωση 43 κιλών - από 39% σωματικό λίπος σε 11%. Από 124kg σε 81kg. Μια από τις πιο εντυπωσιακές μεταμορφώσεις στα MEGA GYM EXCLUSIVE.',
             'pt-r4-sub': 'Έκαψε 38 κιλά',
             'pt-r4-desc': 'Ο Στέλιος έκαψε 38 κιλά με το πρόγραμμα Personal Training Transformation. Αλλαγή ζωής μέσω σωστής προπόνησης και διατροφής.',
+            'pt-result1-name': 'Ιωάννα',
+            'pt-result2-name': 'Γιάννης',
+            'pt-result4-name': 'Στέλιος',
+            'pt-celeb-name': 'Παύλος Σταματόπουλος',
             'pt-celeb-role': 'Δημοσιογράφος',
             'pt-celeb-desc': 'Ο Παύλος Σταματόπουλος μεταμορφώθηκε στα MEGA GYM EXCLUSIVE. Η ιστορία του δημοσιεύτηκε σε ΑΝΤ1, ALPHA, STAR και EPSILON.',
             'pt-cta-title': 'Ξεκίνα Τη Μεταμόρφωσή Σου',
@@ -620,6 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'gym-page-bc': 'Gyms',
             'gym-page-bc-home': 'Home',
             'gym-fc-title': 'MEGA GYM Fitness Clubs',
+            'gym-fc-sub': 'Group Training Centers',
             'gym-fc-desc': 'Top gyms with the best equipment on the market, amazing spaces and the most experienced professional trainers. Group Personal Training programs are offered FREE at all Fitness Clubs.',
             'gym-fc-feat1': 'Group Personal Training',
             'gym-fc-free': 'FREE',
@@ -694,7 +700,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'pt-opt2-prog-label': 'Programs:',
             'pt-opt2-45': '45 Days',
             'pt-opt2-90': '90 Days',
-            'pt-opt2-cta': 'Book Trial',
+            'pt-opt2-cta': 'Discover EXCLUSIVE',
             'pt-opt3-sub': 'MEGA PILATES',
             'pt-opt3-desc': 'Beautiful studios with Pilates Reformer, Cadillac, Combo Chair and Ladder Barrel beds. Classes all day, from 1 to 5 people.',
             'pt-opt3-cta': 'See Pilates Studio',
@@ -722,6 +728,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'pt-r3-desc': '43kg reduction - from 39% body fat to 11%. From 124kg to 81kg. One of the most impressive transformations at MEGA GYM EXCLUSIVE.',
             'pt-r4-sub': 'Lost 38 kg',
             'pt-r4-desc': 'Stelios lost 38kg with the Personal Training Transformation program. A life change through proper training and nutrition.',
+            'pt-result1-name': 'Ioanna',
+            'pt-result2-name': 'Giannis',
+            'pt-result4-name': 'Stelios',
+            'pt-celeb-name': 'Pavlos Stamatopoulos',
             'pt-celeb-role': 'Journalist',
             'pt-celeb-desc': 'Pavlos Stamatopoulos transformed at MEGA GYM EXCLUSIVE. His story was featured on ANT1, ALPHA, STAR and EPSILON.',
             'pt-cta-title': 'Start Your Transformation',
@@ -1091,9 +1101,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroHeight = window.innerHeight;
 
         if (scrollY < heroHeight) {
-            // Original 0.3 parallax — but capped so content never crashes
-            // into the .scroll-indicator at the bottom of the hero.
-            const translate = Math.min(scrollY * 0.3, 80);
+            // Cap the parallax translate as a percentage of viewport height so
+            // it stops at the same VISUAL position across display sizes
+            // (600px laptop vs 1400px desktop). Hard ceiling at 100px guards
+            // against absurdly tall 4K monitors.
+            const maxTranslate = Math.min(heroHeight * 0.055, 75);
+            const translate = Math.min(scrollY * 0.3, maxTranslate);
             const opacity = Math.max(1 - (scrollY / heroHeight) * 0.6, 0.4);
             heroContent.style.transform = `translateY(${translate}px)`;
             heroContent.style.opacity = opacity;
