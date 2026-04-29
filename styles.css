@@ -4901,7 +4901,13 @@ body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
     text-align: center;
     position: relative;
     transition: transform var(--transition), box-shadow var(--transition);
+    /* Flex column so the CTA button anchors at the bottom of every card,
+       regardless of how many features each plan lists. All 3 cards now
+       align horizontally at the bottom. */
+    display: flex;
+    flex-direction: column;
 }
+.pricing-card > .btn { margin-top: auto; }
 .pricing-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
