@@ -6134,10 +6134,9 @@ body.dark-mode .section-subtitle .emph {
     .hero-ctas .btn,
     .hero-ctas .btn-yellow,
     .hero-ctas .btn-outline { padding: 10px 18px; font-size: .78rem; }
-    /* Hide the scrolling locations marquee on mobile — the locations
-       finder section right below the hero already shows all 7 gyms
-       with photos, so the marquee is redundant + adds vertical clutter. */
-    .hero-locations { display: none; }
+    /* Hero locations marquee tighter */
+    .hero-locations { margin-top: 4px; }
+    .hero-locations-label { margin-bottom: 6px; }
 }
 @media (max-width: 400px) {
     .hero-line-1,

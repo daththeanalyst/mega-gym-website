@@ -1102,12 +1102,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ---------------------------------------------------------------
-       8. PARALLAX - HERO (Desktop Only)
+       8. PARALLAX - HERO (Desktop / mouse-driven only)
+       Skip on any touch device or viewport < 1024px so phones and
+       tablets get a static hero with no scroll-driven movement.
     --------------------------------------------------------------- */
     const heroContent = document.querySelector('.hero-content');
+    const isPointerFine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     function handleParallax() {
-        if (!heroContent || window.innerWidth < 768) return;
+        if (!heroContent || !isPointerFine || window.innerWidth < 1024) return;
         const scrollY = window.scrollY;
         const heroHeight = window.innerHeight;
 
