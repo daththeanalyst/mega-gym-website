@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- INDEX: ABOUT ---
             'about-tag': 'Ποιοι Είμαστε',
             'about-title': 'Τα Καλύτερα Ελληνικά Γυμναστήρια',
-            'about-lead': 'Με <strong>33 χρόνια εμπειρίας</strong> και 7 κορυφαίες εγκαταστάσεις στην Αθήνα, τα MEGA GYM αποτελούν σημείο αναφοράς στον χώρο του fitness. Εστιάζουμε στα αποτελέσματα, όχι στις υποσχέσεις.',
-            'about-desc': 'Κορυφαίος εξοπλισμός, έμπειροι γυμναστές και μοναδικά προγράμματα Group Personal Training — δωρεάν με τη συνδρομή σας. Αυτό μας κάνει διαφορετικούς.',
+            'about-lead': 'Επτά κορυφαίες εγκαταστάσεις στην Αθήνα, 15.000+ ενεργά μέλη, τα MEGA GYM αποτελούν σημείο αναφοράς στον χώρο του fitness. Εστιάζουμε στα αποτελέσματα, όχι στις υποσχέσεις.',
+            'about-desc': 'Κορυφαίος εξοπλισμός, έμπειροι γυμναστές και μοναδικά προγράμματα Group Personal Training, δωρεάν με τη συνδρομή σας. Αυτό μας κάνει διαφορετικούς.',
             'metric-fat': 'Τόνοι Λίπους',
             'metric-fat-desc': 'κάηκαν φέτος',
             'metric-muscle': 'Τόνοι Μυών',
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'transform-ioanna-name': 'Ιωάννα',
             'transform-giannis-name': 'Γιάννης',
             'transform-ioanna': 'Απώλεια λίπους & τόνωση σε 45 ημέρες με το πρόγραμμα Transformation',
-            'transform-giannis': 'Ολική μεταμόρφωση σε 90 ημέρες — μυϊκή ανάπτυξη & απώλεια λίπους',
+            'transform-giannis': 'Ολική μεταμόρφωση σε 90 ημέρες, μυϊκή ανάπτυξη & απώλεια λίπους',
             'transform-43kg': 'Απώλεια 43 κιλών με συνεχή καθοδήγηση και αφοσίωση',
             'transform-member': 'Μέλος MEGA GYM',
             'transform-prog-tx': 'Transformation Program',
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- INDEX: PRICING ---
             'pricing-tag': 'Συνδρομές',
             'pricing-title': 'Επέλεξε Το Πλάνο Σου',
-            'pricing-sub': 'Ξεκίνα σήμερα — χωρίς δεσμεύσεις',
+            'pricing-sub': 'Ξεκίνα σήμερα, χωρίς δεσμεύσεις',
             'pricing-day-title': 'Day Pass',
             'pricing-day-period': 'ανά επίσκεψη',
             'pricing-feat-access': 'Πλήρης πρόσβαση στον εξοπλισμό',
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'gym-dir-title': 'Όλα τα MEGA GYM',
             'gym-dir-hq': 'Κεντρικό',
             'gym-trial-title': 'Θέλεις να Δοκιμάσεις;',
-            'gym-trial-desc': 'Κλείσε τη δωρεάν δοκιμαστική σου προπόνηση σε οποιοδήποτε MEGA GYM.',
+            'gym-trial-desc': 'Κλείσε τη δωρεάν δοκιμαστική σου προπόνηση<br>σε οποιοδήποτε MEGA GYM.',
             'gym-trial-cta': 'Δοκιμαστική Προπόνηση',
 
             // --- PROPONISI PAGE ---
@@ -464,8 +464,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- INDEX: ABOUT ---
             'about-tag': 'Who We Are',
             'about-title': 'The Best Greek Gyms',
-            'about-lead': 'With <strong>33 years of experience</strong> and 7 top-tier facilities across Athens, MEGA GYM is the benchmark in the fitness industry. We focus on results, not promises.',
-            'about-desc': 'Top equipment, experienced trainers and unique Group Personal Training programs — free with your membership. That\'s what makes us different.',
+            'about-lead': 'Seven premium locations across Athens, 15,000+ active members, MEGA GYM is Athens\' leading fitness destination. We focus on results, not promises.',
+            'about-desc': 'Top equipment, experienced trainers and unique Group Personal Training programs, free with your membership. That\'s what makes us different.',
             'metric-fat': 'Tons of Fat',
             'metric-fat-desc': 'burned this year',
             'metric-muscle': 'Tons of Muscle',
@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'transform-ioanna-name': 'Ioanna',
             'transform-giannis-name': 'Giannis',
             'transform-ioanna': 'Fat loss & toning in 45 days with the Transformation program',
-            'transform-giannis': 'Total transformation in 90 days — muscle growth & fat loss',
+            'transform-giannis': 'Total transformation in 90 days, muscle growth & fat loss',
             'transform-43kg': 'Lost 43kg with continuous guidance and dedication',
             'transform-member': 'MEGA GYM Member',
             'transform-prog-tx': 'Transformation Program',
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- INDEX: PRICING ---
             'pricing-tag': 'Memberships',
             'pricing-title': 'Choose Your Plan',
-            'pricing-sub': 'Start today — no commitments',
+            'pricing-sub': 'Start today, no commitments',
             'pricing-day-title': 'Day Pass',
             'pricing-day-period': 'per visit',
             'pricing-feat-access': 'Full equipment access',
@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'faq-q3': 'What are the opening hours?',
             'faq-a3': 'Monday-Friday 06:30-00:00, Saturday 08:00-20:00, Sunday 11:00-17:00. Hours may vary by location.',
             'faq-q4': 'What is Group Personal Training?',
-            'faq-a4': 'Group training with personal guidance — including TRX, MEGA ZONE, MEGA CAGE, SKILLMILL, Circuit Cross Training and MEGA SLED. Offered FREE with your membership.',
+            'faq-a4': 'Group training with personal guidance, including TRX, MEGA ZONE, MEGA CAGE, SKILLMILL, Circuit Cross Training and MEGA SLED. Offered FREE with your membership.',
             'faq-q5': 'What do I need to get started?',
             'faq-a5': 'Just athletic clothes and shoes! Towels and lockers are provided. Arrive 15 minutes early on your first visit for a brief tour.',
             'faq-q6': 'Is there parking?',
@@ -757,7 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'pil-acc-6': 'Pilates Boxes',
             'pil-acc-7': 'Pilates weights',
             'pil-ben-tag': 'BENEFITS',
-            'pil-ben-title': 'What are the benefits of Pilates Reformer?',
+            'pil-ben-title': 'What are the benefits of Pilates&nbsp;Reformer?',
             'pil-ben-1-title': 'Strength & Flexibility',
             'pil-ben-1-desc': 'Overall strength, flexibility, coordination and balance. A complete training program for the whole body.',
             'pil-ben-2-title': 'Daily Life',
@@ -1354,6 +1354,23 @@ document.addEventListener('DOMContentLoaded', () => {
             cookieBanner.classList.remove('visible');
             cookieBanner.classList.add('hidden');
         });
+    }
+
+    /* ---------------------------------------------------------------
+       15. VIDEO AUTOPLAY ON SCROLL
+    --------------------------------------------------------------- */
+    const tourVideo = document.querySelector('.video-wrapper video');
+    if (tourVideo && 'IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tourVideo.play();
+                } else {
+                    tourVideo.pause();
+                }
+            });
+        }, { threshold: 0.4 });
+        videoObserver.observe(tourVideo);
     }
 
 });

@@ -166,6 +166,55 @@ New website for MEGA GYM — a Greek gym chain with 7 locations in Athens. Clien
 - Preloader markup added to every page (was only on dokimastiki + pilates).
 - **`sessionStorage('megagym-loaded')` gate restored** — preloader now only plays on first visit per session, not on every page navigation. (Earlier removed for showcase / testing; restored before production.)
 
+### Session 4 — Stelios sprint (2026-04-29)
+
+**Service cards (index.html) — badge + alignment**
+- `ΔΩΡΕΑΝ με Συνδρομή` badge restyled to ghost pill: `background: transparent`, yellow border, yellow text — no longer overlaps the GPT icon
+- Cards aligned via CSS subgrid: `.services-grid` uses `grid-template-rows: auto auto auto auto auto`, each card `grid-row: span 5` + `grid-template-rows: subgrid`. All icons, titles, descriptions, pills, and CTAs now sit on the same row across all 3 cards
+- GPT card pills: 2-column grid layout — TRX and CIRCUIT CROSS TRAINING span full width (first/last rows), middle 4 pills in a 2×2 grid
+- Pilates card: icon changed to `pilates-reformer-icon.svg` (reformer silhouette, yellow fill)
+
+**Gymnastiria page (gymnastiria.html) — location cards with exterior photos**
+- All 6 non-featured cards given exterior photos (`gym-ext-[location].png`) via `div.dir-img-wrap > img.dir-img` + `div.dir-card-body` layout
+- Kifissia (featured card) keeps no exterior photo — image was added then reverted per Stelios request
+- Card alignment: `.directory-card` flex column, `.dir-card-body` flex column + `flex: 1`, `.dir-card-body h3` `min-height: 2.8em`, `.dir-card-body .loc-tags` `margin-top: auto` — addresses, phones, and tag pills all sit at the same level across cards
+- Card titles: `MEGA GYM` on first line, location name on second line via `.directory-card h3 span { display: block }`
+
+**Homepage virtual tour section (index.html)**
+- Replaced Facebook video iframe with local `interior_360_vid.mp4`
+- Removed 16:9 padding-bottom trick — video displays at its natural aspect ratio, full width up to 900px
+- Intersection Observer added (script.js §15): video autoplays (muted) when 40% visible, pauses on scroll out
+
+---
+
+### Session 3 — Stelios sprint
+
+**Favicon (all 8 pages)**
+- Replaced generic favicon with the yellow M transparent PNG (`mega-gym-m-transparent.png`)
+
+**Pilates page (pilates.html) — full overhaul — PAGE COMPLETE**
+- Replaced 3 emoji icons (🕐 👥 🏆) with yellow SVG icons (`schedule-icon.svg`, `groups-icon.svg`, `quality-icon.svg`) — icons centered above titles with hover animation
+- Intro section reworked into a split layout: text left, pilates studio photo right (`.pilates-intro-split` grid)
+- Equipment section rebuilt as a full-height slideshow (`.equipment-slideshow`) with 4 slides showing each machine (reformer, cadillac, combo chair, ladder barrel) — image left 60%, content right 40%, 7s auto-advance with fade transition
+- Accessories section replaced with full-width image + pill overlay (`.accessories-showcase`) — pills centered top row, no bullet points
+- English translation fixed: `pil-ben-title` key — "Pilates&nbsp;Reformer?" now stays on one line
+
+**Gymnastiria page (gymnastiria.html) — PAGE COMPLETE**
+- Yellow CTA section ("ΘΕΛΕΙΣ ΝΑ ΔΟΚΙΜΑΣΕΙΣ;") centered — `.trial-content { text-align: center }` + `.trial-actions { display: flex; justify-content: center }`
+- Greek description text (`gym-trial-desc`) broken into two rows after "προπόνηση" with `<br>` — updated both script.js key and hardcoded HTML fallback
+
+**Dokimastiki page (dokimastiki.html) — PAGE COMPLETE**
+- Confirmed: phone numbers stay on this page (user decision)
+
+**Homepage about section (index.html)**
+- About-lead text rewritten — removed "33 χρόνια εμπειρίας" mention (already in hero badge + accent card). New text leads with "Επτά κορυφαίες εγκαταστάσεις στην Αθήνα, 15.000+ ενεργά μέλη". Updated hardcoded HTML + both GR/EN translation keys in script.js
+
+**Epikoinonia page (epikoinonia.html) — PAGE COMPLETE**
+- Confirmed complete by Stelios (2026-04-29)
+
+**Em dash cleanup (index.html + script.js)**
+- Replaced all " — " with ", " in text content across index.html and script.js (13 replacements). "AI Chat — Coming Soon" button labels intentionally kept.
+
 ---
 
 ## Still To Do
@@ -179,26 +228,26 @@ New website for MEGA GYM — a Greek gym chain with 7 locations in Athens. Clien
 - [x] ~~Pricing CTAs unified~~ — all 3 yellow + full-width
 - [x] ~~Old "Our Gyms" 7-card preview replaced with linked list+map finder~~
 - [x] ~~Duplicate contact-quick section removed~~
-- [ ] Hero badge "33 Χρόνια" + about-lead "Με 33 χρόνια εμπειρίας" — decide if both still needed (33+ now only appears in those 2 places, was previously 4)
+- [x] ~~Hero badge "33 Χρόνια" + about-lead~~ — kept hero badge, removed from about-lead text (now leads with 7 locations + 15K members)
 
 ### Gymnastiria page (gymnastiria.html)
 - [ ] Consider whether the big EXCLUSIVE badge on the gym-type comparison card needs restyling (currently flat yellow — small loc-tags already done)
-- [ ] Center the "want to try our..." section content
+- [x] ~~Center the "want to try our..." section content~~ — done (trial-content centered, trial-actions flex centered)
 - [ ] **Add per-gym galleries** — when a user clicks a gym in the directory, open a gallery / detail view with multiple photos of that location. Each of the 7 gyms should have its own set of photos (interior, equipment, locker rooms, etc.). Needs photo set per location from client.
 
 ### Dokimastiki page (dokimastiki.html)
 - [x] ~~Trust signals stat block (33/15K/7) removed~~
 - [x] ~~"Why try us?" 3-card section archived (commented out, source preserved)~~
 - [x] ~~Phone CTA padding tightened~~
-- [ ] **Decide:** keep phone numbers on this page or move all to epikoinonia.html only?
+- [x] ~~Decide: phone numbers~~ — keeping them on this page (user confirmed, page marked complete)
 
 ### Personal Training page (personal-training.html)
 - [ ] Translate testimonial names in the "proven results" section (still pending)
 - [ ] **Add depth: more photos + more written content.** Currently the page is light on visual storytelling. Add gallery / before-after photos, longer copy on the transformation programs, photos of the EXCLUSIVE centers.
 
-### Pilates Studio page (pilates.html)
-- [ ] Replace emoji icons (🕐 👥 🏆) in the Schedule / Groups / Quality cards with proper SVG icons
-- [ ] **Add depth: more photos + more written content.** New pilates images already exist in `Gym_pics/new/` (action shots + studio shots) — wire them into the page. Stelios noted in original handoff that this is a high-priority page.
+### Pilates Studio page (pilates.html) — COMPLETE
+- [x] ~~Replace emoji icons~~ — replaced with yellow SVGs, centered + animated
+- [x] ~~Add depth: more photos + more written content~~ — full page overhaul done (split intro, equipment slideshow, accessories showcase)
 
 ### Proponisi page (proponisi.html)
 - [ ] **Add depth: more photos + more written content** for Group Personal Training. Show TRX / MEGA ZONE / MEGA CAGE / SKILLMILL etc. with photos of the actual equipment in use.
@@ -253,5 +302,5 @@ New website for MEGA GYM — a Greek gym chain with 7 locations in Athens. Clien
 
 ---
 
-*Last updated 2026-04-28*  
-*Session 1: Stelios · Session 2 (multiple sub-sessions): Dimitris*
+*Last updated 2026-04-29*  
+*Session 1: Stelios · Session 2 (multiple sub-sessions): Dimitris · Session 3: Stelios · Session 4: Stelios*
