@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-locations-label': '7 Γυμναστήρια Σε Όλη Την Αθήνα',
             'scroll-down': 'Κάντε scroll',
 
+            // --- COOKIE BANNER ---
+            'cookie-text': 'Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας σας. Συνεχίζοντας, αποδέχεστε τη χρήση τους.',
+            'cookie-accept': 'Αποδοχή',
+
             // --- LOCATION AREA NAMES (used across pages) ---
             'loc-kifissia': 'Κηφισιά',
             'loc-metamorfosi': 'Μεταμόρφωση',
@@ -456,6 +460,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-stat-fat': 'Tons of Fat Burned',
             'hero-locations-label': '7 Premium Gyms Across Athens',
             'scroll-down': 'Scroll down',
+
+            // --- COOKIE BANNER ---
+            'cookie-text': 'We use cookies to improve your experience. By continuing, you accept their use.',
+            'cookie-accept': 'Accept',
 
             // --- LOCATION AREA NAMES (used across pages) ---
             'loc-kifissia': 'Kifissia',

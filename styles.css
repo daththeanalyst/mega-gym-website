@@ -6580,6 +6580,14 @@ body.dark-mode .pt-opt-meta dd span { color: #fff; }
         box-shadow: none !important;
     }
 
+    /* Hide the cookie banner + sticky CTA + FAB while the mobile menu
+       is open — they were poking through the bottom of the overlay. */
+    body.nav-open .cookie-banner,
+    body.nav-open .sticky-cta,
+    body.nav-open .fab-container {
+        display: none !important;
+    }
+
     /* Hamburger / X button — visible above the menu, switches to white spans when open */
     .nav-toggle.active span {
         background: var(--white) !important;
@@ -6805,6 +6813,23 @@ body.dark-mode .pt-opt-meta dd span { color: #fff; }
     .section-tag { font-size: .68rem; }
     .section-title { font-size: 1.6rem !important; }
     .section-subtitle { font-size: .82rem; }
+}
+
+/* --- Social proof (Instagram / Facebook / etc. counters) — 2x2 on mobile --- */
+@media (max-width: 768px) {
+    .social-proof-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px;
+    }
+    .social-proof { padding: 36px 0; }
+    .social-proof-num { font-size: 1.6rem; }
+    .social-proof-label { font-size: .72rem; }
+    .social-proof-icon svg { width: 28px; height: 28px; }
+}
+@media (max-width: 400px) {
+    .social-proof-grid { gap: 12px; }
+    .social-proof-num { font-size: 1.4rem; }
+    .social-proof-label { font-size: .66rem; }
 }
 @media (max-width: 400px) {
     .section { padding: 36px 0; }
