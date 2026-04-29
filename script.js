@@ -954,7 +954,9 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            const isOpen = navLinks.classList.contains('active');
+            document.body.classList.toggle('nav-open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
         // Close menu when a link is clicked
@@ -962,6 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                document.body.classList.remove('nav-open');
                 document.body.style.overflow = '';
             });
         });

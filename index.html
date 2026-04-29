@@ -245,11 +245,15 @@
             wireCardEvents();
         }
 
-        var map = L.map('megaMap', { scrollWheelZoom: false }).setView([37.98, 23.82], 11);
+        var map = L.map('megaMap', { scrollWheelZoom: false });
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap &copy; CARTO',
             maxZoom: 19
         }).addTo(map);
+        // Auto-fit zoom so all 7 pins are always visible regardless of viewport
+        var ALL_BOUNDS = L.latLngBounds(gyms.map(function(g) { return [g.lat, g.lng]; }));
+        var FIT_OPTS = { paddingTopLeft: [25, 30], paddingBottomRight: [25, 50], maxZoom: 12 };
+        map.fitBounds(ALL_BOUNDS, FIT_OPTS);
 
         var pinLogoSrc = 'assets/MegaGymPhotos/mega-gym-m-cursor.png';
         var pinShapeSvg = '<svg class="mg-pin__shape" viewBox="0 0 32 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
@@ -307,7 +311,6 @@
             markers.forEach(function(m) { var el = m.getElement(); if (el) el.classList.remove('is-active'); });
         }
 
-        var DEFAULT_VIEW = { center: [37.98, 23.82], zoom: 11 };
         var lockedGymId = null;  // which gym (if any) is click-pinned
         var isTransitioning = false;  // true during a select-to-select swap; suppresses the popupclose deselect
 
@@ -318,9 +321,10 @@
             var ll = L.latLng(gyms[i].lat, gyms[i].lng);
             var pt = map.project(ll, zoom);
             var mapH = map.getSize().y;
-            // Shift center UP from marker by 22% of map height → marker drops
-            // about 22% below the new viewport center → ~72% down the view.
-            pt.y -= mapH * 0.22;
+            // Shift center UP from marker by 36% of map height → marker drops
+            // ~86% down the view, leaving full room above for the popup
+            // (especially the bigger HQ popup with image).
+            pt.y -= mapH * 0.36;
             return map.unproject(pt, zoom);
         }
 
@@ -381,7 +385,7 @@
             syncResetBtn();
             clearAllActive();
             map.closePopup();
-            map.flyTo(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom, { duration: 0.6 });
+            map.flyToBounds(ALL_BOUNDS, { paddingTopLeft: [25, 30], paddingBottomRight: [25, 50], maxZoom: 12, duration: 0.6 });
         }
 
         function wireCardEvents() {
