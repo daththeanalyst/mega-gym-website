@@ -252,7 +252,7 @@
         }).addTo(map);
         // Auto-fit zoom so all 7 pins are always visible regardless of viewport
         var ALL_BOUNDS = L.latLngBounds(gyms.map(function(g) { return [g.lat, g.lng]; }));
-        var FIT_OPTS = { paddingTopLeft: [25, 30], paddingBottomRight: [25, 50], maxZoom: 12 };
+        var FIT_OPTS = { paddingTopLeft: [25, 30], paddingBottomRight: [25, 50], maxZoom: 13 };
         map.fitBounds(ALL_BOUNDS, FIT_OPTS);
 
         var pinLogoSrc = 'assets/MegaGymPhotos/mega-gym-m-cursor.png';
@@ -385,7 +385,7 @@
             syncResetBtn();
             clearAllActive();
             map.closePopup();
-            map.flyToBounds(ALL_BOUNDS, { paddingTopLeft: [25, 30], paddingBottomRight: [25, 50], maxZoom: 12, duration: 0.6 });
+            map.flyToBounds(ALL_BOUNDS, { paddingTopLeft: [25, 30], paddingBottomRight: [25, 50], maxZoom: 13, duration: 0.6 });
         }
 
         function wireCardEvents() {

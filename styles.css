@@ -6080,15 +6080,26 @@ body.dark-mode .section-subtitle .emph {
    with an orphaned word at the previous floor. Lower floor + tighter
    letter-spacing keeps it to a clean 2-line layout on iPhone-class widths. */
 @media (max-width: 600px) {
+    /* Use dynamic viewport on mobile so iOS Safari's URL bar doesn't
+       eat the bottom of the hero (100vh problem). */
+    .hero { min-height: 100vh; min-height: 100dvh; }
     .hero-line-1,
     .hero-line-2 {
-        font-size: clamp(1.35rem, 6.5vw, 2.1rem);
+        font-size: clamp(1.3rem, 6.2vw, 2rem);
         letter-spacing: .02em;
-        line-height: 1.1;
+        line-height: 1.08;
     }
-    .hero-title { margin-bottom: 18px; word-spacing: -0.04em; }
-    .hero-badge { font-size: .66rem; padding: 6px 14px; }
-    .hero-content { padding: 24px 14px 32px; }
+    .hero-title { margin-bottom: 14px; word-spacing: -0.04em; }
+    .hero-badge { font-size: .64rem; padding: 5px 13px; margin-bottom: 14px; }
+    .hero-content { padding: 60px 14px 80px; }
+    /* Tighter CTAs spacing — was wrapping/overflowing on small phones */
+    .hero-ctas { gap: 10px; margin-bottom: 28px; }
+    .hero-ctas .btn,
+    .hero-ctas .btn-yellow,
+    .hero-ctas .btn-outline { padding: 10px 18px; font-size: .78rem; }
+    /* Hero locations marquee tighter */
+    .hero-locations { margin-top: 8px; }
+    .hero-locations-label { margin-bottom: 8px; }
 }
 @media (max-width: 400px) {
     .hero-line-1,
