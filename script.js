@@ -1369,7 +1369,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieAccept = document.getElementById('cookieAccept');
 
     if (cookieBanner && !localStorage.getItem('megagym-cookies')) {
-        setTimeout(() => cookieBanner.classList.add('visible'), 1500);
+        setTimeout(() => {
+            cookieBanner.classList.add('visible');
+            document.body.classList.add('cookie-visible');
+        }, 1500);
     }
 
     if (cookieAccept) {
@@ -1377,6 +1380,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('megagym-cookies', '1');
             cookieBanner.classList.remove('visible');
             cookieBanner.classList.add('hidden');
+            document.body.classList.remove('cookie-visible');
         });
     }
 
