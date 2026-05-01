@@ -3706,6 +3706,35 @@ body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
     align-items: center;
     justify-content: center;
 }
+/* Real photo card — image fills the frame, duration sits as a corner badge */
+.transform-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: var(--gray-200);
+}
+.transform-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform .4s ease;
+}
+.transform-card:hover .transform-image img {
+    transform: scale(1.04);
+}
+.transform-image .transform-duration {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(10, 10, 10, .82);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
 .transform-duration {
     font-family: var(--font-display);
     text-transform: uppercase;
@@ -3748,20 +3777,28 @@ body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
 }
 .tv-logos {
     display: flex;
-    gap: 24px;
+    gap: 28px;
     justify-content: center;
-    margin-top: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
 }
 .tv-logo {
-    font-family: var(--font-display);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: .06em;
-    color: var(--gray-500);
-    padding: 8px 20px;
-    border: 1px solid var(--gray-300);
-    border-radius: var(--radius-sm);
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    opacity: .9;
+    transition: opacity .25s ease, transform .25s ease;
+    background: var(--white);
+}
+.tv-logo:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+    .tv-logos { gap: 16px 22px; margin-top: 12px; }
+    .tv-logo { height: 28px; }
 }
 
 /* Trial CTA (yellow banner) */
@@ -4149,13 +4186,15 @@ body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
     .hero-content { padding: 24px 16px 28px; }
     .accessories-grid { grid-template-columns: 1fr; }
     .about-image img { height: 240px; }
-    .transform-image-placeholder { height: 150px; }
+    .transform-image-placeholder,
+    .transform-image { height: 200px; }
 }
 
 /* --- Transformations grid: compact 2-card-per-row layout on phones --- */
 @media (max-width: 768px) {
     .transform-grid { gap: 14px; }
-    .transform-image-placeholder { height: 110px; }
+    .transform-image-placeholder,
+    .transform-image { height: 180px; }
     .transform-info { padding: 14px 14px 16px; }
     .transform-info h4 { font-size: .95rem; margin-bottom: 4px; }
     .transform-info .transform-card-sub,
@@ -4164,14 +4203,17 @@ body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
     .transform-info p { font-size: .76rem; line-height: 1.4; }
     .transform-program,
     .transform-card .transform-program { font-size: .62rem; padding: 4px 9px; margin-top: 8px; }
-    .transform-duration {
+    .transform-image .transform-duration {
         font-size: .85rem;
         padding: 4px 10px;
+        bottom: 8px;
+        right: 8px;
     }
     .transform-grid > .transform-card:nth-child(3) { max-width: 65%; }
 }
 @media (max-width: 480px) {
-    .transform-image-placeholder { height: 90px; }
+    .transform-image-placeholder,
+    .transform-image { height: 150px; }
     .transform-info { padding: 12px 12px 14px; }
     .transform-info h4 { font-size: .88rem; }
     .transform-info p { font-size: .72rem; }
