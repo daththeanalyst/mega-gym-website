@@ -3777,28 +3777,37 @@ body.dark-mode .intro-highlight-item p { color: rgba(0, 0, 0, 0.72); }
 }
 .tv-logos {
     display: flex;
-    gap: 28px;
+    gap: 18px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 16px;
 }
 .tv-logo {
-    height: 42px;
+    height: 38px;
     width: auto;
     object-fit: contain;
-    border-radius: 6px;
-    opacity: .9;
-    transition: opacity .25s ease, transform .25s ease;
     background: var(--white);
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    opacity: .92;
+    transition: opacity .25s ease, transform .25s ease;
 }
 .tv-logo:hover {
     opacity: 1;
     transform: translateY(-2px);
 }
+/* ANT1 logo is white-on-transparent — it disappears on white. Give it
+   a black chip so the white wordmark + colorful + plus stay visible. */
+.tv-logo--dark {
+    background: #0a0a0a;
+    border-color: #1a1a1a;
+}
 @media (max-width: 600px) {
-    .tv-logos { gap: 16px 22px; margin-top: 12px; }
-    .tv-logo { height: 28px; }
+    .tv-logos { gap: 12px; margin-top: 12px; }
+    .tv-logo { height: 26px; padding: 6px 10px; }
 }
 
 /* Trial CTA (yellow banner) */
